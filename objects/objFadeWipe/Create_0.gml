@@ -8,15 +8,14 @@ image_yscale=768;
 
 if global.fadeMode="out"
 {
+	x=1024;
 	if global.sound=1 {audio_play_sound(sndTransition,0,0);}
 }
 
 if global.fadeMode="outT"
 {
-	transMethod=1;
-	image_alpha=transMethod;
+	x=1024;
 	audio_play_sound(sndStart,0,0);
-
 }
 
 if global.fadeMode="inR"
@@ -26,9 +25,9 @@ if global.fadeMode="inR"
 
 if global.fadeMode="outR"
 {
+	y=-768;
 	global.reset=1;
 	amplify=1024;
-	transMethod=1;
 	if global.sound=1 
 	{
 		audio_play_sound(sndTransition,0,0);

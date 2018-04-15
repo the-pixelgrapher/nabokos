@@ -3,6 +3,7 @@ electric=0;
 global.complete=0;
 magState=0;
 noMoveTimer=0;
+resetTimer=0;
 levelNTimer=120;
 easex=-1024;
 easea=1;

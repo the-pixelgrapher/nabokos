@@ -1,5 +1,5 @@
 // ---- LEVEL NUMBER POPUP ANIMATION ----
-if !instance_exists(objFadeWipe) and levelNTimer>-31
+if global.fadeMode="none" and levelNTimer>-31 or global.fadeMode="outR"
 {
 	levelNTimer-=1;
 	
@@ -10,7 +10,7 @@ if !instance_exists(objFadeWipe) and levelNTimer>-31
 		easea=ease("easeoutcubic",counter*2);
 	}
 	
-	if levelNTimer<=0 or global.complete=1
+	if levelNTimer<=0 or global.complete=1 or global.fadeMode="outR"
 	{
 		if counter2<1 {counter2+=1/30};
 		easex=ease("easeoutquart",counter2)*amplify2+176-96;
@@ -100,7 +100,7 @@ if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
 
 
 	// Magnet rotates to face a single adjecent crate
-	if speed=0 and magState=1 and global.rotationMode=0
+	if magState=1 and global.rotationMode=0
 	{
 		if place_meeting(x,y-16,objCrate) and //if only top
 		!place_meeting(x,y+16,objCrate)   and
@@ -124,26 +124,30 @@ if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
 
 		if global.allowCornerRotate=1
 		{
-			// magnet faces direction of movement when cornered by crates
+			// magnet faces closest crate when cornered
 			if place_meeting(x+16,y,objCrate) and place_meeting(x,y-16,objCrate) // top right check
+			and !place_meeting(x-16,y,objCrate) and !place_meeting(x,y+16,objCrate)
 			{
-				if keyboard_check(vk_right)    {image_angle=0;}
-				if keyboard_check(vk_up)       {image_angle=90;}
+				if image_angle==180	{image_angle=90;}
+				if image_angle==270	{image_angle=0;}
 			}
 			if place_meeting(x-16,y,objCrate) and place_meeting(x,y+16,objCrate) // bottom left check
+			and !place_meeting(x+16,y,objCrate) and !place_meeting(x,y-16,objCrate)
 			{
-				if keyboard_check(vk_down)     {image_angle=270;}
-				if keyboard_check(vk_left)     {image_angle=180;}
+				if image_angle==90	{image_angle=180;}
+				if image_angle==0	{image_angle=270;}
 			}
 			if place_meeting(x,y-16,objCrate) and place_meeting(x-16,y,objCrate) // top left check
+			and !place_meeting(x,y+16,objCrate) and !place_meeting(x+16,y,objCrate)
 			{
-				if keyboard_check(vk_up)       {image_angle=90;}
-				if keyboard_check(vk_left)     {image_angle=180;}
+				if image_angle==0	{image_angle=90;}
+				if image_angle==270 {image_angle=180;}
 			}
 			if place_meeting(x,y+16,objCrate) and place_meeting(x+16,y,objCrate) // bottom right check
+			and !place_meeting(x,y-16,objCrate) and !place_meeting(x-16,y,objCrate)
 			{
-				if keyboard_check(vk_down)     {image_angle=270;}
-				if keyboard_check(vk_right)    {image_angle=0;}
+				if image_angle==180	{image_angle=270;}
+				if image_angle==90	{image_angle=0;}
 			}
 		}
 	}
@@ -200,6 +204,17 @@ if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
 
 // ---- ROTATION INTERPOLATION KEYFRAME END ----
 //if image_angle=0 or image_angle=90 or image_angle=180 or image_angle=270 {rotAfter=image_angle;}
+
+// ---- DELAYED GAME RESET ----
+if resetTimer==31
+{
+	global.fadeMode="outR";
+	if !instance_exists(objFadeWipe)
+	{
+		instance_create_layer(0,-768,"insPostprocess",objFadeWipe);
+	}
+	resetTimer=0;
+}
 
 // ---- COMPLETION CODE ----
 if global.complete=1 and image_alpha>0 {image_alpha-=1/30;} //fade player out on completion

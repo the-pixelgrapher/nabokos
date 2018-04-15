@@ -207,6 +207,14 @@
             }
         },
         {
+            "Key": "4b4abc24-17a3-4f39-b2ce-f117c344f4dc",
+            "Value": {
+                "id": "7c4130d1-be0f-4c23-b71f-48e19cc8327d",
+                "resourcePath": "fonts\\fntDIN2\\fntDIN2.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "4bb0a49a-8742-4e6b-9de1-0ce1aee38f45",
             "Value": {
                 "id": "2934c842-9e50-44c8-959d-8e56f20e591b",
