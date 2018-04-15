@@ -191,14 +191,6 @@
             }
         },
         {
-            "Key": "41f73f44-010d-49ce-8403-2d266bf3a1b3",
-            "Value": {
-                "id": "d3a48d64-0dee-4627-934b-ad66e792b245",
-                "resourcePath": "objects\\objFadeINr\\objFadeINr.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "4344ee20-63e0-4eea-a36c-c941de573002",
             "Value": {
                 "id": "33938b39-a55e-45e7-bb27-6bcbc0da3e92",
@@ -252,14 +244,6 @@
                 "id": "34746824-be5f-4ec9-a417-3b8a78dc9be8",
                 "resourcePath": "sprites\\sprTooltips\\sprTooltips.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "65e9d1f0-9499-42dd-870c-45a61affea0a",
-            "Value": {
-                "id": "980468af-6bb5-4034-a39e-adb8f64bf181",
-                "resourcePath": "objects\\objFadeOUT\\objFadeOUT.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -351,14 +335,6 @@
             }
         },
         {
-            "Key": "83b065cd-9fdc-4ad1-8366-b07283c813e0",
-            "Value": {
-                "id": "6eb081f7-2f27-4ca4-a993-a02f600d4fb8",
-                "resourcePath": "objects\\objFadeOUTr\\objFadeOUTr.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "89f07f73-d0f2-48a4-8df1-97eb37f1593c",
             "Value": {
                 "id": "4e6f9331-a643-4219-842e-79f9b201d7db",
@@ -402,7 +378,7 @@
             "Key": "8fe3e745-31df-4d6c-87db-3c92879499b3",
             "Value": {
                 "id": "3386c483-d236-4c8c-9591-e0354dda8192",
-                "resourcePath": "objects\\objFadeIN\\objFadeIN.yy",
+                "resourcePath": "objects\\objFadeWipe\\objFadeWipe.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -652,14 +628,6 @@
                 "id": "c1f67dbc-f9f4-4648-876d-9b7eb5a51c4d",
                 "resourcePath": "views\\d2630698-eabf-43d2-b713-57bc3767926d.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "d792a3bb-c68c-46bb-a280-fd1edbd5130d",
-            "Value": {
-                "id": "ddb8da41-97dd-4dc9-aae7-b3c4a2f9d89d",
-                "resourcePath": "objects\\objFadeOUTtitle\\objFadeOUTtitle.yy",
-                "resourceType": "GMObject"
             }
         },
         {

@@ -1,8 +1,9 @@
 /// @description continue
+global.fadeMode="out"
 
-if global.complete=1 and !instance_exists(objFadeOUT) and !instance_exists(objFadeIN)
+if !instance_exists(objFadeWipe)
 {
-	instance_create_layer(0,0,"insPostprocess",objFadeOUT);
+	instance_create_layer(0,0,"insPostprocess",objFadeWipe);
 }
 
 if global.sound=1 {audio_play_sound(sndClick,0,0);}

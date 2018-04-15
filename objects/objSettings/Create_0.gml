@@ -10,6 +10,7 @@ global.fadeDelay=30;			//fade transition delay before switching rooms
 
 // GAME MECHANIC PARAMETERS
 global.splashPlayed=0;
+global.fadeMode="none"
 global.reset=0;
 
 //GAME START

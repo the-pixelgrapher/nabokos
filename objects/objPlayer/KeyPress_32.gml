@@ -6,14 +6,16 @@ if global.complete=0 and !instance_exists(objFadeOUT) and !instance_exists(objFa
 	audio_play_sound(sndError,0,0)
 }
 */
-if global.complete=1 and !instance_exists(objFadeOUT) and !instance_exists(objFadeIN)
+if global.complete=1 and !instance_exists(objFadeWipe)
 {
-	instance_create_layer(0,0,"insPostprocess",objFadeOUT);
+	global.fadeMode="out";
+	instance_create_layer(0,0,"insPostprocess",objFadeWipe);
 }
 
-if global.complete=0 and !instance_exists(objFadeOUTr) and !instance_exists(objFadeINr)
+if global.complete=0 and !instance_exists(objFadeWipe)
 {
-	instance_create_layer(0,0,"insPostprocess",objFadeOUTr);
+	global.fadeMode="outR";
+	instance_create_layer(0,0,"insPostprocess",objFadeWipe);
 }
 
 

@@ -1,5 +1,5 @@
 // ---- LEVEL NUMBER POPUP ANIMATION ----
-if !instance_exists(objFadeIN) and !instance_exists(objFadeINr) and levelNTimer>-31
+if !instance_exists(objFadeWipe) and levelNTimer>-31
 {
 	levelNTimer-=1;
 	

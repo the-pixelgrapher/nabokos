@@ -2,7 +2,7 @@
     "id": "8fe3e745-31df-4d6c-87db-3c92879499b3",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "objFadeIN",
+    "name": "objFadeWipe",
     "eventList": [
         {
             "id": "7f7a7a0c-b4ec-48c5-a9d0-3c896661910c",
