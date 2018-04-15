@@ -17,4 +17,4 @@ if global.complete=0 and !instance_exists(objFadeOUTr) and !instance_exists(objF
 }
 
 
-if global.sound=1 {audio_play_sound(sndClick,0,0)}
+if global.sound=1 {audio_play_sound(sndClick,0,0);}
