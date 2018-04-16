@@ -1,3 +1,5 @@
+/// @description next level
+
 if global.complete=1 and !instance_exists(objFadeWipe)
 {
 	global.fadeMode="out";

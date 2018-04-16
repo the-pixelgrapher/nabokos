@@ -19,10 +19,8 @@ if global.fadeMode="none" and levelNTimer>-31 or global.fadeMode="outR"
 }
 
 // ---- ON/OFF INDICATOR ----
-image_index=magState
-
-// ---- ROTATION INTERPOLATION KEYFRAME START ----
-//if image_angle=0 or image_angle=90 or image_angle=180 or image_angle=270 {rotBefore=image_angle}
+image_index=magState;
+if offError>0 {offError-=1;}
 
 // ---- GRID LOCK ----
 if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
@@ -91,13 +89,12 @@ if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
 		
 		if magState=1
 		{
-			if keyboard_check(vk_right)=1 and !place_meeting(x-16,y,objCrate) {image_angle=0;}
-			if keyboard_check(vk_up)=1    and !place_meeting(x,y+16,objCrate) {image_angle=90;}
-			if keyboard_check(vk_left)=1  and !place_meeting(x+16,y,objCrate) {image_angle=180;}
-			if keyboard_check(vk_down)=1  and !place_meeting(x,y-16,objCrate) {image_angle=270;}
+			if keyboard_check(vk_right)=1 and !place_meeting(x-32,y,objCrate) {image_angle=0;}
+			if keyboard_check(vk_up)=1    and !place_meeting(x,y+32,objCrate) {image_angle=90;}
+			if keyboard_check(vk_left)=1  and !place_meeting(x+32,y,objCrate) {image_angle=180;}
+			if keyboard_check(vk_down)=1  and !place_meeting(x,y-32,objCrate) {image_angle=270;}
 		}
 	}
-
 
 	// Magnet rotates to face a single adjecent crate
 	if magState=1 and global.rotationMode=0
@@ -169,41 +166,38 @@ if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
 	// ---- MAGNET MEACHANICS ----
 	
 		//000
-		if place_meeting(x+16,y,objCrate) and image_angle==0 and !place_meeting(x-64,y,objMagbox000)
+		if place_meeting(x+32,y,objCrate) and image_angle==0 and !place_meeting(x-64,y,objMagbox000)
 		{
 			instance_create_layer(x-64,y,"insGoals",objMagbox000);
 		}
-		if !place_meeting(x+16,y,objCrate) or image_angle<>0 or magState=0
+		if !place_meeting(x+32,y,objCrate) or image_angle<>0 or magState=0
 		{instance_destroy(objMagbox000);}
 	
 		//090
-		if place_meeting(x,y-16,objCrate) and image_angle==90 and !place_meeting(x,y+64,objMagbox090)
+		if place_meeting(x,y-32,objCrate) and image_angle==90 and !place_meeting(x,y+64,objMagbox090)
 		{
 			instance_create_layer(x,y+64,"insGoals",objMagbox090);
 		}
-		if !place_meeting(x,y-16,objCrate) or image_angle<>90 or magState=0
+		if !place_meeting(x,y-32,objCrate) or image_angle<>90 or magState=0
 		{instance_destroy(objMagbox090);}
 	
 		//180
-		if place_meeting(x-16,y,objCrate) and image_angle==180 and !place_meeting(x+64,y,objMagbox180)
+		if place_meeting(x-32,y,objCrate) and image_angle==180 and !place_meeting(x+64,y,objMagbox180)
 		{
 			instance_create_layer(x+64,y,"insGoals",objMagbox180);
 		}
-		if !place_meeting(x-16,y,objCrate) or image_angle<>180 or magState=0
+		if !place_meeting(x-32,y,objCrate) or image_angle<>180 or magState=0
 		{instance_destroy(objMagbox180);}
 	
 		//270
-		if place_meeting(x,y+16,objCrate) and image_angle==270 and !place_meeting(x,y-64,objMagbox270)
+		if place_meeting(x,y+32,objCrate) and image_angle==270 and !place_meeting(x,y-64,objMagbox270)
 		{
 			instance_create_layer(x,y-64,"insGoals",objMagbox270);
 		}
-		if !place_meeting(x,y+16,objCrate) or image_angle<>270 or magState=0
+		if !place_meeting(x,y+32,objCrate) or image_angle<>270 or magState=0
 		{instance_destroy(objMagbox270);}
 	
 }
-
-// ---- ROTATION INTERPOLATION KEYFRAME END ----
-//if image_angle=0 or image_angle=90 or image_angle=180 or image_angle=270 {rotAfter=image_angle;}
 
 // ---- DELAYED GAME RESET ----
 if resetTimer==31
@@ -219,8 +213,9 @@ if resetTimer==31
 // ---- COMPLETION CODE ----
 if global.complete=1 and image_alpha>0 {image_alpha-=1/30;} //fade player out on completion
 if global.complete=1 and !instance_exists(objComplete)    //level complete screen
-	{
-		instance_create_layer(0,0,"insPlayer", objComplete);
+	{	
+		layer_create(150,"insOverlay")
+		instance_create_layer(0,0,"insOverlay", objComplete);
 	}
 if image_alpha<=0    {visible=0;} //player becomes invisible
 if global.complete=1 {speed=0;}   //player movement locked on completion

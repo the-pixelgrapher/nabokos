@@ -7,11 +7,9 @@ if place_meeting(x,y-128,objMagbox270) {y=objMagbox270.y+96;}
 if place_snapped(64,64)
 {
 	if place_meeting(x,y,objGoal) {state=1;}
-	snapped=1;
 }
-else {snapped=0;}
 
-if !place_meeting(x,y,objGoal) or !place_snapped(64,64) 
+if !place_meeting(x,y,objGoal)
 {
 	state=0;
 }

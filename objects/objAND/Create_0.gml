@@ -1,6 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
-electric=1;
 state=0;
 nearA=0;
 nearB=0;

@@ -20,3 +20,11 @@ if !resetTimer=0 and resetTimer<=30
 	draw_set_colour($6363E9);
 	draw_rectangle(448,695,448+128*(resetTimer/30),699,0);
 }
+
+// ---- MAGNET TOGGLE ERROR	----
+if offError>0 and global.complete=0
+{
+	draw_set_colour($545454);
+	draw_set_font(fntDIN2);
+	draw_text(320,64,"You cannot turn the magnet off while moving.");
+}

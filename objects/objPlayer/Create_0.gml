@@ -1,21 +1,18 @@
 // PLAYER VARIABLES & PARAMETERS
-electric=0;
-global.complete=0;
-magState=0;
-noMoveTimer=0;
-resetTimer=0;
-levelNTimer=120;
-easex=-1024;
-easea=1;
-counter=0;
+global.complete=0;		//whether the level is complete or not
+magState=0;				//magnet power state off=0 on=1
+offError=0				//error timer if player tries to turn off magnet while moving
+resetTimer=0;			//delayed reset timer
+levelNTimer=120;		//level number popup timer
+easex=-1024;			//x easing of level number popup
+easea=1;				//alpha easing of level number popup
+counter=0;				//animation counter
 counter2=0;
-amplify=176;
+amplify=176;			//move distance of level number popup
 amplify2=-176;
-rotBefore=image_angle;
-rotAfter=image_angle;
 
 // VARIABLE SETTINGS
-spdInv=8; //buggy if not set to a factor of 64 or if less than 5
+spdInv=8;				//buggy if not set to a factor of 64 or if less than 5
 
 // FADE IN ON LOAD
 if global.reset=1
