@@ -1,6 +1,6 @@
 /// @description toggle magnet
 
-if speed=0 or magState=0
+if instance_exists(objPlayer)
 {
 	if global.complete=0
 	{
@@ -17,7 +17,7 @@ if speed=0 or magState=0
 	}
 }
 
-
+/*
 else if global.complete=0
 {
 	if global.sound=1
@@ -26,3 +26,4 @@ else if global.complete=0
 	}
 	offError=60*4;
 }
+*/

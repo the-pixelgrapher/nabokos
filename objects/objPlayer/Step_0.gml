@@ -22,44 +22,51 @@ if global.fadeMode="none" and levelNTimer>-31 or global.fadeMode="outR"
 image_index=magState;
 if offError>0 {offError-=1;}
 
-// ---- GRID LOCK ----
-if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
+// ---- SNAPPING SETUP ----
+if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64) {snapped=1;}
+else {snapped=0;}
+
+// ---- INPUT SETUP ----
+right=max(keyboard_check(vk_right),keyboard_check(ord("D")),0)
+up=max(keyboard_check(vk_up),keyboard_check(ord("W")),0)
+left=max(keyboard_check(vk_left),keyboard_check(ord("A")),0)
+down=max(keyboard_check(vk_down),keyboard_check(ord("S")),0)
+
+rightP=max(keyboard_check_pressed(vk_right),keyboard_check_pressed(ord("D")),0)
+upP=max(keyboard_check_pressed(vk_up),keyboard_check_pressed(ord("W")),0)
+leftP=max(keyboard_check_pressed(vk_left),keyboard_check_pressed(ord("A")),0)
+downP=max(keyboard_check_pressed(vk_down),keyboard_check_pressed(ord("S")),0)
+
+if snapped=1 //grid lock
 {
 
 	// ---- MOVEMENT ----
 	if global.stepMovement=0 //player will move continuously
 	{
-		if keyboard_check(vk_right)=1 and !place_meeting(x+64,y,objWall){speed=64/spdInv; direction=0;  }
-		if keyboard_check(vk_up)=1    and !place_meeting(x,y-64,objWall){speed=64/spdInv; direction=90; }
-		if keyboard_check(vk_left)=1  and !place_meeting(x-64,y,objWall){speed=64/spdInv; direction=180;}
-		if keyboard_check(vk_down)=1  and !place_meeting(x,y+64,objWall){speed=64/spdInv; direction=270;}
+		if right=1 and !place_meeting(x+64,y,objWall){speed=64/spdInv; direction=0;  }
+		if up=1    and !place_meeting(x,y-64,objWall){speed=64/spdInv; direction=90; }
+		if left=1  and !place_meeting(x-64,y,objWall){speed=64/spdInv; direction=180;}
+		if down=1  and !place_meeting(x,y+64,objWall){speed=64/spdInv; direction=270;}
 	}
 	
 	if global.stepMovement=1 //player will only move one square at a time
 	{
-		if keyboard_check_pressed(vk_right)=1 and !place_meeting(x+64,y,objWall)
-		{speed=64/spdInv; direction=0;  }
-		
-		if keyboard_check_pressed(vk_up)=1    and !place_meeting(x,y-64,objWall)
-		{speed=64/spdInv; direction=90; }
-		
-		if keyboard_check_pressed(vk_left)=1  and !place_meeting(x-64,y,objWall)
-		{speed=64/spdInv; direction=180;}
-		
-		if keyboard_check_pressed(vk_down)=1  and !place_meeting(x,y+64,objWall)
-		{speed=64/spdInv; direction=270;}
+		if rightP=1 and !place_meeting(x+64,y,objWall) {speed=64/spdInv; direction=0;  }
+		if upP=1    and !place_meeting(x,y-64,objWall) {speed=64/spdInv; direction=90; }
+		if leftP=1  and !place_meeting(x-64,y,objWall) {speed=64/spdInv; direction=180;}
+		if downP=1  and !place_meeting(x,y+64,objWall) {speed=64/spdInv; direction=270;}
 	}
 	
 	// ---- STOPPING ----
 	if global.stepMovement=0
 		{
-		if keyboard_check(vk_right)=0 and direction=0   {speed=0;} //stop if key is no longer pressed
-		if keyboard_check(vk_up)=0    and direction=90  {speed=0;}
-		if keyboard_check(vk_left)=0  and direction=180 {speed=0;}
-		if keyboard_check(vk_down)=0  and direction=270 {speed=0;}
+		if right=0 and direction=0   {speed=0;} //stop if key is no longer pressed
+		if up=0    and direction=90  {speed=0;}
+		if left=0  and direction=180 {speed=0;}
+		if down=0  and direction=270 {speed=0;}
 	
-		if keyboard_check(vk_left)=1 and keyboard_check(vk_right)=1 or
-		   keyboard_check(vk_up)=1   and keyboard_check(vk_down)=1  or
+		if left=1 and right=1 or
+		   up=1   and down=1  or
 		   keyboard_check(vk_nokey)=1
 		{
 			speed=0;
@@ -68,8 +75,8 @@ if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
 	
 	if global.stepMovement=1
 	{
-		if keyboard_check_pressed(vk_right)=0 and keyboard_check_pressed(vk_up)=0
-		and keyboard_check_pressed(vk_down)=0 and keyboard_check_pressed(vk_left)=0
+		if rightP=0 and upP=0
+		and downP=0 and leftP=0
 		{speed=0;}
 	}
 	
@@ -83,18 +90,18 @@ if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
 	{
 		if magState=0
 		{
-			if keyboard_check(vk_right)=1 {image_angle=0;}
-			if keyboard_check(vk_up)=1    {image_angle=90;}
-			if keyboard_check(vk_left)=1  {image_angle=180;}
-			if keyboard_check(vk_down)=1  {image_angle=270;}
+			if right=1 {image_angle=0;}
+			if up=1    {image_angle=90;}
+			if left=1  {image_angle=180;}
+			if down=1  {image_angle=270;}
 		}
 		
 		if magState=1
 		{
-			if keyboard_check(vk_right)=1 and !place_meeting(x-32,y,objCrate) {image_angle=0;}
-			if keyboard_check(vk_up)=1    and !place_meeting(x,y+32,objCrate) {image_angle=90;}
-			if keyboard_check(vk_left)=1  and !place_meeting(x+32,y,objCrate) {image_angle=180;}
-			if keyboard_check(vk_down)=1  and !place_meeting(x,y-32,objCrate) {image_angle=270;}
+			if right=1 and !place_meeting(x-32,y,objCrate) {image_angle=0;}
+			if up=1    and !place_meeting(x,y+32,objCrate) {image_angle=90;}
+			if left=1  and !place_meeting(x+32,y,objCrate) {image_angle=180;}
+			if down=1  and !place_meeting(x,y-32,objCrate) {image_angle=270;}
 		}
 	}
 
@@ -150,59 +157,10 @@ if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
 			}
 		}
 	}
-
-// ---- SNAPPING SAFEGUARD ----
-/*
-if keyboard_check(vk_right)=0 and
-   keyboard_check(vk_left)=0  and
-   keyboard_check(vk_up)=0    and
-   keyboard_check(vk_down)=0
-{	
-	if noMoveTimer<=64 {noMoveTimer+=64/spdInv}
-}
-*/
-
-// ---- GRID LOCK ----
-if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
-{
-	// ---- MAGNET MEACHANICS ----
 	
-		//000
-		if place_meeting(x+32,y,objCrate) and image_angle==0 and !place_meeting(x-64,y,objMagbox000)
-		{
-			instance_create_layer(x-64,y,"insGoals",objMagbox000);
-		}
-		if !place_meeting(x+32,y,objCrate) or image_angle<>0 or magState=0
-		{instance_destroy(objMagbox000);}
-	
-		//090
-		if place_meeting(x,y-32,objCrate) and image_angle==90 and !place_meeting(x,y+64,objMagbox090)
-		{
-			instance_create_layer(x,y+64,"insGoals",objMagbox090);
-		}
-		if !place_meeting(x,y-32,objCrate) or image_angle<>90 or magState=0
-		{instance_destroy(objMagbox090);}
-	
-		//180
-		if place_meeting(x-32,y,objCrate) and image_angle==180 and !place_meeting(x+64,y,objMagbox180)
-		{
-			instance_create_layer(x+64,y,"insGoals",objMagbox180);
-		}
-		if !place_meeting(x-32,y,objCrate) or image_angle<>180 or magState=0
-		{instance_destroy(objMagbox180);}
-	
-		//270
-		if place_meeting(x,y+32,objCrate) and image_angle==270 and !place_meeting(x,y-64,objMagbox270)
-		{
-			instance_create_layer(x,y-64,"insGoals",objMagbox270);
-		}
-		if !place_meeting(x,y+32,objCrate) or image_angle<>270 or magState=0
-		{instance_destroy(objMagbox270);}
-	
-}
 
 // ---- DELAYED GAME RESET ----
-if resetTimer==31 and global.complete=0 and !place_meeting(x,y,objExit)
+if resetTimer=30 and global.complete=0 and !place_meeting(x,y,objExit)
 {
 	global.fadeMode="outR";
 	if !instance_exists(objFadeWipe)

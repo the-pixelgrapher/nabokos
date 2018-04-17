@@ -5,16 +5,6 @@
     "name": "objCrate",
     "eventList": [
         {
-            "id": "0f6c61d4-1afa-46ec-b525-303e57f06f66",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "2481ce72-c9c5-4601-97de-35f2373ff9a0",
-            "enumb": 0,
-            "eventtype": 4,
-            "m_owner": "cb61ec6c-6365-4c67-ac54-612a1aebb686"
-        },
-        {
             "id": "583b0433-16d4-4023-874e-9cbd5ec55524",
             "modelName": "GMEvent",
             "mvc": "1.0",

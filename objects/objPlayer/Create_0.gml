@@ -1,6 +1,20 @@
-// PLAYER VARIABLES & PARAMETERS
+// ---- PLAYER VARIABLES & PARAMETERS ----
 global.complete=0;		//whether the level is complete or not
+
+// CONTROLS
+right=0;				//right direction held
+up=0;					//up direction held
+left=0;					//left direction held
+down=0;					//down direction held
+
+rightP=0;				//right direction pressed
+upP=0;					//up direction pressed
+leftP=0;				//left direction pressed
+downP=0;				//down direction pressed
+
+//VARIABLES
 magState=0;				//magnet power state off=0 on=1
+snapped=1;				//snapped to grid
 offError=0				//error timer if player tries to turn off magnet while moving
 resetTimer=0;			//delayed reset timer
 levelNTimer=120;		//level number popup timer
@@ -14,7 +28,7 @@ amplify2=-176;
 // VARIABLE SETTINGS
 spdInv=8;				//buggy if not set to a factor of 64 or if less than 5
 
-// FADE IN ON LOAD
+// ---- FADE IN ON LOAD ----
 if global.reset=1
 {	
 	global.fadeMode="inR"

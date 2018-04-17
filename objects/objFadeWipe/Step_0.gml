@@ -46,8 +46,9 @@ if global.fadeMode="inR"
 	}
 }
 
-if global.fadeMode="outR" and !instance_exists(objComplete)
-{
+if global.fadeMode="outR"
+{	
+	if instance_exists(objComplete) {instance_destroy();}
 	counter+=1/30;
 	y=ease("easeoutquart",counter)*amplify-1024;
 	if y>=0

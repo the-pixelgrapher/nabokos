@@ -143,27 +143,11 @@
             }
         },
         {
-            "Key": "3b3fe4b9-99a1-4cc9-b907-4ca0cf6573d5",
-            "Value": {
-                "id": "a120867e-ad19-4027-99ac-ec9513282ad5",
-                "resourcePath": "objects\\objMagbox180\\objMagbox180.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "3b540d9b-9df0-4953-bc74-7f85d098bad3",
             "Value": {
                 "id": "f26dc9a2-fc59-4ff0-a4a8-9816fec1cf1d",
                 "resourcePath": "sprites\\sprWireTR\\sprWireTR.yy",
                 "resourceType": "GMSprite"
-            }
-        },
-        {
-            "Key": "3c61db04-e145-49f1-a377-328413c16017",
-            "Value": {
-                "id": "4cb74524-7df1-46e2-bbc7-f323d69603e5",
-                "resourcePath": "objects\\objMagbox000\\objMagbox000.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -212,14 +196,6 @@
                 "id": "7c4130d1-be0f-4c23-b71f-48e19cc8327d",
                 "resourcePath": "fonts\\fntDIN2\\fntDIN2.yy",
                 "resourceType": "GMFont"
-            }
-        },
-        {
-            "Key": "4bb0a49a-8742-4e6b-9de1-0ce1aee38f45",
-            "Value": {
-                "id": "2934c842-9e50-44c8-959d-8e56f20e591b",
-                "resourcePath": "objects\\objMagbox270\\objMagbox270.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -612,14 +588,6 @@
                 "id": "1920e88c-a945-43ce-b799-14ec8da866e1",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
-            }
-        },
-        {
-            "Key": "cf54df59-6cc3-46d3-818d-278c11cefdee",
-            "Value": {
-                "id": "4bc043c5-293a-4428-a742-ac5d9f3bb680",
-                "resourcePath": "objects\\objMagbox090\\objMagbox090.yy",
-                "resourceType": "GMObject"
             }
         },
         {
