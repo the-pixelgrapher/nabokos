@@ -20,26 +20,24 @@ if global.fadeMode="none" and levelNTimer>-31 or global.fadeMode="outR"
 
 // ---- ON/OFF INDICATOR ----
 image_index=magState;
-if offError>0 {offError-=1;}
 
 // ---- SNAPPING SETUP ----
 if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64) {snapped=1;}
 else {snapped=0;}
 
 // ---- INPUT SETUP ----
-right=max(keyboard_check(vk_right),keyboard_check(ord("D")),0)
-up=max(keyboard_check(vk_up),keyboard_check(ord("W")),0)
-left=max(keyboard_check(vk_left),keyboard_check(ord("A")),0)
-down=max(keyboard_check(vk_down),keyboard_check(ord("S")),0)
+right=max(keyboard_check(vk_right),keyboard_check(ord("D")),0);
+up=max(keyboard_check(vk_up),keyboard_check(ord("W")),0);
+left=max(keyboard_check(vk_left),keyboard_check(ord("A")),0);
+down=max(keyboard_check(vk_down),keyboard_check(ord("S")),0);
 
-rightP=max(keyboard_check_pressed(vk_right),keyboard_check_pressed(ord("D")),0)
-upP=max(keyboard_check_pressed(vk_up),keyboard_check_pressed(ord("W")),0)
-leftP=max(keyboard_check_pressed(vk_left),keyboard_check_pressed(ord("A")),0)
-downP=max(keyboard_check_pressed(vk_down),keyboard_check_pressed(ord("S")),0)
+rightP=max(keyboard_check_pressed(vk_right),keyboard_check_pressed(ord("D")),0);
+upP=max(keyboard_check_pressed(vk_up),keyboard_check_pressed(ord("W")),0);
+leftP=max(keyboard_check_pressed(vk_left),keyboard_check_pressed(ord("A")),0);
+downP=max(keyboard_check_pressed(vk_down),keyboard_check_pressed(ord("S")),0);
 
-if snapped=1 //grid lock
+if snapped=1
 {
-
 	// ---- MOVEMENT ----
 	if global.stepMovement=0 //player will move continuously
 	{
@@ -80,13 +78,14 @@ if snapped=1 //grid lock
 		{speed=0;}
 	}
 	
-	if resetTimer>21 {speed=0}; //prevent player from moving when about to reset
+	if resetTimer>=22 {speed=0}; //prevent player from moving when about to reset
 }
+
 
 // ---- MAGNET ROTATION ----
 
 	//image_angle = direction if powered off or not adjecent a crate.
-	if  global.rotationMode=1
+	if global.rotationMode=1
 	{
 		if magState=0
 		{
@@ -128,39 +127,37 @@ if snapped=1 //grid lock
 		!place_meeting(x,y+16,objCrate)   and
 		!place_meeting(x-16,y,objCrate)   {image_angle=0;}
 
-		if global.allowCornerRotate=1
+		// magnet faces closest crate to front when cornered
+		if place_meeting(x+16,y,objCrate) and place_meeting(x,y-16,objCrate) // top right check
+		and !place_meeting(x-16,y,objCrate) and !place_meeting(x,y+16,objCrate)
 		{
-			// magnet faces closest crate when cornered
-			if place_meeting(x+16,y,objCrate) and place_meeting(x,y-16,objCrate) // top right check
-			and !place_meeting(x-16,y,objCrate) and !place_meeting(x,y+16,objCrate)
-			{
-				if image_angle==180	{image_angle=90;}
-				if image_angle==270	{image_angle=0;}
-			}
-			if place_meeting(x-16,y,objCrate) and place_meeting(x,y+16,objCrate) // bottom left check
-			and !place_meeting(x+16,y,objCrate) and !place_meeting(x,y-16,objCrate)
-			{
-				if image_angle==90	{image_angle=180;}
-				if image_angle==0	{image_angle=270;}
-			}
-			if place_meeting(x,y-16,objCrate) and place_meeting(x-16,y,objCrate) // top left check
-			and !place_meeting(x,y+16,objCrate) and !place_meeting(x+16,y,objCrate)
-			{
-				if image_angle==0	{image_angle=90;}
-				if image_angle==270 {image_angle=180;}
-			}
-			if place_meeting(x,y+16,objCrate) and place_meeting(x+16,y,objCrate) // bottom right check
-			and !place_meeting(x,y-16,objCrate) and !place_meeting(x-16,y,objCrate)
-			{
-				if image_angle==180	{image_angle=270;}
-				if image_angle==90	{image_angle=0;}
-			}
+			if image_angle==180	{image_angle=90;}
+			if image_angle==270	{image_angle=0;}
 		}
+		if place_meeting(x-16,y,objCrate) and place_meeting(x,y+16,objCrate) // bottom left check
+		and !place_meeting(x+16,y,objCrate) and !place_meeting(x,y-16,objCrate)
+		{
+			if image_angle==90	{image_angle=180;}
+			if image_angle==0	{image_angle=270;}
+		}
+		if place_meeting(x,y-16,objCrate) and place_meeting(x-16,y,objCrate) // top left check
+		and !place_meeting(x,y+16,objCrate) and !place_meeting(x+16,y,objCrate)
+		{
+			if image_angle==0	{image_angle=90;}
+			if image_angle==270 {image_angle=180;}
+		}
+		if place_meeting(x,y+16,objCrate) and place_meeting(x+16,y,objCrate) // bottom right check
+		and !place_meeting(x,y-16,objCrate) and !place_meeting(x-16,y,objCrate)
+		{
+			if image_angle==180	{image_angle=270;}
+			if image_angle==90	{image_angle=0;}
+		}
+		
 	}
 	
 
 // ---- DELAYED GAME RESET ----
-if resetTimer=30 and global.complete=0 and !place_meeting(x,y,objExit)
+if resetTimer=32 and global.complete=0 and !place_meeting(x,y,objExit)
 {
 	global.fadeMode="outR";
 	if !instance_exists(objFadeWipe)
@@ -170,8 +167,8 @@ if resetTimer=30 and global.complete=0 and !place_meeting(x,y,objExit)
 }
 
 // ---- COMPLETION CODE ----
-if global.complete=1 and image_alpha>0 {image_alpha-=1/30;} //fade player out on completion
-if global.complete=1 and !instance_exists(objComplete)    //level complete screen
+if global.complete=1 and image_alpha>0 {image_alpha-=1/30;}	//fade player out on completion
+if global.complete=1 and !instance_exists(objComplete)		//level complete screen
 	{	
 		layer_create(150,"insOverlay")
 		instance_create_layer(0,0,"insOverlay", objComplete);

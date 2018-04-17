@@ -15,7 +15,6 @@ downP=0;				//down direction pressed
 //VARIABLES
 magState=0;				//magnet power state off=0 on=1
 snapped=1;				//snapped to grid
-offError=0				//error timer if player tries to turn off magnet while moving
 resetTimer=0;			//delayed reset timer
 levelNTimer=120;		//level number popup timer
 easex=-1024;			//x easing of level number popup

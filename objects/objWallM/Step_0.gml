@@ -4,14 +4,14 @@ if place_meeting(xo-64,yo+00,objWireA) or
    place_meeting(xo+00,yo+64,objWireA) or
    place_meeting(xo+00,yo-64,objWireA)
 {
-near=instance_nearest(xo,yo,objWireA);
-state=near.state
+	near=instance_nearest(xo,yo,objWireA);
+	state=near.state;
 }
 
 if load >=0 
 {
-image_angle=spawn.image_angle;
-load-=1
+	image_angle=spawn.image_angle;
+	load-=1;
 }
 
 // DOOR OPEN/CLOSE SOUNDS

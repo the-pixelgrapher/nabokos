@@ -54,7 +54,9 @@ if global.fadeMode="outR"
 	if y>=0
 	{
 		global.fadeMode="none";
-		objPlayer.resetTimer=0
+		objPlayer.resetTimer=0;
 		room_restart();
 	}
 }
+
+if global.fadeMode="none" {instance_destroy();}

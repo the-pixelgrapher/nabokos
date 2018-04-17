@@ -1,6 +1,6 @@
 //DYNAMIC SPRITES
 
-if timer>0{timer-=1;}
+if timer>0 {timer-=1;}
 
 if sprite_index=sprWirePH and timer=0
 {
@@ -55,4 +55,4 @@ if sprite_index=sprWirePH and timer=0
 if place_meeting(x,y,objElectron) {state=1;}
 else {state=0;}
 
-image_index=state //sprite change based on state
+image_index=state; //sprite change based on state

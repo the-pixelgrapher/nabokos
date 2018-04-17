@@ -2,8 +2,8 @@
 if place_meeting(x-64,yo,objWireA) or
    place_meeting(x+64,yo,objWireA)
 {
-near=instance_nearest(x,yo,objWireA);
-state=near.state;
+	near=instance_nearest(x,yo,objWireA);
+	state=near.state;
 }
 
 // DOOR OPEN/CLOSE SOUNDS
