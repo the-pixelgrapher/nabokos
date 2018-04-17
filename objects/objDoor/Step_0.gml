@@ -1,4 +1,3 @@
-
 //DOOR TAKES STATE OF NEARBY WIRE
 if place_meeting(x-64,yo,objWireA) or
    place_meeting(x+64,yo,objWireA)
@@ -27,4 +26,4 @@ if !state=1 and sndPlayed0=0
 }
 
 
-y=lerp(y,target.y,0.2);
+y=lerp(y,target.y,0.2); //door animation

@@ -1,6 +1,6 @@
 /// @description delayed reset
 
-if global.complete=0 and !instance_exists(objFadeWipe) and levelNTimer<=-30
+if global.complete=0 and levelNTimer<=0 and !place_meeting(x,y,objExit)
 {
 	resetTimer+=1;
 }

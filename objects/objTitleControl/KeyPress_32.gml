@@ -1,5 +1,5 @@
 /// @description start game
-global.fadeMode="outT"
+global.fadeMode="outT";
 
 if !instance_exists(objFadeWipe)
 {

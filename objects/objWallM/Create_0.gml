@@ -1,9 +1,6 @@
 instance_create_layer(x,y,"insMarkers",objWallTarget);
 target=instance_place(x,y,objWallTarget);
 
-
-electric=1;
-
 xo=x;
 yo=y;
 load=2;

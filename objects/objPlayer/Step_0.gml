@@ -72,6 +72,8 @@ if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
 		and keyboard_check_pressed(vk_down)=0 and keyboard_check_pressed(vk_left)=0
 		{speed=0;}
 	}
+	
+	if resetTimer>21 {speed=0}; //prevent player from moving when about to reset
 }
 
 // ---- MAGNET ROTATION ----
@@ -200,14 +202,13 @@ if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
 }
 
 // ---- DELAYED GAME RESET ----
-if resetTimer==31
+if resetTimer==31 and global.complete=0 and !place_meeting(x,y,objExit)
 {
 	global.fadeMode="outR";
 	if !instance_exists(objFadeWipe)
 	{
 		instance_create_layer(0,-768,"insPostprocess",objFadeWipe);
 	}
-	resetTimer=0;
 }
 
 // ---- COMPLETION CODE ----

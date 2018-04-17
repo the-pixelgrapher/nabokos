@@ -7,6 +7,5 @@ if global.sound=1
 	audio_play_sound(sndSwitch,0,0);
 	if image_index=1 {audio_play_sound(sndON,1,0);}
 	ePressed=1;
-
 }
 

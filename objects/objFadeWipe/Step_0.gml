@@ -46,14 +46,14 @@ if global.fadeMode="inR"
 	}
 }
 
-if global.fadeMode="outR"
+if global.fadeMode="outR" and !instance_exists(objComplete)
 {
-	objPlayer.resetTimer=0
 	counter+=1/30;
 	y=ease("easeoutquart",counter)*amplify-1024;
 	if y>=0
 	{
 		global.fadeMode="none";
+		objPlayer.resetTimer=0
 		room_restart();
 	}
 }

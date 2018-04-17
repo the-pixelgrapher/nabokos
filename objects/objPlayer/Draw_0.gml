@@ -12,7 +12,7 @@ if levelNTimer>-31
 }
 
 // ---- RESET LEVEL PROGRESS ----
-if !resetTimer=0 and resetTimer<=30
+if !resetTimer=0 and resetTimer<=30 and global.complete=0 and !place_meeting(x,y,objExit)
 {
 	draw_set_colour($545454);
 	draw_set_font(fntDIN2);

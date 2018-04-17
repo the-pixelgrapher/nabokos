@@ -11,8 +11,4 @@ if eDirection=180
 
 }
 
-
-//if place_meeting(x,y,objElectron){instance_destroy()}
-//if place_meeting(x,y,objGoal){instance_destroy()}
-//if !place_meeting(x,y,objWireA) {instance_destroy()}
 if !place_meeting(x+64,y,objElectron) {instance_destroy();}
