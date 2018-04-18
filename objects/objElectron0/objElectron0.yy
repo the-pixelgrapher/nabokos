@@ -4,26 +4,7 @@
     "mvc": "1.0",
     "name": "objElectron0",
     "eventList": [
-        {
-            "id": "ecf5be48-3bf8-4922-952d-87e6e9bf0dae",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 3,
-            "m_owner": "157a6931-4fcd-40ef-a8b8-2d5f98a9d302"
-        },
-        {
-            "id": "43161632-a9fe-4561-b925-685d620159f8",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "157a6931-4fcd-40ef-a8b8-2d5f98a9d302"
-        }
+        
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
     "overriddenProperties": null,

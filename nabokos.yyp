@@ -71,14 +71,6 @@
             }
         },
         {
-            "Key": "157a6931-4fcd-40ef-a8b8-2d5f98a9d302",
-            "Value": {
-                "id": "646e2e43-fbe5-4170-8e48-5227f9c65643",
-                "resourcePath": "objects\\objElectron0\\objElectron0.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "1f29e243-003a-432b-bd0b-1102c59c88d9",
             "Value": {
                 "id": "162d38f3-5645-4adc-834f-a724ad2abff6",
@@ -164,14 +156,6 @@
                 "id": "b54e8785-3f66-454e-9fc9-cf351dbaf262",
                 "resourcePath": "views\\4036911a-20a0-48e4-99ce-968e1f1a94e9.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "40ad6c04-df3d-4ad6-a8f0-f7f359f477ab",
-            "Value": {
-                "id": "3673fb8e-9da9-44ed-9f33-d6d1a7e2ce16",
-                "resourcePath": "objects\\objElectron90\\objElectron90.yy",
-                "resourceType": "GMObject"
             }
         },
         {
@@ -311,14 +295,6 @@
             }
         },
         {
-            "Key": "80150ba9-7316-4c7b-9df7-7472fafb0020",
-            "Value": {
-                "id": "9d7b7da8-51de-48c5-b536-01e5405fce9d",
-                "resourcePath": "objects\\objElectron270\\objElectron270.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "89f07f73-d0f2-48a4-8df1-97eb37f1593c",
             "Value": {
                 "id": "4e6f9331-a643-4219-842e-79f9b201d7db",
@@ -371,14 +347,6 @@
             "Value": {
                 "id": "7e814094-4a10-4cae-81a0-95d0d98d8e28",
                 "resourcePath": "objects\\objExit\\objExit.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
-            "Key": "943f9c53-5d57-44dd-915b-e0cbc91189aa",
-            "Value": {
-                "id": "c9e16950-45e7-483e-b5e4-921c42cd8335",
-                "resourcePath": "objects\\objElectron180\\objElectron180.yy",
                 "resourceType": "GMObject"
             }
         },

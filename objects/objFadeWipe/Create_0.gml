@@ -13,7 +13,7 @@ if global.fadeMode="out"
 if global.fadeMode="outT"
 {
 	x=1024;
-	audio_play_sound(sndStart,0,0);
+	audio_play_sound(sndStart,64,0);
 }
 
 if global.fadeMode="inR"
@@ -29,6 +29,6 @@ if global.fadeMode="outR"
 	if global.sound=1 
 	{
 		audio_play_sound(sndTransition,0,0);
-		audio_play_sound(sndError,0,0);
+		audio_play_sound(sndError,32,0);
 	}
 }

@@ -52,6 +52,6 @@ if sprite_index=sprWirePH and timer=0
 }
 
 //WIRE MECHANICS
-state=position_meeting(x,y,objElectron);
+state=position_meeting(x,y,objElectron); //wire activates when hit by electron
 
 image_index=state; //sprite change based on state
