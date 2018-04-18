@@ -5,7 +5,6 @@ if global.fadeMode="in"
 	if x<=-1024
 	{
 		global.fadeMode="none";
-		instance_destroy();
 	}
 }
 
@@ -18,7 +17,6 @@ if global.fadeMode="out"
 		global.fadeMode="none";
 		if global.complete=1{room_goto_next();}
 		else {room_restart();}
-		
 	}
 }
 
@@ -42,7 +40,6 @@ if global.fadeMode="inR"
 	{
 		global.reset=0;
 		global.fadeMode="none";
-		instance_destroy();
 	}
 }
 
@@ -54,7 +51,6 @@ if global.fadeMode="outR"
 	if y>=0
 	{
 		global.fadeMode="none";
-		objPlayer.resetTimer=0;
 		room_restart();
 	}
 }

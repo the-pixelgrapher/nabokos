@@ -25,5 +25,4 @@ if !state=1 and sndPlayed0=0
 	sndPlayed1=0;
 }
 
-
 y=lerp(y,target.y,0.2); //door animation

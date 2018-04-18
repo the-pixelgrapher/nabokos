@@ -1,5 +1,4 @@
-if place_meeting(x,y,objCrate){state=1;}
-else {state=0;}
+state=place_meeting(x,y,objCrate);
 
 // ---- GENERATE ELECTRON CURRENT ----
 if state=1 //and !place_meeting(x+64,y,objElectron)

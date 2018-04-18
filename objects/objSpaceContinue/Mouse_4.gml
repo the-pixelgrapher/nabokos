@@ -1,5 +1,4 @@
 /// @description continue
-global.fadeMode="out";
 
 if !instance_exists(objFadeWipe)
 {

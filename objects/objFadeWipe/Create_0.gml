@@ -4,8 +4,6 @@ amplify=-1024;
 image_xscale=1024;
 image_yscale=768;
 
-if global.fadeMode="none" {instance_destroy()}
-
 if global.fadeMode="out"
 {
 	x=1024;

@@ -32,7 +32,4 @@ and objPlayer.magState=1 and !place_meeting(x,y-128,objWall)
 	direction=objPlayer.direction;
 }
 
-if place_meeting(x,y,objGoal) {state=1;}
-else {state=0;}
-
-image_index=state; //sprite changes when on goal
+image_index=place_meeting(x,y,objGoal); //sprite changes when on goal

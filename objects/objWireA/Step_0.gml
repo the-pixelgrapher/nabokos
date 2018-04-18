@@ -52,7 +52,6 @@ if sprite_index=sprWirePH and timer=0
 }
 
 //WIRE MECHANICS
-if place_meeting(x,y,objElectron) {state=1;}
-else {state=0;}
+state=position_meeting(x,y,objElectron);
 
 image_index=state; //sprite change based on state

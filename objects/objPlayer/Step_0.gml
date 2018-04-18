@@ -39,20 +39,20 @@ downP=max(keyboard_check_pressed(vk_down),keyboard_check_pressed(ord("S")),0);
 if snapped=1
 {
 	// ---- MOVEMENT ----
-	if global.stepMovement=0 //player will move continuously
-	{
-		if right=1 and !place_meeting(x+64,y,objWall){speed=64/spdInv; direction=0;  }
-		if up=1    and !place_meeting(x,y-64,objWall){speed=64/spdInv; direction=90; }
-		if left=1  and !place_meeting(x-64,y,objWall){speed=64/spdInv; direction=180;}
-		if down=1  and !place_meeting(x,y+64,objWall){speed=64/spdInv; direction=270;}
+	if global.stepMovement=0 and resetTimer<=30
+	{ //continuous movement
+		if right=1 and !position_meeting(x+64,y,objWall){speed=64/spdInv; direction=0;  }
+		if up=1    and !position_meeting(x,y-64,objWall){speed=64/spdInv; direction=90; }
+		if left=1  and !position_meeting(x-64,y,objWall){speed=64/spdInv; direction=180;}
+		if down=1  and !position_meeting(x,y+64,objWall){speed=64/spdInv; direction=270;}
 	}
 	
-	if global.stepMovement=1 //player will only move one square at a time
-	{
-		if rightP=1 and !place_meeting(x+64,y,objWall) {speed=64/spdInv; direction=0;  }
-		if upP=1    and !place_meeting(x,y-64,objWall) {speed=64/spdInv; direction=90; }
-		if leftP=1  and !place_meeting(x-64,y,objWall) {speed=64/spdInv; direction=180;}
-		if downP=1  and !place_meeting(x,y+64,objWall) {speed=64/spdInv; direction=270;}
+	if global.stepMovement=1 and resetTimer<=30
+	{ //single step movement
+		if rightP=1 and !position_meeting(x+64,y,objWall) {speed=64/spdInv; direction=0;  }
+		if upP=1    and !position_meeting(x,y-64,objWall) {speed=64/spdInv; direction=90; }
+		if leftP=1  and !position_meeting(x-64,y,objWall) {speed=64/spdInv; direction=180;}
+		if downP=1  and !position_meeting(x,y+64,objWall) {speed=64/spdInv; direction=270;}
 	}
 	
 	// ---- STOPPING ----
@@ -78,7 +78,7 @@ if snapped=1
 		{speed=0;}
 	}
 	
-	if resetTimer>=22 {speed=0}; //prevent player from moving when about to reset
+	if resetTimer>30 {speed=0;}
 }
 
 
@@ -97,10 +97,10 @@ if snapped=1
 		
 		if magState=1
 		{
-			if right=1 and !place_meeting(x-32,y,objCrate) {image_angle=0;}
-			if up=1    and !place_meeting(x,y+32,objCrate) {image_angle=90;}
-			if left=1  and !place_meeting(x+32,y,objCrate) {image_angle=180;}
-			if down=1  and !place_meeting(x,y-32,objCrate) {image_angle=270;}
+			if right=1 and !position_meeting(x-64,y,objCrate) {image_angle=0;}
+			if up=1    and !position_meeting(x,y+64,objCrate) {image_angle=90;}
+			if left=1  and !position_meeting(x+64,y,objCrate) {image_angle=180;}
+			if down=1  and !position_meeting(x,y-64,objCrate) {image_angle=270;}
 		}
 	}
 
@@ -158,7 +158,8 @@ if snapped=1
 
 // ---- DELAYED GAME RESET ----
 if resetTimer=32 and global.complete=0 and !place_meeting(x,y,objExit)
-{
+{	
+	speed=0;
 	global.fadeMode="outR";
 	if !instance_exists(objFadeWipe)
 	{
@@ -167,11 +168,15 @@ if resetTimer=32 and global.complete=0 and !place_meeting(x,y,objExit)
 }
 
 // ---- COMPLETION CODE ----
-if global.complete=1 and image_alpha>0 {image_alpha-=1/30;}	//fade player out on completion
-if global.complete=1 and !instance_exists(objComplete)		//level complete screen
+if snapped=1 and place_meeting(x,y,objExit)
+{
+	global.complete=1;
+	speed=0;								//player movement locked on completion
+	if image_alpha>0 {image_alpha-=1/30;}	//fade player out on completion
+	if image_alpha<=0 {visible=0;}
+	if !instance_exists(objComplete)		//level complete screen
 	{	
-		layer_create(150,"insOverlay")
+		layer_create(150,"insOverlay");
 		instance_create_layer(0,0,"insOverlay", objComplete);
 	}
-if image_alpha<=0    {visible=0;} //player becomes invisible
-if global.complete=1 {speed=0;}   //player movement locked on completion
+}

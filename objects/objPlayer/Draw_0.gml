@@ -12,7 +12,7 @@ if levelNTimer>-31
 }
 
 // ---- RESET LEVEL PROGRESS BAR ----
-if !resetTimer=0 and resetTimer<=32 and global.complete=0 and !place_meeting(x,y,objExit)
+if !resetTimer=0 and !place_meeting(x,y,objExit)
 {
 	draw_set_colour($545454); //same colour as wall
 	draw_set_font(fntDIN2);

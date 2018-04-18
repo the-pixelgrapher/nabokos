@@ -1,11 +1,9 @@
-if objDoor.state=1 
+if objDoor.state=1
 {
 	y=yo-64;
 }
 
-else 
+if objDoor.state=0 or objPlayer.resetTimer>=24 or global.fadeMode="outR"
 {
 	y=yo;
 }
-
-state=objDoor.state;
