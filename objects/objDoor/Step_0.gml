@@ -1,6 +1,6 @@
 //DOOR TAKES STATE OF NEARBY WIRE
-if place_meeting(x-64,yo,objWireA) or
-   place_meeting(x+64,yo,objWireA)
+if position_meeting(x-64,yo,objWireA) or
+   position_meeting(x+64,yo,objWireA)
 {
 	near=instance_nearest(x,yo,objWireA);
 	state=near.state;

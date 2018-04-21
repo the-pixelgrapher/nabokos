@@ -1,4 +1,3 @@
-/// @description set variables
 counter=0;
 amplify=-1024;
 image_xscale=1024;
@@ -16,10 +15,7 @@ if global.fadeMode="outT"
 	audio_play_sound(sndStart,64,0);
 }
 
-if global.fadeMode="inR"
-{
-	amplify=-1024;
-}
+//if global.fadeMode="inR" {}
 
 if global.fadeMode="outR"
 {

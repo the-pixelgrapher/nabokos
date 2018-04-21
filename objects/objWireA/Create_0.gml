@@ -1,9 +1,4 @@
-electric=1;
 state=0;
-update=0;
 timer=2;
-near=0;
-nearS=0;
-nearSG=0;
 image_speed=0;
 image_index=0;

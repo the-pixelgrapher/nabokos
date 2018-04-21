@@ -3,7 +3,7 @@
 //GAME SETTINGS
 global.rotationMode=0;			//0 is auto rotation 1 is manual
 global.stepMovement=0;			//singe step movement
-audio_channel_num(64);
+audio_channel_num(32);			//max cocurrent sounds
 global.sound=1;					//sound effects
 //global.music=1;					//background music
 //global.fadeDelay=30;			//fade transition delay before switching rooms

@@ -81,4 +81,4 @@ if eDirection=270
 if !position_meeting(x,y,objWireA) {instance_destroy();}
 
 life-=1;
-if life<0 {instance_destroy();}
+if life<0 {instance_destroy();} //electrons are destroyed after 1 step
