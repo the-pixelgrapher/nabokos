@@ -75,7 +75,7 @@ if snapped=1
 		if mean(rightP,upP,leftP,downP)<0.1 {speed=0;} //stop if no keys pressed
 	}
 	
-	if resetTimer>=24 {speed=0;}
+	if resetTimer>=24 or objMenuPause.drawMenuPause=1 {speed=0;}
 }
 
 
@@ -170,7 +170,6 @@ if snapped=1 and place_meeting(x,y,objExit)
 	global.complete=1;
 	speed=0;								//player movement locked on completion
 	if image_alpha>0 {image_alpha-=1/30;}	//fade player out on completion
-	if image_alpha<=0 {visible=0;}
 	if !instance_exists(objComplete)		//level complete screen
 	{	
 		layer_create(150,"insOverlay");

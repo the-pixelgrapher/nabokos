@@ -45,13 +45,32 @@ if global.fadeMode="inR"
 
 if global.fadeMode="outR"
 {	
-	if instance_exists(objComplete) {instance_destroy();}
 	counter+=1/30;
 	y=ease("easeoutquart",counter)*amplify-1024;
 	if y>=0
 	{
 		global.fadeMode="none";
 		room_restart();
+	}
+}
+
+if global.fadeMode="outM"
+{	
+	counter+=1/30;
+	y=ease("easeoutquart",counter)*amplify-1024;
+	if y>=0
+	{
+		room_goto(1);
+	}
+}
+
+if global.fadeMode="inM"
+{
+	counter+=1/30;
+	y=ease("easeoutquart",counter)*amplify;
+	if y<=-1024
+	{
+		global.fadeMode="none";
 	}
 }
 

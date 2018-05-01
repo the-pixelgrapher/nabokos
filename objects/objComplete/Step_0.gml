@@ -12,6 +12,6 @@ if delay>0
 }
 
 if delay<=0 and !instance_exists(objSpaceContinue)
-	{
-		instance_create_layer(231,0,"insPlayer", objSpaceContinue);
-	}
+{
+	instance_create_layer(231,0,"insPlayer", objSpaceContinue);
+}

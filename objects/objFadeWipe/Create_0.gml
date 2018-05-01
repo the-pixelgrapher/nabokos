@@ -28,3 +28,13 @@ if global.fadeMode="outR"
 		audio_play_sound(sndError,32,0);
 	}
 }
+
+if global.fadeMode="outM"
+{
+	y=-768;
+	amplify=1024;
+	if global.sound=1 
+	{
+		audio_play_sound(sndTransition,0,0);
+	}
+}

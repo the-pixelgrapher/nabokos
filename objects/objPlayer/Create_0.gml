@@ -26,7 +26,6 @@ amplify2=-176;
 
 // VARIABLE SETTINGS
 spdInv=8;				//buggy if not set to a factor of 64 or if less than 5
-e = math_get_epsilon();
 
 // ---- FADE IN ON LOAD ----
 if global.reset=1
@@ -40,3 +39,6 @@ if global.reset=0
 	global.fadeMode="in"
 	instance_create_layer(0,0,"insPostprocess",objFadeWipe);
 }
+
+layer_create(101,"GUI")
+instance_create_layer(0,0,"GUI",objMenuPause)
