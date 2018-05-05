@@ -28,7 +28,7 @@ if global.fadeMode="outT"
 	{
 		global.fadeMode="none";
 		audio_play_sound(sndTransition,0,0);
-		room_goto_next();
+		room_goto(3);
 	}
 }
 

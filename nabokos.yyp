@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "0b3fb8cd-c130-4e79-8edb-4237cffe9699",
+            "Value": {
+                "id": "89576d0a-e628-4eba-b52c-c70b3bfac120",
+                "resourcePath": "sprites\\sprLevelSelectBack\\sprLevelSelectBack.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "0ff6be4e-5825-4c33-bc08-2a6c75c48bd0",
             "Value": {
                 "id": "08f7a02a-2485-429d-8b61-e55338d5ff4a",
@@ -151,6 +159,14 @@
             }
         },
         {
+            "Key": "3d0b3a61-b4e0-4b9c-8980-a34fa00acf46",
+            "Value": {
+                "id": "4f5bdd51-7d0c-46d1-89df-e31509cddf5c",
+                "resourcePath": "fonts\\fntDIN3\\fntDIN3.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "3fa83545-efbc-4b69-b1bf-976593fffe78",
             "Value": {
                 "id": "073b3c49-4c7b-4967-91bf-ec16794a4988",
@@ -188,6 +204,14 @@
                 "id": "7c4130d1-be0f-4c23-b71f-48e19cc8327d",
                 "resourcePath": "fonts\\fntDIN2\\fntDIN2.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "4b531d45-7fd8-4f5e-bcd8-d60bb898ac5d",
+            "Value": {
+                "id": "5c4e5c0e-9532-40e6-9be9-ee763d41fc2d",
+                "resourcePath": "objects\\objLevelSelect\\objLevelSelect.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -236,6 +260,14 @@
                 "id": "34746824-be5f-4ec9-a417-3b8a78dc9be8",
                 "resourcePath": "sprites\\sprTooltips\\sprTooltips.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "5fbdd050-fb96-4fe8-aca2-0b46db0e84db",
+            "Value": {
+                "id": "dbdc18f8-d51c-44cf-9303-c271b88a1718",
+                "resourcePath": "fonts\\fntDIN4\\fntDIN4.yy",
+                "resourceType": "GMFont"
             }
         },
         {
@@ -340,6 +372,14 @@
                 "id": "4d90e7b1-be63-4416-b377-e6de5fdc69f2",
                 "resourcePath": "views\\8ab66f13-ca66-408f-9828-ec81449259dc.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "8c84f858-a276-4ec9-86ea-ae222a0549e6",
+            "Value": {
+                "id": "5e8dbeb7-334f-4fac-a21d-ffe8e56697f5",
+                "resourcePath": "rooms\\rmLevelSelect\\rmLevelSelect.yy",
+                "resourceType": "GMRoom"
             }
         },
         {

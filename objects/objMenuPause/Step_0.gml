@@ -15,6 +15,7 @@ if drawMenuPause=1
 				global.fadeMode="outM";
 			instance_create_layer(0,-1024,"insPostprocess",objFadeWipe);
 		}
+		if select=1 {room_goto(2);}
 		if select=4 {game_end();}
 		drawMenuPause=0;
 	}

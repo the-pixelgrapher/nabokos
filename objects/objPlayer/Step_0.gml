@@ -168,6 +168,7 @@ if resetTimer=32 and global.complete=0 and !place_meeting(x,y,objExit)
 if snapped=1 and place_meeting(x,y,objExit)
 {
 	global.complete=1;
+	global.L00=2;
 	speed=0;								//player movement locked on completion
 	if image_alpha>0 {image_alpha-=1/30;}	//fade player out on completion
 	if !instance_exists(objComplete)		//level complete screen
