@@ -1,4 +1,4 @@
-if easea>0 or easea=1
+if easea>0
 {	
 	draw_set_colour(c_black);
 	draw_set_alpha(0.0625*easea);
@@ -7,7 +7,8 @@ if easea>0 or easea=1
 	
 	draw_set_colour(c_white);
 	draw_set_alpha(easea);
-	draw_roundrect_ext(288,y+160,736,y+608,64,64,0);
+	draw_set_circle_precision(40);
+	draw_roundrect_ext(288,y+160,736,y+608,easer,easer,0);
 	
 	draw_set_font(fntDIN2);
 	draw_set_halign(1);
@@ -34,3 +35,5 @@ if easea>0 or easea=1
 	
 	draw_set_alpha(1);
 }
+
+//draw_set_font(fntDIN); draw_text(512,y+248,counter);

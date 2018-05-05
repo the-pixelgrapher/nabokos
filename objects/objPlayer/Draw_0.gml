@@ -17,7 +17,7 @@ if !resetTimer=0 and !place_meeting(x,y,objExit)
 {
 	draw_set_colour($545454); //same colour as wall
 	draw_set_font(fntDIN2);
-	draw_text(448,665,"RESETTING . . .");
+	draw_text(448,665,"RESETTING ...");
 	draw_set_colour(c_white); //white background
 	draw_rectangle(448,695,448+128,699,0);
 	if resetTimer<31 {draw_set_colour($6363E9);} //red counting up
