@@ -14,6 +14,10 @@ if select<0 {select=6;}
 if keyboard_check_pressed(vk_enter) or keyboard_check_pressed(vk_space) or
 keyboard_check_pressed(ord("E"))
 {
-	if global.sound=1 {audio_play_sound(sndClick,0,0);}
-	room_goto(select+3);
+	if !instance_exists(objFadeWipe)
+	{
+		if global.sound=1 {audio_play_sound(sndClick,0,0);}
+		global.fadeMode="outLN";
+		instance_create_layer(1024,0,"insPostprocess",objFadeWipe);
+	}
 }

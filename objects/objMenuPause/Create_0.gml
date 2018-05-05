@@ -1,9 +1,11 @@
 drawMenuPause=0;
 select=0;
 
-counter0=0;
-counter1=0;
-amplify0a=-128;
-amplify0b=128;
-alpha=0;
-y=0;
+easea=0;
+
+counter=0;
+counter2=1;
+amplify=-64;
+amplify2=64;
+y=64;
+image_alpha=0;

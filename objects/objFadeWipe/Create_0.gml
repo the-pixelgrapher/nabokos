@@ -9,10 +9,14 @@ if global.fadeMode="out"
 	if global.sound=1 {audio_play_sound(sndTransition,0,0);}
 }
 
-if global.fadeMode="outT"
+if global.fadeMode="outT"  or global.fadeMode="outLN"
 {
 	x=1024;
-	audio_play_sound(sndStart,64,0);
+	if global.sound=1 
+	{
+		audio_play_sound(sndStart,64,0);
+		audio_play_sound(sndTransition,0,0);
+	}
 }
 
 //if global.fadeMode="inR" {}
@@ -21,7 +25,7 @@ if global.fadeMode="outR"
 {
 	y=-768;
 	global.reset=1;
-	amplify=1024;
+	amplify=768;
 	if global.sound=1 
 	{
 		audio_play_sound(sndTransition,0,0);
@@ -29,10 +33,10 @@ if global.fadeMode="outR"
 	}
 }
 
-if global.fadeMode="outM"
+if global.fadeMode="outM" or global.fadeMode="outLS"
 {
 	y=-768;
-	amplify=1024;
+	amplify=768;
 	if global.sound=1 
 	{
 		audio_play_sound(sndTransition,0,0);
