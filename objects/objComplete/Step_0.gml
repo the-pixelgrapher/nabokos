@@ -5,6 +5,7 @@ if counter2<1 {counter2+=1/30;}
 y=ease("easeoutelastic",counter)*amplify-16;
 
 image_alpha=ease("easeoutcubic",counter2)*1;
+easea=ease("easeoutcubic",counter2)*1;
 
 if delay>0
 {

@@ -23,9 +23,13 @@ counter=0;				//animation counter
 counter2=0;
 amplify=176;			//move distance of level number popup
 amplify2=-176;
+lerpRot=0;				//animate rotation
+rotT=0;
 
 // VARIABLE SETTINGS
 spdInv=8;				//buggy if not set to a factor of 64 or if less than 5
+instance_create_layer(x,y,"insMarkers",objPlayerRotTarget);
+instance_create_layer(x+64,y+64,"insMarkers",objPlayerRotLerp);
 
 // ---- FADE IN ON LOAD ----
 if global.reset=1

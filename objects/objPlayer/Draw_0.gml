@@ -1,4 +1,14 @@
-if image_alpha>0 {draw_self();}
+if image_alpha>0 
+{
+	if lerpRot=1 
+	{
+		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotI,c_white,image_alpha);
+	}
+	if lerpRot=0
+	{
+		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotT,c_white,image_alpha);
+	}
+}
 draw_set_valign(0);
 draw_set_halign(0);
 

@@ -19,7 +19,6 @@ if global.fadeMode="none" and levelNTimer>-31
 }
 
 // ---- ON/OFF INDICATOR ----
-image_index=magState;
 
 // ---- SNAPPING SETUP ----
 if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64) {snapped=1;}
@@ -39,7 +38,7 @@ downP = max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0
 if snapped=1
 {
 	// ---- MOVEMENT ----
-	if global.stepMovement=0 //continuous movement
+	if global.stepMovement=0 or objMenuPause.drawMenuPause=0 //continuous movement
 	{
 		if right=1 and !place_meeting(x+64,y,objWall) {speed=64/spdInv; direction=0;  }
 		if up=1    and !place_meeting(x,y-64,objWall) {speed=64/spdInv; direction=90; }
@@ -47,7 +46,7 @@ if snapped=1
 		if down=1  and !place_meeting(x,y+64,objWall) {speed=64/spdInv; direction=270;}
 	}
 	
-	if global.stepMovement=1 //single step movement
+	if global.stepMovement=1 or objMenuPause.drawMenuPause=0 //single step movement
 	{
 		if rightP=1 and !place_meeting(x+64,y,objWall) {speed=64/spdInv; direction=0;  }
 		if upP=1    and !place_meeting(x,y-64,objWall) {speed=64/spdInv; direction=90; }
@@ -80,25 +79,25 @@ if snapped=1
 
 
 // ---- MAGNET ROTATION ----
-
-	//image_angle = direction if powered off or not adjecent a crate.
+rotI=point_direction(x,y,objPlayerRotLerp.x,objPlayerRotLerp.y);
+	//rotT = direction if powered off or not adjecent a crate.
 	/*
 	if global.rotationMode=1
 	{
 		if magState=0
 		{
-			if right=1 {image_angle=0;}
-			if up=1    {image_angle=90;}
-			if left=1  {image_angle=180;}
-			if down=1  {image_angle=270;}
+			if right=1 {rotT=0;}
+			if up=1    {rotT=90;}
+			if left=1  {rotT=180;}
+			if down=1  {rotT=270;}
 		}
 		
 		if magState=1
 		{
-			if right=1 and !position_meeting(x-64,y,objCrate) {image_angle=0;}
-			if up=1    and !position_meeting(x,y+64,objCrate) {image_angle=90;}
-			if left=1  and !position_meeting(x+64,y,objCrate) {image_angle=180;}
-			if down=1  and !position_meeting(x,y-64,objCrate) {image_angle=270;}
+			if right=1 and !position_meeting(x-64,y,objCrate) {rotT=0;}
+			if up=1    and !position_meeting(x,y+64,objCrate) {rotT=90;}
+			if left=1  and !position_meeting(x+64,y,objCrate) {rotT=180;}
+			if down=1  and !position_meeting(x,y-64,objCrate) {rotT=270;}
 		}
 	}
 	*/
@@ -108,47 +107,47 @@ if snapped=1
 		if place_meeting(x,y-16,objCrate) and //if only top
 		!place_meeting(x,y+16,objCrate)   and
 		!place_meeting(x-16,y,objCrate)   and
-		!place_meeting(x+16,y,objCrate)   {image_angle=90;}
+		!place_meeting(x+16,y,objCrate)   {rotT=90;}
 		
 		if place_meeting(x,y+16,objCrate) and //if only bottom
 		!place_meeting(x,y-16,objCrate)   and
 		!place_meeting(x-16,y,objCrate)   and
-		!place_meeting(x+16,y,objCrate)   {image_angle=270;}
+		!place_meeting(x+16,y,objCrate)   {rotT=270;}
 		
 		if place_meeting(x-16,y,objCrate) and //if only left
 		!place_meeting(x,y-16,objCrate)   and
 		!place_meeting(x,y+16,objCrate)   and
-		!place_meeting(x+16,y,objCrate)   {image_angle=180;}
+		!place_meeting(x+16,y,objCrate)   {rotT=180;}
 		
 		if place_meeting(x+16,y,objCrate) and //if only right
 		!place_meeting(x,y-16,objCrate)   and
 		!place_meeting(x,y+16,objCrate)   and
-		!place_meeting(x-16,y,objCrate)   {image_angle=0;}
+		!place_meeting(x-16,y,objCrate)   {rotT=0;}
 
 		// magnet faces closest crate to front when cornered
 		if position_meeting(x+64,y,objCrate) and position_meeting(x,y-64,objCrate) // top right check
 		and !position_meeting(x-64,y,objCrate) and !position_meeting(x,y+64,objCrate)
 		{
-			if image_angle=180	{image_angle=90;}
-			if image_angle=270	{image_angle=0;}
+			if rotT=180	{rotT=90;}
+			if rotT=270	{rotT=0;}
 		}
 		if position_meeting(x-64,y,objCrate) and position_meeting(x,y+64,objCrate) // bottom left check
 		and !position_meeting(x+64,y,objCrate) and !position_meeting(x,y-64,objCrate)
 		{
-			if image_angle=90	{image_angle=180;}
-			if image_angle=0	{image_angle=270;}
+			if rotT=90	{rotT=180;}
+			if rotT=0	{rotT=270;}
 		}
 		if position_meeting(x,y-64,objCrate) and position_meeting(x-64,y,objCrate) // top left check
 		and !position_meeting(x,y+64,objCrate) and !position_meeting(x+64,y,objCrate)
 		{
-			if image_angle=0	{image_angle=90;}
-			if image_angle=270 {image_angle=180;}
+			if rotT=0	{rotT=90;}
+			if rotT=270 {rotT=180;}
 		}
 		if position_meeting(x,y+64,objCrate) and position_meeting(x+64,y,objCrate) // bottom right check
 		and !position_meeting(x,y-64,objCrate) and !position_meeting(x-64,y,objCrate)
 		{
-			if image_angle=180	{image_angle=270;}
-			if image_angle=90	{image_angle=0;}
+			if rotT=180	{rotT=270;}
+			if rotT=90	{rotT=0;}
 		}
 		
 	}
@@ -168,7 +167,6 @@ if resetTimer=32 and global.complete=0 and !place_meeting(x,y,objExit)
 if snapped=1 and place_meeting(x,y,objExit)
 {
 	global.complete=1;
-	global.L00=2;
 	speed=0;								//player movement locked on completion
 	if image_alpha>0 {image_alpha-=1/30;}	//fade player out on completion
 	if !instance_exists(objComplete)		//level complete screen

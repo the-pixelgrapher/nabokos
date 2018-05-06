@@ -1,6 +1,6 @@
 /// @description toggle magnet
 
-if global.complete=0
+if global.complete=0 and objMenuPause.drawMenuPause=0
 {
 	magState=!magState;
 	if global.sound=1

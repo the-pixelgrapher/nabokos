@@ -9,7 +9,7 @@ if drawMenuPause=1 or counter>0
 		counter+=1/25;
 		easer=ease("easeoutquint",counter)*-446+446+64;
 		y=ease("easeoutquint",counter)*amplify+64;
-		easea=ease("easeoutquint",counter);
+		easea=ease("easeoutquint",counter*1.1);
 	}
 	
 	if y<32
@@ -55,7 +55,7 @@ if drawMenuPause=0 or counter2>0
 		counter2+=1/25;
 		easer=ease("easeoutquint",counter2)*446+64;
 		y=ease("easeoutquint",counter2)*amplify2;
-		easea=1-ease("easeoutquint",counter2);
+		easea=1-ease("easeoutquint",counter2*1.1);
 	}
 	if y=64 and counter2=1 {counter=0;} //reset fade in animation
 }
