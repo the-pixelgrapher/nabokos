@@ -15,3 +15,5 @@ if global.level="04" {global.L04=2; if global.L05=0 {global.L05=1;}}
 if global.level="05" {global.L05=2; if global.L06=0 {global.L06=1;}}
 if global.level="06" {global.L06=2; if global.L07=0 {global.L07=1;}}
 
+scrSave();
+
