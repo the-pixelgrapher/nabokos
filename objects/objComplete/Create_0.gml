@@ -1,6 +1,6 @@
 counter=0;
 counter2=0;
-amplify=48+16;
+amplify=64;
 delay=60;
 easea=0;
 image_alpha=0;

@@ -11,40 +11,35 @@ if drawMenuPause=1 or counter>0
 		y=ease("easeoutquint",counter)*amplify+64;
 		easea=ease("easeoutquint",counter*1.1);
 	}
+	if y=0 and counter=1 {counter2=0;} //reset fade out animation
 	
-	if y<32
+	if rowu=1 {select-=1; audio_play_sound(sndClick2,0,0);}
+	if rowd=1 {select+=1; audio_play_sound(sndClick2,0,0);}
+	if select>4 {select=0;}
+	if select<0 {select=4;}
+
+	if keyboard_check_pressed(vk_enter) or keyboard_check_pressed(vk_space) or
+	keyboard_check_pressed(ord("E"))
 	{
-		if y=0 and counter=1 {counter2=0;} //reset fade out animation
-	
-		if rowu=1 {select-=1; audio_play_sound(sndClick2,0,0);}
-		if rowd=1 {select+=1; audio_play_sound(sndClick2,0,0);}
-
-		if select>4 {select=0;}
-		if select<0 {select=4;}
-
-		if keyboard_check_pressed(vk_enter) or keyboard_check_pressed(vk_space) or
-		keyboard_check_pressed(ord("E"))
+		if global.sound=1 {audio_play_sound(sndClick,0,0);}
+		if select=0 //main menu
 		{
-			if global.sound=1 {audio_play_sound(sndClick,0,0);}
-			if select=0 //main menu
+			if !instance_exists(objFadeWipe) 
 			{
-				if !instance_exists(objFadeWipe) 
-				{
-					global.fadeMode="outM";
-					instance_create_layer(0,-768,"insPostprocess",objFadeWipe);
-				}
+				global.fadeMode="outM";
+				instance_create_layer(0,-768,"insPostprocess",objFadeWipe);
 			}
-			if select=1 //level selection
-			{
-				if !instance_exists(objFadeWipe)
-				{
-					global.fadeMode="outLS";
-					instance_create_layer(0,-768,"insPostprocess",objFadeWipe);
-				}
-			}
-			if select=4 {game_end();}
-			drawMenuPause=0;
 		}
+		if select=1 //level selection
+		{
+			if !instance_exists(objFadeWipe)
+			{
+				global.fadeMode="outLS";
+				instance_create_layer(0,-768,"insPostprocess",objFadeWipe);
+			}
+		}
+		if select=4 {game_end();}
+		drawMenuPause=0;
 	}
 }
 

@@ -1,12 +1,12 @@
-if image_alpha>0 
+if alpha>0 
 {
-	if lerpRot=1 
+	if global.lerpRot=1 
 	{
-		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotI,c_white,image_alpha);
+		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotI,c_white,alpha);
 	}
-	if lerpRot=0
+	if global.lerpRot=0
 	{
-		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotT,c_white,image_alpha);
+		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotT,c_white,alpha);
 	}
 }
 draw_set_valign(0);

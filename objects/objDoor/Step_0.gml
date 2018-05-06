@@ -9,7 +9,7 @@ if position_meeting(xo-64,yo,objWireA) or
 }
 
 // DOOR OPEN/CLOSE SOUNDS
-if !state=0 and sndPlayed1=0
+if state=1 and sndPlayed1=0
 {
 	if global.sound=1 
 	{
@@ -20,7 +20,7 @@ if !state=0 and sndPlayed1=0
 	sndPlayed0=0;
 }
 
-if !state=1 and sndPlayed0=0
+if state=0 and sndPlayed0=0
 {
 	if global.sound=1 {audio_play_sound(sndDoor,1,0);}
 	sndPlayed0=1;

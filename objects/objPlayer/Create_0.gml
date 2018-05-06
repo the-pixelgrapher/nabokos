@@ -13,6 +13,7 @@ leftP=0;				//left direction pressed
 downP=0;				//down direction pressed
 
 //VARIABLES
+alpha=1;
 magState=0;				//magnet power state off=0 on=1
 snapped=1;				//snapped to grid
 resetTimer=0;			//delayed reset timer
@@ -23,7 +24,6 @@ counter=0;				//animation counter
 counter2=0;
 amplify=176;			//move distance of level number popup
 amplify2=-176;
-lerpRot=0;				//animate rotation
 rotT=0;
 
 // VARIABLE SETTINGS

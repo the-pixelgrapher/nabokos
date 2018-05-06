@@ -168,7 +168,7 @@ if snapped=1 and place_meeting(x,y,objExit)
 {
 	global.complete=1;
 	speed=0;								//player movement locked on completion
-	if image_alpha>0 {image_alpha-=1/30;}	//fade player out on completion
+	if alpha>0 {alpha-=1/30;}				//fade player out on completion
 	if !instance_exists(objComplete)		//level complete screen
 	{	
 		layer_create(150,"insOverlay");

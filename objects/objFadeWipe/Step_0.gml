@@ -31,65 +31,26 @@ if global.fadeMode="outT"
 	}
 }
 
-if global.fadeMode="inR"
+if global.fadeMode="inR" or global.fadeMode="inM" or global.fadeMode="inLS"
 {
 	counter+=1/30;
 	y=ease("easeoutquart",counter)*amplify;
-	if y<=-1024
+	if y<=-768
 	{
-		global.reset=0;
+		if global.fadeMode="inR" {global.reset=0;}
 		global.fadeMode="none";
 	}
 }
 
-if global.fadeMode="outR"
+if global.fadeMode="outR" or global.fadeMode="outM" or global.fadeMode="outLS"
 {	
 	counter+=1/30;
 	y=ease("easeoutquart",counter)*amplify-768;
 	if y>=0
 	{
-		global.fadeMode="none";
-		room_restart();
-	}
-}
-
-if global.fadeMode="outM"
-{	
-	counter+=1/30;
-	y=ease("easeoutquart",counter)*amplify-768;
-	if y>=0
-	{
-		room_goto(1);
-	}
-}
-
-if global.fadeMode="inM"
-{
-	counter+=1/30;
-	y=ease("easeoutquart",counter)*amplify;
-	if y<=-1024
-	{
-		global.fadeMode="none";
-	}
-}
-
-if global.fadeMode="outLS"
-{	
-	counter+=1/30;
-	y=ease("easeoutquart",counter)*amplify-768;
-	if y>=0
-	{
-		room_goto(2);
-	}
-}
-
-if global.fadeMode="inLS"
-{	
-	counter+=1/30;
-	y=ease("easeoutquart",counter)*amplify;
-	if y<=-1024
-	{
-		global.fadeMode="none";
+		if global.fadeMode="outR" {room_restart();}
+		if global.fadeMode="outM" {room_goto(1);}
+		if global.fadeMode="outLS" {room_goto(2);}
 	}
 }
 

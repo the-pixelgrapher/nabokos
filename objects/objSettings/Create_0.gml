@@ -2,6 +2,7 @@
 
 //GAME SETTINGS
 global.rotationMode=0;			//0 is auto rotation 1 is manual
+global.lerpRot=0;				//animate rotation
 global.stepMovement=0;			//singe step movement
 audio_channel_num(32);			//max cocurrent sounds
 global.sound=1;					//sound effects
