@@ -26,7 +26,7 @@ if global.fadeMode="outT"
 	if x<=0
 	{
 		global.fadeMode="none";
-		audio_play_sound(sndTransition,0,0);
+		scrSound("trans");
 		room_goto(3);
 	}
 }

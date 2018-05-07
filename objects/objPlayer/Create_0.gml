@@ -32,17 +32,10 @@ instance_create_layer(x,y,"insMarkers",objPlayerRotTarget);
 instance_create_layer(x+64,y+64,"insMarkers",objPlayerRotLerp);
 
 // ---- FADE IN ON LOAD ----
-if global.reset=1
-{	
-	global.fadeMode="inR"
-	instance_create_layer(0,0,"insPostprocess",objFadeWipe);
-}
 
-if global.reset=0
-{
-	global.fadeMode="in"
-	instance_create_layer(0,0,"insPostprocess",objFadeWipe);
-}
+if global.reset=1 {global.fadeMode="inR";}
+if global.reset=0 {global.fadeMode="in";}
+instance_create_layer(0,0,"insPostprocess",objFadeWipe);
 
-layer_create(101,"GUI")
-instance_create_layer(0,0,"GUI",objMenuPause)
+layer_create(101,"GUI");
+instance_create_layer(0,0,"GUI",objMenuPause);

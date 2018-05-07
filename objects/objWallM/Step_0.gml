@@ -17,17 +17,14 @@ if load >=0
 // DOOR OPEN/CLOSE SOUNDS
 if state=1 and sndPlayed1=0
 {
-	if global.sound=1 
-	{
-		audio_play_sound(sndDoor,1,0);
-	}
+	scrSound("door");
 	sndPlayed1=1;
 	sndPlayed0=0;
 }
 
 if state=0 and sndPlayed0=0
 {
-	if global.sound=1 {audio_play_sound(sndDoor,1,0);}
+	scrSound("door");
 	sndPlayed0=1;
 	sndPlayed1=0;
 }

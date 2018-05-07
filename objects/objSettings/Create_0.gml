@@ -12,6 +12,7 @@ global.sound=1;					//sound effects
 global.splashPlayed=0;
 global.fadeMode="none";
 global.reset=0;
+global.aaSet=0;
 
 // LEVEL PROGRESS DATA
 scrLoad();

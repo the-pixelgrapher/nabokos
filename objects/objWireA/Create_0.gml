@@ -1,4 +1,3 @@
 state=0;
-timer=2;
+alarm[0]=1;
 image_speed=0;
-image_index=0;

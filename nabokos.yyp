@@ -167,6 +167,14 @@
             }
         },
         {
+            "Key": "3a0c81b1-1338-4c19-83de-0d143248ee4e",
+            "Value": {
+                "id": "27c69e88-9d76-4a41-b0cf-9b97a6b6283a",
+                "resourcePath": "scripts\\scrSound\\scrSound.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "3b1a9ea8-00d9-4aef-9ab3-6ad57978c740",
             "Value": {
                 "id": "4b199864-0826-43ad-b3d6-7e81de198aef",
@@ -859,7 +867,8 @@
         "399476b6-f180-4254-abb8-a5ff064470de",
         "22f3c33a-0da1-47a0-8f7c-fe2145bb8220",
         "1952f4ac-51ee-440a-b378-3829f327d3fb",
-        "50928403-dd28-4b16-9cba-7e778eac4b75"
+        "50928403-dd28-4b16-9cba-7e778eac4b75",
+        "3a0c81b1-1338-4c19-83de-0d143248ee4e"
     ],
     "tutorial": ""
 }

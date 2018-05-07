@@ -3,10 +3,11 @@ prev = max(keyboard_check_pressed(vk_left), keyboard_check_pressed(ord("A")), 0)
 rowu = max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0);
 rowd = max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);
 
-if prev=1 {select-=1; audio_play_sound(sndClick2,0,0);}
-if next=1 {select+=1; audio_play_sound(sndClick2,0,0);}
-if rowu=1 {select-=7; audio_play_sound(sndClick2,0,0);}
-if rowd=1 {select+=7; audio_play_sound(sndClick2,0,0);}
+if prev=1 {select-=1;}
+if next=1 {select+=1;}
+if rowu=1 {select-=7;}
+if rowd=1 {select+=7;}
+if rowu=1 or rowd=1 or prev=1 or next=1 {scrSound("tap");}
 
 if select>6 {select=0;}
 if select<0 {select=6;}
@@ -16,7 +17,7 @@ keyboard_check_pressed(ord("E"))
 {
 	if !instance_exists(objFadeWipe)
 	{
-		if global.sound=1 {audio_play_sound(sndClick,0,0);}
+		scrSound("click");
 		global.fadeMode="outLN";
 		instance_create_layer(1024,0,"insPostprocess",objFadeWipe);
 	}

@@ -5,7 +5,7 @@ delay=60;
 easea=0;
 image_alpha=0;
 global.reset=0;
-if global.sound=1 {audio_play_sound(sndWin,1,0);}
+scrSound("win");
 
 if global.level="00" {global.L00=2; if global.L01=0 {global.L01=1;}}
 if global.level="01" {global.L01=2; if global.L02=0 {global.L02=1;}}

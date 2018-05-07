@@ -2,4 +2,4 @@
 
 toolTips=!toolTips;
 
-if global.sound=1 {audio_play_sound(sndClick,0,0);}
+scrSound("click");
