@@ -1,0 +1,1 @@
+image_angle=spawn.image_angle;

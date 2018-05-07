@@ -18,40 +18,38 @@ if global.fadeMode="none" and levelNTimer>-31
 	}
 }
 
-// ---- ON/OFF INDICATOR ----
-
 // ---- SNAPPING SETUP ----
-if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64) {snapped=1;}
-else {snapped=0;}
+var snapped = place_snapped(32,32) * !place_snapped(64,32) * !place_snapped(32,64);
 
 // ---- INPUT SETUP ----
-right = max(keyboard_check(vk_right), keyboard_check(ord("D")), 0);
-up = max(keyboard_check(vk_up), keyboard_check(ord("W")), 0);
-left = max(keyboard_check(vk_left), keyboard_check(ord("A")), 0);
-down = max(keyboard_check(vk_down), keyboard_check(ord("S")), 0);
+var right = max(keyboard_check(vk_right), keyboard_check(ord("D")), 0),
+	up = max(keyboard_check(vk_up), keyboard_check(ord("W")), 0),
+	left = max(keyboard_check(vk_left), keyboard_check(ord("A")), 0),
+	down = max(keyboard_check(vk_down), keyboard_check(ord("S")), 0),
 
-rightP = max(keyboard_check_pressed(vk_right), keyboard_check_pressed(ord("D")), 0);
-upP = max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0);
-leftP = max(keyboard_check_pressed(vk_left), keyboard_check_pressed(ord("A")), 0);
-downP = max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);
+	rightP = max(keyboard_check_pressed(vk_right), keyboard_check_pressed(ord("D")), 0),
+	upP = max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0),
+	leftP = max(keyboard_check_pressed(vk_left), keyboard_check_pressed(ord("A")), 0),
+	downP = max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);
 
 if snapped=1
 {
 	// ---- MOVEMENT ----
+	var spdInv=8; //buggy if not set to a factor of 64 or if less than 5
 	if global.stepMovement=0 or objMenuPause.drawMenuPause=0 //continuous movement
 	{
-		if right=1 and !place_meeting(x+64,y,objWall) {speed=64/spdInv; direction=0;  }
-		if up=1    and !place_meeting(x,y-64,objWall) {speed=64/spdInv; direction=90; }
-		if left=1  and !place_meeting(x-64,y,objWall) {speed=64/spdInv; direction=180;}
-		if down=1  and !place_meeting(x,y+64,objWall) {speed=64/spdInv; direction=270;}
+		if right=1 and !place_meeting(x+64,y,objSolid) {speed=64/spdInv; direction=0;  }
+		if up=1    and !place_meeting(x,y-64,objSolid) {speed=64/spdInv; direction=90; }
+		if left=1  and !place_meeting(x-64,y,objSolid) {speed=64/spdInv; direction=180;}
+		if down=1  and !place_meeting(x,y+64,objSolid) {speed=64/spdInv; direction=270;}
 	}
 	
 	if global.stepMovement=1 or objMenuPause.drawMenuPause=0 //single step movement
 	{
-		if rightP=1 and !place_meeting(x+64,y,objWall) {speed=64/spdInv; direction=0;  }
-		if upP=1    and !place_meeting(x,y-64,objWall) {speed=64/spdInv; direction=90; }
-		if leftP=1  and !place_meeting(x-64,y,objWall) {speed=64/spdInv; direction=180;}
-		if downP=1  and !place_meeting(x,y+64,objWall) {speed=64/spdInv; direction=270;}
+		if rightP=1 and !place_meeting(x+64,y,objSolid) {speed=64/spdInv; direction=0;  }
+		if upP=1    and !place_meeting(x,y-64,objSolid) {speed=64/spdInv; direction=90; }
+		if leftP=1  and !place_meeting(x-64,y,objSolid) {speed=64/spdInv; direction=180;}
+		if downP=1  and !place_meeting(x,y+64,objSolid) {speed=64/spdInv; direction=270;}
 	}
 	
 	// ---- STOPPING ----
@@ -80,78 +78,77 @@ if snapped=1
 
 // ---- MAGNET ROTATION ----
 rotI=point_direction(x,y,objPlayerRotLerp.x,objPlayerRotLerp.y);
-	//rotT = direction if powered off or not adjecent a crate.
-	/*
-	if global.rotationMode=1
+//rotT = direction if powered off or not adjecent a crate.
+/*
+if global.rotationMode=1
+{
+	if magState=0
 	{
-		if magState=0
-		{
-			if right=1 {rotT=0;}
-			if up=1    {rotT=90;}
-			if left=1  {rotT=180;}
-			if down=1  {rotT=270;}
-		}
-		
-		if magState=1
-		{
-			if right=1 and !position_meeting(x-64,y,objCrate) {rotT=0;}
-			if up=1    and !position_meeting(x,y+64,objCrate) {rotT=90;}
-			if left=1  and !position_meeting(x+64,y,objCrate) {rotT=180;}
-			if down=1  and !position_meeting(x,y-64,objCrate) {rotT=270;}
-		}
+		if right=1 {rotT=0;}
+		if up=1    {rotT=90;}
+		if left=1  {rotT=180;}
+		if down=1  {rotT=270;}
 	}
-	*/
-	// Magnet rotates to face a single adjecent crate
-	if magState=1 and global.rotationMode=0
+		
+	if magState=1
 	{
-		if place_meeting(x,y-16,objCrate) and //if only top
-		!place_meeting(x,y+16,objCrate)   and
-		!place_meeting(x-16,y,objCrate)   and
-		!place_meeting(x+16,y,objCrate)   {rotT=90;}
+		if right=1 and !position_meeting(x-64,y,objCrate) {rotT=0;}
+		if up=1    and !position_meeting(x,y+64,objCrate) {rotT=90;}
+		if left=1  and !position_meeting(x+64,y,objCrate) {rotT=180;}
+		if down=1  and !position_meeting(x,y-64,objCrate) {rotT=270;}
+	}
+}
+*/
+// Magnet rotates to face a single adjecent crate
+if magState=1 and global.rotationMode=0
+{
+	if place_meeting(x,y-16,objCrate) and //if only top
+	!place_meeting(x,y+16,objCrate)   and
+	!place_meeting(x-16,y,objCrate)   and
+	!place_meeting(x+16,y,objCrate)   {rotT=90;}
 		
-		if place_meeting(x,y+16,objCrate) and //if only bottom
-		!place_meeting(x,y-16,objCrate)   and
-		!place_meeting(x-16,y,objCrate)   and
-		!place_meeting(x+16,y,objCrate)   {rotT=270;}
+	if place_meeting(x,y+16,objCrate) and //if only bottom
+	!place_meeting(x,y-16,objCrate)   and
+	!place_meeting(x-16,y,objCrate)   and
+	!place_meeting(x+16,y,objCrate)   {rotT=270;}
 		
-		if place_meeting(x-16,y,objCrate) and //if only left
-		!place_meeting(x,y-16,objCrate)   and
-		!place_meeting(x,y+16,objCrate)   and
-		!place_meeting(x+16,y,objCrate)   {rotT=180;}
+	if place_meeting(x-16,y,objCrate) and //if only left
+	!place_meeting(x,y-16,objCrate)   and
+	!place_meeting(x,y+16,objCrate)   and
+	!place_meeting(x+16,y,objCrate)   {rotT=180;}
 		
-		if place_meeting(x+16,y,objCrate) and //if only right
-		!place_meeting(x,y-16,objCrate)   and
-		!place_meeting(x,y+16,objCrate)   and
-		!place_meeting(x-16,y,objCrate)   {rotT=0;}
+	if place_meeting(x+16,y,objCrate) and //if only right
+	!place_meeting(x,y-16,objCrate)   and
+	!place_meeting(x,y+16,objCrate)   and
+	!place_meeting(x-16,y,objCrate)   {rotT=0;}
 
-		// magnet faces closest crate to front when cornered
-		if position_meeting(x+64,y,objCrate) and position_meeting(x,y-64,objCrate) // top right check
-		and !position_meeting(x-64,y,objCrate) and !position_meeting(x,y+64,objCrate)
-		{
-			if rotT=180	{rotT=90;}
-			if rotT=270	{rotT=0;}
-		}
-		if position_meeting(x-64,y,objCrate) and position_meeting(x,y+64,objCrate) // bottom left check
-		and !position_meeting(x+64,y,objCrate) and !position_meeting(x,y-64,objCrate)
-		{
-			if rotT=90	{rotT=180;}
-			if rotT=0	{rotT=270;}
-		}
-		if position_meeting(x,y-64,objCrate) and position_meeting(x-64,y,objCrate) // top left check
-		and !position_meeting(x,y+64,objCrate) and !position_meeting(x+64,y,objCrate)
-		{
-			if rotT=0	{rotT=90;}
-			if rotT=270 {rotT=180;}
-		}
-		if position_meeting(x,y+64,objCrate) and position_meeting(x+64,y,objCrate) // bottom right check
-		and !position_meeting(x,y-64,objCrate) and !position_meeting(x-64,y,objCrate)
-		{
-			if rotT=180	{rotT=270;}
-			if rotT=90	{rotT=0;}
-		}
-		
+	// magnet faces closest crate to front when cornered
+	if position_meeting(x+64,y,objCrate) and position_meeting(x,y-64,objCrate) // top right check
+	and !position_meeting(x-64,y,objCrate) and !position_meeting(x,y+64,objCrate)
+	{
+		if rotT=180	{rotT=90;}
+		if rotT=270	{rotT=0;}
 	}
-	
+	if position_meeting(x-64,y,objCrate) and position_meeting(x,y+64,objCrate) // bottom left check
+	and !position_meeting(x+64,y,objCrate) and !position_meeting(x,y-64,objCrate)
+	{
+		if rotT=90	{rotT=180;}
+		if rotT=0	{rotT=270;}
+	}
+	if position_meeting(x,y-64,objCrate) and position_meeting(x-64,y,objCrate) // top left check
+	and !position_meeting(x,y+64,objCrate) and !position_meeting(x+64,y,objCrate)
+	{
+		if rotT=0	{rotT=90;}
+		if rotT=270 {rotT=180;}
+	}
+	if position_meeting(x,y+64,objCrate) and position_meeting(x+64,y,objCrate) // bottom right check
+	and !position_meeting(x,y-64,objCrate) and !position_meeting(x-64,y,objCrate)
+	{
+		if rotT=180	{rotT=270;}
+		if rotT=90	{rotT=0;}
+	}
+		
+}
 
 // ---- DELAYED GAME RESET ----
 if resetTimer=32 and global.complete=0 and !place_meeting(x,y,objExit)

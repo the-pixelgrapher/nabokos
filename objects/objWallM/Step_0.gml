@@ -1,17 +1,39 @@
 //DOOR TAKES STATE OF NEARBY WIRE
+var state, xx, yy, targetx, targety;
 if position_meeting(xo-64,yo+00,objWireA) or
    position_meeting(xo+64,yo+00,objWireA) or
    position_meeting(xo+00,yo+64,objWireA) or
    position_meeting(xo+00,yo-64,objWireA)
 {
-	near=instance_nearest(xo,yo,objWireA);
+	var near=instance_nearest(xo,yo,objWireA);
 	state=near.state;
 }
 
-if load >=0 
+if image_angle=000 {xx=xo+64; yy=yo+00;}
+if image_angle=090 {xx=xo+00; yy=yo-64;}
+if image_angle=180 {xx=xo-64; yy=yo+00;}
+if image_angle=270 {xx=xo+00; yy=yo+64;}
+
+if state=0 
 {
-	image_angle=spawn.image_angle;
-	load-=1;
+	targetx=xo;
+	targety=yo;
+	if !position_meeting(xo,yo, objWall) 
+	{
+		with instance_create_layer(xo-32,yo-32,"insMarkers",objWall)
+		{
+			visible=0;
+		}
+	}
+}
+
+var wall=instance_position(xo-32,yo-32,objWall);
+
+if state=1 
+{
+	targetx=xx;
+	targety=yy;
+	if position_meeting(xo,yo, wall) {instance_destroy(wall);}
 }
 
 // DOOR OPEN/CLOSE SOUNDS
@@ -29,14 +51,6 @@ if state=0 and sndPlayed0=0
 	sndPlayed1=0;
 }
 
-if animate=0
-{
-	x=target.x;
-	y=target.y;
-}
 
-if animate=1
-{
-	x=lerp(x,target.x,0.2);
-	y=lerp(y,target.y,0.2);
-}
+x=lerp(x,targetx,0.2);
+y=lerp(y,targety,0.2);

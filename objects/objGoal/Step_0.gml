@@ -1,4 +1,4 @@
-state=position_meeting(x,y,objCrate);
+var state=position_meeting(x,y,objCrate);
 
 // ---- GENERATE ELECTRON CURRENT ----
 if state=1 {instance_create_layer(x,y,"insMarkers", objElectron);}

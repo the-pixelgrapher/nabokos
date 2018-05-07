@@ -1,7 +1,5 @@
 drawMenuPause=0;
 select=0;
-rowu=0;
-rowd=0;
 
 easea=0;
 easer=446;

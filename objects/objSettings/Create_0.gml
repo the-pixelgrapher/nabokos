@@ -13,6 +13,8 @@ global.splashPlayed=0;
 global.fadeMode="none";
 global.reset=0;
 global.aaSet=0;
+global.wx=window_get_x();
+global.wy=window_get_y();
 
 // LEVEL PROGRESS DATA
 scrLoad();

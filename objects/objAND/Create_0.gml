@@ -1,4 +1,3 @@
-state=0;
 nearA=0;
 nearB=0;
 xx=0;

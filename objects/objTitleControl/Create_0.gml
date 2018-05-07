@@ -9,9 +9,6 @@ if global.fadeMode="outM"
 	instance_create_layer(0,0,"insPostprocess",objFadeWipe);
 }
 
-global.wx=window_get_x();
-global.wy=window_get_y();
-
 if global.aaSet=0
 {
 	alarm[0]=1;

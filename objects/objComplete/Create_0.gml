@@ -1,12 +1,11 @@
-counter=0;
-counter2=0;
-amplify=64;
-delay=60;
-easea=0;
-image_alpha=0;
 global.reset=0;
 scrSound("win");
+counter=0;			//timer for easing function
+amplify=64;			//multiplier for easing function
+easea=0;			//easing for alpha
+alarm[0]=60;		//delay before "space to continue"
 
+//---- SAVE GAME STATE -----
 if global.level="00" {global.L00=2; if global.L01=0 {global.L01=1;}}
 if global.level="01" {global.L01=2; if global.L02=0 {global.L02=1;}}
 if global.level="02" {global.L02=2; if global.L03=0 {global.L03=1;}}

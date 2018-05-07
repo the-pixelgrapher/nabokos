@@ -6,8 +6,3 @@ if !instance_exists(objFadeWipe)
 	scrSound("click");
 	instance_create_layer(0,0,"insPostprocess",objFadeWipe);
 }
-
-
-
-
-
