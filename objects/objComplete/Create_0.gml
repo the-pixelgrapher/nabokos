@@ -6,13 +6,13 @@ easea=0;			//easing for alpha
 alarm[0]=60;		//delay before "space to continue"
 
 //---- SAVE GAME STATE -----
-if global.level="00" {global.L00=2; if global.L01=0 {global.L01=1;}}
-if global.level="01" {global.L01=2; if global.L02=0 {global.L02=1;}}
-if global.level="02" {global.L02=2; if global.L03=0 {global.L03=1;}}
-if global.level="03" {global.L03=2; if global.L04=0 {global.L04=1;}}
-if global.level="04" {global.L04=2; if global.L05=0 {global.L05=1;}}
-if global.level="05" {global.L05=2; if global.L06=0 {global.L06=1;}}
-if global.level="06" {global.L06=2; if global.L07=0 {global.L07=1;}}
+if global.level="00" {global.levelState[0]=2; if global.levelState[1]=0 {global.levelState[1]=1;}}
+if global.level="01" {global.levelState[1]=2; if global.levelState[2]=0 {global.levelState[2]=1;}}
+if global.level="02" {global.levelState[2]=2; if global.levelState[3]=0 {global.levelState[3]=1;}}
+if global.level="03" {global.levelState[3]=2; if global.levelState[4]=0 {global.levelState[4]=1;}}
+if global.level="04" {global.levelState[4]=2; if global.levelState[5]=0 {global.levelState[5]=1;}}
+if global.level="05" {global.levelState[5]=2; if global.levelState[6]=0 {global.levelState[6]=1;}}
+if global.level="06" {global.levelState[6]=2; if global.levelState[7]=0 {global.levelState[7]=1;}}
 
 scrSave();
 

@@ -9,8 +9,8 @@ if rowu=1 {select-=7;}
 if rowd=1 {select+=7;}
 if rowu=1 or rowd=1 or prev=1 or next=1 {scrSound("tap");}
 
-if select>6 {select=0;}
-if select<0 {select=6;}
+if select>20 {select=0;}
+if select<0 {select=20;}
 
 if keyboard_check_pressed(vk_enter) or keyboard_check_pressed(vk_space) or
 keyboard_check_pressed(ord("E"))

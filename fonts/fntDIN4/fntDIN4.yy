@@ -4,7 +4,7 @@
     "mvc": "1.0",
     "name": "fntDIN4",
     "AntiAlias": 1,
-    "TTFName": "",
+    "TTFName": "${project_dir}\\fonts\\fntDIN4\\DIN Bold.otf",
     "bold": true,
     "charset": 0,
     "first": 0,
@@ -13,7 +13,7 @@
         {
             "Key": 32,
             "Value": {
-                "id": "4f78798f-1c37-4e81-94cf-b4fa3faef6b5",
+                "id": "8a9feabf-586b-4b3d-823b-aa968f3c9118",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 32,
@@ -28,7 +28,7 @@
         {
             "Key": 48,
             "Value": {
-                "id": "929723dd-601a-4b36-bf33-f22283985b96",
+                "id": "069c698b-4528-49a3-a934-0967e78bfc0b",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 48,
@@ -43,7 +43,7 @@
         {
             "Key": 49,
             "Value": {
-                "id": "c4e22ba3-22a8-41da-92e4-ac4262052ea4",
+                "id": "8169407c-d4e6-47bc-8638-13a46be5a624",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 49,
@@ -58,7 +58,7 @@
         {
             "Key": 50,
             "Value": {
-                "id": "2a6424a1-0b5c-4ea0-be40-68c99f6c71df",
+                "id": "91b64284-211c-4f8e-87bb-1b66af915edd",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 50,
@@ -73,7 +73,7 @@
         {
             "Key": 51,
             "Value": {
-                "id": "fb8c48dd-f4b1-4735-9775-b3538da853cd",
+                "id": "8776afa0-5059-4ed0-b88f-44f7d3f306c1",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 51,
@@ -88,7 +88,7 @@
         {
             "Key": 52,
             "Value": {
-                "id": "754ef72e-4c84-41d5-95a1-0276912bad40",
+                "id": "5f05c1e9-48d6-4e8d-a5f2-74c2bd0348da",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 52,
@@ -103,7 +103,7 @@
         {
             "Key": 53,
             "Value": {
-                "id": "335fb639-0603-4f65-98b2-412e4d369894",
+                "id": "af11d4cb-1120-4207-8fe7-830b7beca4a7",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 53,
@@ -118,7 +118,7 @@
         {
             "Key": 54,
             "Value": {
-                "id": "cde3bc6f-e218-4b9b-b4ae-8f485fa9a3a9",
+                "id": "5cd494d5-13d2-4737-b29b-3ebcf90c2552",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 54,
@@ -133,7 +133,7 @@
         {
             "Key": 55,
             "Value": {
-                "id": "c270165f-8e87-4642-94d1-c893a95f580c",
+                "id": "13601c1a-9099-44d6-b45c-88507e58ae71",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 55,
@@ -148,7 +148,7 @@
         {
             "Key": 56,
             "Value": {
-                "id": "185d0b60-93f8-42f1-8567-efff164e6ebd",
+                "id": "27448c58-71d0-4f04-a301-11f3b8044e78",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 56,
@@ -163,7 +163,7 @@
         {
             "Key": 57,
             "Value": {
-                "id": "4d4531e2-9258-4853-acce-674d0d4436ef",
+                "id": "ac631efb-1324-4983-ad46-72f52495749c",
                 "modelName": "GMGlyph",
                 "mvc": "1.0",
                 "character": 57,
@@ -177,7 +177,7 @@
         }
     ],
     "image": null,
-    "includeTTF": false,
+    "includeTTF": true,
     "italic": false,
     "kerningPairs": [
         

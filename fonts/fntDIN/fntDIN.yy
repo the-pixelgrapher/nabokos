@@ -4,7 +4,7 @@
     "mvc": "1.0",
     "name": "fntDIN",
     "AntiAlias": 1,
-    "TTFName": "${project_dir}\\fonts\\fntDIN\\DIN Medium.otf",
+    "TTFName": null,
     "bold": false,
     "charset": 0,
     "first": 0,
@@ -177,7 +177,7 @@
         }
     ],
     "image": null,
-    "includeTTF": true,
+    "includeTTF": false,
     "italic": false,
     "kerningPairs": [
         

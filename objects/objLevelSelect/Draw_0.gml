@@ -13,58 +13,38 @@ draw_set_valign(1);
 draw_set_colour(c_white);
 draw_set_font(fntDIN4);
 
-if select=0								{draw_sprite(sprLevelSelectBack,2,128,288);}
-else {if global.L00=0 or global.L00=1	{draw_sprite(sprLevelSelectBack,0,128,288);}
-if global.L00=2							{draw_sprite(sprLevelSelectBack,1,128,288);}}
-if global.L00=0							{draw_set_alpha(0.67);}
-else									{draw_set_alpha(1);}
-draw_text(128,289,"00");
-draw_set_alpha(1);
 
-if select=1								{draw_sprite(sprLevelSelectBack,2,256,288);}
-else {if global.L01=0 or global.L01=1	{draw_sprite(sprLevelSelectBack,0,256,288);}
-if global.L01=2							{draw_sprite(sprLevelSelectBack,1,256,288);}}
-if global.L01=0							{draw_set_alpha(0.67);}
-else									{draw_set_alpha(1);}
-draw_text(256,289,"01");
-draw_set_alpha(1);
-
-if select=2								{draw_sprite(sprLevelSelectBack,2,384,288);}
-else {if global.L02=0 or global.L02=1	{draw_sprite(sprLevelSelectBack,0,384,288);}
-if global.L02=2							{draw_sprite(sprLevelSelectBack,1,384,288);}}
-if global.L02=0							{draw_set_alpha(0.67);}
-else									{draw_set_alpha(1);}
-draw_text(384,289,"02");
-draw_set_alpha(1);
-
-if select=3								{draw_sprite(sprLevelSelectBack,2,512,288);}
-else {if global.L03=0 or global.L03=1	{draw_sprite(sprLevelSelectBack,0,512,288);}
-if global.L03=2							{draw_sprite(sprLevelSelectBack,1,512,288);}}
-if global.L03=0							{draw_set_alpha(0.67);}
-else									{draw_set_alpha(1);}
-draw_text(512,289,"03");
-draw_set_alpha(1);
-
-if select=4								{draw_sprite(sprLevelSelectBack,2,640,288);}
-else {if global.L04=0 or global.L04=1	{draw_sprite(sprLevelSelectBack,0,640,288);}
-if global.L04=2							{draw_sprite(sprLevelSelectBack,1,640,288);}}
-if global.L04=0							{draw_set_alpha(0.67);}
-else									{draw_set_alpha(1);}
-draw_text(640,289,"04");
-draw_set_alpha(1);
-
-if select=5								{draw_sprite(sprLevelSelectBack,2,768,288);}
-else {if global.L05=0 or global.L05=1	{draw_sprite(sprLevelSelectBack,0,768,288);}
-if global.L05=2							{draw_sprite(sprLevelSelectBack,1,768,288);}}
-if global.L05=0							{draw_set_alpha(0.67);}
-else									{draw_set_alpha(1);}
-draw_text(768,289,"05");
-draw_set_alpha(1);
-
-if select=6								{draw_sprite(sprLevelSelectBack,2,896,288);}
-else {if global.L06=0 or global.L06=1	{draw_sprite(sprLevelSelectBack,0,896,288);}
-if global.L06=2							{draw_sprite(sprLevelSelectBack,1,896,288);}}
-if global.L06=0							{draw_set_alpha(0.67);}
-else									{draw_set_alpha(1);}
-draw_text(896,289,"06");
-draw_set_alpha(1);
+for (var i = 0; i < 21; i += 1;)
+{
+	
+	{
+		var xo = 128 + i * 128,
+			yo = 288 + 128 * 0;
+	}
+	
+	if i > 6 and i < 14 
+	{
+		xo = i * 128 - 768;
+		yo = 288 + 128 * 1
+	}
+	
+	if i > 13 and i < 21 
+	{
+		xo = i * 128 - 1664;
+		yo = 288 + 128 * 2;
+	}
+	
+	if select=i						{draw_sprite(sprLevelSelectBack,2,xo,yo);}
+	else							{draw_sprite(sprLevelSelectBack,scrCol(global.levelState[i]),xo,yo);}
+	if global.levelState[i]=0		{draw_set_alpha(0.67);}
+	else							{draw_set_alpha(1);}
+	if string_length(i) = 1
+	{
+		draw_text(xo,yo+1,(string(0) + string(i)));
+	}
+	else 
+	{
+		draw_text(xo,yo+1,i);
+	}
+	draw_set_alpha(1);
+}
