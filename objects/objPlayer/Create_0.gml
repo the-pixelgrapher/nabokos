@@ -1,5 +1,6 @@
 // ---- PLAYER VARIABLES & PARAMETERS ----
 global.complete=0;		//whether the level is complete or not
+global.level=room-3;
 
 //VARIABLES
 alpha=1;

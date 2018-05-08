@@ -18,7 +18,7 @@ if levelNTimer>-31
 	draw_set_font(fntDIN);
 	draw_set_colour(c_gray);
 	draw_set_alpha(easea);
-	draw_text(easex,96,global.level);
+	draw_text(easex,96,(string(0) + string(global.level)));
 	draw_set_alpha(1);
 }
 

@@ -1,2 +1,0 @@
-
-global.level="00"

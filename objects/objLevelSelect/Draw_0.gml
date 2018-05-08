@@ -14,7 +14,7 @@ draw_set_colour(c_white);
 draw_set_font(fntDIN4);
 
 
-for (var i = 0; i < 21; i += 1;)
+for (var i = 0; i < 21; i++;)
 {
 	
 	{

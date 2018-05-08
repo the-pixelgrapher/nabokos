@@ -60,13 +60,7 @@ if global.fadeMode="outLN"
 	x=ease("easeoutquart",counter)*amplify+1024;
 	if x<=0
 	{
-		if objLevelSelect.select=0 {room_goto(3);}
-		if objLevelSelect.select=1 {room_goto(4);}
-		if objLevelSelect.select=2 {room_goto(5);}
-		if objLevelSelect.select=3 {room_goto(6);}
-		if objLevelSelect.select=4 {room_goto(7);}
-		if objLevelSelect.select=5 {room_goto(8);}
-		if objLevelSelect.select=6 {room_goto(9);}
+		room_goto(clamp(objLevelSelect.select+3,0,10)); //go to selected level
 	}
 }
 
