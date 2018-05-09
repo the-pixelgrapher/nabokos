@@ -5,8 +5,8 @@ ini_open("nabokos.ini");
 	for 
 	(
 		var i = 0; 
-		i < 21; 
-		i += 1;
+			i < 21; 
+			i += 1;
 	)
 	{
 		ini_write_real("levelProgress",string(i),global.levelState[i]);

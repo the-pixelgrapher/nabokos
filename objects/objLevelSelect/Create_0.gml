@@ -1,4 +1,15 @@
-select=0;
+global.fadeMode = "inLS";
+instance_create_layer(0, 0 ,"insPostprocess" ,objFadeWipe); //fade in animation
 
-global.fadeMode="inLS";
-instance_create_layer(0,0,"insPostprocess",objFadeWipe);
+select = global.level; //select last played level
+activd = 0;
+
+// ---- CHECKING CURRENTY UNLOCKED LEVELS
+levelUnlocked = 0;
+for (var i = 1; i < 21; i++)
+{
+	if (global.levelState[i] > 0)
+	{
+		levelUnlocked += 1;
+	}
+}

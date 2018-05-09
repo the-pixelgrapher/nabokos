@@ -13,27 +13,22 @@ if easea>0
 	draw_set_font(fntDIN2);
 	draw_set_halign(1);
 	
-	if select=0 {draw_set_colour($0DA5F2);}
-	else {draw_set_colour($5c5c5c);}
-	draw_text(512,y+248,"MAIN MENU");
-	
-	if select=1 {draw_set_colour($0DA5F2);}
-	else {draw_set_colour($5c5c5c);}
-	draw_text(512,y+312,"LEVEL SELECTION");
-	
-	if select=2 {draw_set_colour($0DA5F2);}
-	else {draw_set_colour($5c5c5c);}
-	draw_text(512,y+376,"CONTROLS");
-	
-	if select=3 {draw_set_colour($0DA5F2);}
-	else {draw_set_colour($5c5c5c);}
-	draw_text(512,y+440,"OPTIONS");
-	
-	if select=4 {draw_set_colour($5d3ae9);}
-	else {draw_set_colour($5c5c5c);}
-	draw_text(512,y+504,"EXIT GAME");
-	
-	draw_set_alpha(1);
+	for (var i = 0; i < 5; i++;)
+	{
+		var yy = i * 64;
+		if (i = 0) {var item = "MAIN MENU"}
+		if (i = 1) {	item = "LEVEL SELECTION"}
+		if (i = 2) {	item = "CONTROLS"}
+		if (i = 3) {	item = "OPTIONS"}
+		if (i = 4) {	item = "EXIT GAME"}
+		
+		if (select = i)
+		{
+			if (i = 4)	{draw_set_colour($5d3ae9);}
+			else		{draw_set_colour($0DA5F2);}
+		}
+		else			{draw_set_colour($5c5c5c);}
+		draw_text(512, y + yy + 248, item);
+	}
 }
-
-//draw_set_font(fntDIN); draw_text(512,y+248,counter);
+draw_set_alpha(1);

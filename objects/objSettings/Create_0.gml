@@ -9,6 +9,7 @@ global.sound=1;					//sound effects
 //global.music=1;					//background music
 
 // GAME MECHANIC PARAMETERS
+global.level=0;
 global.splashPlayed=0;
 global.fadeMode="none";
 global.reset=0;

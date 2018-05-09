@@ -50,7 +50,7 @@
             "Key": "0b3fb8cd-c130-4e79-8edb-4237cffe9699",
             "Value": {
                 "id": "89576d0a-e628-4eba-b52c-c70b3bfac120",
-                "resourcePath": "sprites\\sprLevelSelectBack\\sprLevelSelectBack.yy",
+                "resourcePath": "sprites\\sprSquare\\sprSquare.yy",
                 "resourceType": "GMSprite"
             }
         },
@@ -724,6 +724,14 @@
                 "id": "12e85ac9-1cfb-4456-b9e9-cc6e13c840a1",
                 "resourcePath": "views\\d8a440cc-0131-4b8a-9ce7-80ade16b4a19.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "db2c632f-9480-4b40-8bcf-fd8312c8e506",
+            "Value": {
+                "id": "25f065c6-aba7-4c66-abc8-80f87a04d3bc",
+                "resourcePath": "sprites\\sprSelect\\sprSelect.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
