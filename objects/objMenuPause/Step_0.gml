@@ -1,5 +1,4 @@
-var rowu = max(keyboard_check_pressed(vk_up), keyboard_check_pressed(ord("W")), 0),
-	rowd = max(keyboard_check_pressed(vk_down), keyboard_check_pressed(ord("S")), 0);
+scrControl();
 
 if drawMenuPause=1 or counter>0
 {
@@ -14,14 +13,13 @@ if drawMenuPause=1 or counter>0
 	if drawMenuPause=1 
 	{
 		if y=0 and counter=1 {counter2=0;} //reset fade out animation
-		if rowu=1 {select-=1;}
-		if rowd=1 {select+=1;}
-		if rowu=1 ^^ rowd=1 {scrSound("tap")}
+		if keyUpP == 1 {select--;}
+		if keyDownP == 1 {select++;}
+		if keyUpP == 1 ^^ keyDownP == 1 {scrSound("tap")}
 		if select>4 {select=0;}
 		if select<0 {select=4;}
 
-		if keyboard_check_pressed(vk_enter) or keyboard_check_pressed(vk_space) or
-		keyboard_check_pressed(ord("E"))
+		if keyActP == 1
 		{
 			scrSound("click")
 		

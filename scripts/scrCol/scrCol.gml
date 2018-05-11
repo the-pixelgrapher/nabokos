@@ -4,10 +4,10 @@ switch(colourID)
 {
 	case 0:
 	case 1:
-	return 0//$F5F5F5;
+	return ($545454);
 	break;
 	
 	case 2:
-	return 1 //$6363E9;
+	return ($0DA5F2);
 	break;
 }

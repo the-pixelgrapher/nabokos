@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "2c93e988-7734-47c5-952e-331fa04c3ea1",
+            "Value": {
+                "id": "c9533029-61f0-46fb-80ea-004e084a4682",
+                "resourcePath": "objects\\objLevelNum\\objLevelNum.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "311155b8-d6c9-47c1-8602-8fb7978b480b",
             "Value": {
                 "id": "461e9292-43bb-43ba-8bc3-0168e16c4251",
@@ -295,6 +303,14 @@
             }
         },
         {
+            "Key": "5aed2b23-5e1f-496a-92b2-a38f3ca931d3",
+            "Value": {
+                "id": "02ff50df-ba3d-4bde-9e75-10afe506cefa",
+                "resourcePath": "scripts\\scrControl\\scrControl.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "5d6341dd-b6aa-41cd-8c3b-5aee3b0cd2b7",
             "Value": {
                 "id": "6c0a8c5b-135c-4f09-b437-00bdc47c7134",
@@ -323,14 +339,6 @@
             "Value": {
                 "id": "dbdc18f8-d51c-44cf-9303-c271b88a1718",
                 "resourcePath": "fonts\\fntDIN4\\fntDIN4.yy",
-                "resourceType": "GMFont"
-            }
-        },
-        {
-            "Key": "6a63a1f2-eb25-410e-9c50-efe5021b2fdf",
-            "Value": {
-                "id": "db9ead69-113a-4a75-b19e-8733c66270b8",
-                "resourcePath": "fonts\\fntDIN\\fntDIN.yy",
                 "resourceType": "GMFont"
             }
         },
@@ -492,6 +500,14 @@
                 "id": "c290888f-eb29-4210-a5c8-aad37618689d",
                 "resourcePath": "sounds\\sndClick\\sndClick.yy",
                 "resourceType": "GMSound"
+            }
+        },
+        {
+            "Key": "a5f4c4d6-bfc4-4e74-8b88-0372fec1494d",
+            "Value": {
+                "id": "d85f3a41-bb7a-49a7-94c9-5277dc190a9e",
+                "resourcePath": "sprites\\sprComplete\\sprComplete.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -823,14 +839,6 @@
             }
         },
         {
-            "Key": "f74e6f2f-4d85-499e-a019-753e2f948a09",
-            "Value": {
-                "id": "619850ca-224c-4297-bb74-573509f76942",
-                "resourcePath": "fonts\\fntDIN5\\fntDIN5.yy",
-                "resourceType": "GMFont"
-            }
-        },
-        {
             "Key": "fb200e09-ebea-4dfc-9368-9ea7b4f30b40",
             "Value": {
                 "id": "b108f80b-09be-46d7-a545-5fbf32a5caf4",
@@ -869,7 +877,8 @@
         "1952f4ac-51ee-440a-b378-3829f327d3fb",
         "50928403-dd28-4b16-9cba-7e778eac4b75",
         "3a0c81b1-1338-4c19-83de-0d143248ee4e",
-        "eb219e1a-2bff-473f-b2e8-a5167f2d409c"
+        "eb219e1a-2bff-473f-b2e8-a5167f2d409c",
+        "5aed2b23-5e1f-496a-92b2-a38f3ca931d3"
     ],
     "tutorial": ""
 }

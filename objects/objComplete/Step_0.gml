@@ -1,3 +1,3 @@
 counter+=1/100;
 y=ease("easeoutelastic",counter)*amplify-16;
-easea=ease("easeoutcubic",counter*4);
+image_alpha=ease("easeoutcubic",counter*3);

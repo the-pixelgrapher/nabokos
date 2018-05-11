@@ -9,22 +9,11 @@ if alpha>0
 		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotT,c_white,alpha);
 	}
 }
-draw_set_valign(0);
-draw_set_halign(0);
-
-// ---- LEVEL NUMBER ----
-if levelNTimer>-31
-{
-	draw_set_font(fntDIN);
-	draw_set_colour(c_gray);
-	draw_set_alpha(easea);
-	draw_text(easex,96,(string(0) + string(global.level)));
-	draw_set_alpha(1);
-}
 
 // ---- RESET LEVEL PROGRESS BAR ----
 if !resetTimer=0 and !place_meeting(x,y,objExit)
 {
+	draw_set_halign(0);
 	draw_set_colour($545454); //same colour as wall
 	draw_set_font(fntDIN2);
 	draw_text(448,665,"RESETTING ...");

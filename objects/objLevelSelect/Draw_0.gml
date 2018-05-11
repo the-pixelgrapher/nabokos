@@ -26,8 +26,9 @@ for (var i = 0; i < 21; i++)
 		xo = (i * 128) - (rn * 896) + 128,	//x origin pint
 		yo = rn * 128 + 288,				//y origin point
 	
-	if ( i == 20) {draw_sprite(sprSquare,2,xo,yo);}
-	else		  {draw_sprite(sprSquare,scrCol(global.levelState[i]),xo,yo);}
+	//if ( i == 20) {draw_sprite(sprSquare,2,xo,yo);}
+	if ( i == 20) {draw_sprite_ext(sprSquare,0,xo,yo,1,1,0,$6363E9,1)}
+	else		  {draw_sprite_ext(sprSquare,0,xo,yo,1,1,0,scrCol(global.levelState[i]),1)}
 	
 	if (global.levelState[i] == 0) {draw_set_alpha(0.67);}	//text is faded when level is locked
 	else						   {draw_set_alpha(1);}

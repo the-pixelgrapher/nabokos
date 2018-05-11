@@ -2,7 +2,7 @@ global.reset=0;
 scrSound("win");
 counter=0;			//timer for easing function
 amplify=64;			//multiplier for easing function
-easea=0;			//easing for alpha
+image_alpha=0;
 alarm[0]=60;		//delay before "space to continue"
 
 //---- SAVE GAME STATE -----
