@@ -12,6 +12,7 @@ if easea>0
 	
 	draw_set_font(fntDIN2);
 	draw_set_halign(1);
+	draw_set_valign(0);
 	
 	for (var i = 0; i < 5; i++;)
 	{

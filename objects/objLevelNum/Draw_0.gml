@@ -1,5 +1,5 @@
 // ---- LEVEL NUMBER ----
-if levelNTimer>-31
+if levelNTimer>-61
 {	
 	draw_set_halign(0);
 	draw_set_colour($F5F5F5);
