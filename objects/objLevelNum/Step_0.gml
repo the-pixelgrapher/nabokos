@@ -1,5 +1,5 @@
 // ---- LEVEL NUMBER POPUP ANIMATION ----
-if global.fadeMode="none" and levelNTimer>-61
+if global.fadeMode="none" and levelNTimer>-51
 {
 	levelNTimer-=1;
 	
@@ -8,7 +8,7 @@ if global.fadeMode="none" and levelNTimer>-61
 	{
 		counter+=1/50;
 		easey=ease("easeoutquint",counter)*amplify-34;
-		easea=ease("easeinoutquad",counter*1.5);
+		easea=ease("easeinoutcubic",counter*(2));
 	}
 	
 	//exit animation
@@ -24,6 +24,6 @@ if global.fadeMode="none" and levelNTimer>-61
 			counter2+=1/50;
 			easey=ease("easeinquint",counter2)*amplify2+127-34;
 		}
-		easea=1-ease("easeinoutcubic",counter2*1.33);
+		easea=1-ease("easeinoutcubic",counter2*(4/3));
 	}
 }

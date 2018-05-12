@@ -8,8 +8,8 @@ if !activd == 1
 	if keyDownP == 1 {select += 7;}
 	if keyLeftP == 1 or keyRightP == 1 or keyUpP == 1 or keyDownP == 1 {scrSound("tap");}
 }
-if select > clamp(levelUnlocked,0,20) {select = 0;} //do not allow user to select locked levels
-if select < 0 {select = clamp(levelUnlocked,0,20);}
+if select > clamp(global.levelUnlocked,0,20) {select = 0;} //do not allow user to select locked levels
+if select < 0 {select = clamp(global.levelUnlocked,0,20);}
 
 if keyActP == 1
 {

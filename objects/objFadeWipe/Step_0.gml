@@ -25,13 +25,13 @@ if global.fadeMode="outT"
 	x=ease("easeoutquart",counter)*amplify+1024;
 	if x<=0
 	{
-		global.fadeMode="none";
 		scrSound("trans");
-		room_goto(3);
+		room_goto(global.levelUnlocked+3);
+		global.fadeMode="none";
 	}
 }
 
-if global.fadeMode="inR" or global.fadeMode="inM" or global.fadeMode="inLS"
+if global.fadeMode="inR" or global.fadeMode="inLS"
 {
 	counter+=1/30;
 	y=ease("easeoutquart",counter)*amplify;

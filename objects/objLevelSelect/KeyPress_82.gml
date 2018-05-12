@@ -7,7 +7,7 @@ global.levelState[0] = 1;
 
 scrSave();
 
-levelUnlocked = 0;
+global.levelUnlocked = 0;
 select = 0;
 
 scrSound("click");
