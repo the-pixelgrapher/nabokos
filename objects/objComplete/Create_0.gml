@@ -4,6 +4,7 @@ counter=0;			//timer for easing function
 amplify=64;			//multiplier for easing function
 image_alpha=0;
 alarm[0]=60;		//delay before "space to continue"
+x=64;
 
 //---- SAVE GAME STATE -----
 

@@ -46,7 +46,7 @@ if snapped=1
 		if mean(keyRightP,keyUpP,keyLeftP,keyDownP)<0.1 {speed=0;} //stop if no keys pressed
 	}
 	
-	if resetTimer>=24 or objMenuPause.drawMenuPause=1 {speed=0;}
+	if resetTimer>=24 or objMenuPause.drawMenuPause=1 or global.showControls=1 {speed=0;}
 }
 
 

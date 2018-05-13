@@ -1,7 +1,7 @@
 draw_set_alpha(easea);
 draw_sprite(sprTitleText,0,512,144+easex);
-draw_sprite(sprGoalGraphic,0,-96+easex,379);
-draw_sprite(sprGoalGraphic,0,928-easex,379);
+draw_sprite(sprGoalGraphic,0,easex,379);
+draw_sprite_ext(sprGoalGraphic,0,1024-easex,296,-1,-1,0,c_white,easea);
 draw_sprite(sprMagCrate,0,811-easex*1.5,390);
 
 draw_set_font(fntDIN2);
@@ -27,7 +27,7 @@ for (var i = 0; i < 5; i++;)
 		else		{draw_set_colour($0DA5F2);}
 	}
 	else			{draw_set_colour($5c5c5c);}
-	draw_text((1*(i/2.5+1))*easex + x, y + yy, item);
+	draw_text((1*(i/3+1))*easex + x, y + yy, item);
 }
 
 draw_set_colour($545454);

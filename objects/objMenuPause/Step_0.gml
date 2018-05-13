@@ -10,11 +10,11 @@ if drawMenuPause=1 or counter>0
 		y=ease("easeoutquint",counter)*amplify+64;
 		easea=ease("easeoutquint",counter*1.1);
 	}
-	if drawMenuPause=1 
+	if drawMenuPause=1 and objControlsScreen.counter=0
 	{
 		if y=0 and counter=1 {counter2=0;} //reset fade out animation
-		if keyUpP == 1 {select--;}
-		if keyDownP == 1 {select++;}
+		select -= keyUpP;
+		select += keyDownP;
 		if keyUpP == 1 ^^ keyDownP == 1 {scrSound("tap")}
 		if select>4 {select=0;}
 		if select<0 {select=4;}
@@ -29,8 +29,9 @@ if drawMenuPause=1 or counter>0
 				if select=1 {global.fadeMode="outLS";} //level selection
 				instance_create_layer(0,-768,"insPostprocess",objFadeWipe);
 			}
+			if select=2 and objControlsScreen.counter=0 {objControlsScreen.drawControls=1;}
 			if select=4 {game_end();}
-			drawMenuPause=0;
+			//drawMenuPause=0;
 		}
 	}
 }

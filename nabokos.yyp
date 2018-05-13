@@ -135,6 +135,14 @@
             }
         },
         {
+            "Key": "2eb275f3-b8b2-403b-a35b-0103f671ba91",
+            "Value": {
+                "id": "d948e820-160f-43a6-bd84-7a0dfe1e669c",
+                "resourcePath": "fonts\\fntDIN\\fntDIN.yy",
+                "resourceType": "GMFont"
+            }
+        },
+        {
             "Key": "311155b8-d6c9-47c1-8602-8fb7978b480b",
             "Value": {
                 "id": "461e9292-43bb-43ba-8bc3-0168e16c4251",
@@ -471,6 +479,14 @@
             }
         },
         {
+            "Key": "9a52c0d9-ce70-4a04-9ab5-11a9e1692f97",
+            "Value": {
+                "id": "48a66a17-2896-456c-a6c5-a1f4f8b57500",
+                "resourcePath": "objects\\objControlsScreen\\objControlsScreen.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
             "Key": "9c8345fe-8cd1-4dbf-8d66-5ebbc00492e8",
             "Value": {
                 "id": "ad117b0e-9433-4719-8953-2c365dbd948a",
@@ -503,6 +519,14 @@
             }
         },
         {
+            "Key": "a6b6161a-2b5b-4653-8edd-d7f97c725d4f",
+            "Value": {
+                "id": "e6de6990-117b-4639-9d54-0900bea2104c",
+                "resourcePath": "sprites\\sprE\\sprE.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "a727a96a-ca4e-4495-a885-8c2775632f45",
             "Value": {
                 "id": "7845e224-7f9d-44d2-9cfe-deb103f1c5c3",
@@ -516,6 +540,14 @@
                 "id": "ef7a9b90-042e-4b33-88b8-b2a1e13220f7",
                 "resourcePath": "options\\linux\\options_linux.yy",
                 "resourceType": "GMLinuxOptions"
+            }
+        },
+        {
+            "Key": "aaf53a18-926e-4f01-85bc-7b97ca903d8f",
+            "Value": {
+                "id": "aeb21a4b-51b7-4c68-bba6-b3174df0631a",
+                "resourcePath": "sprites\\sprSwitch\\sprSwitch.yy",
+                "resourceType": "GMSprite"
             }
         },
         {
@@ -647,6 +679,14 @@
             }
         },
         {
+            "Key": "c6b006c8-201c-419e-80ab-86ab3ff2962d",
+            "Value": {
+                "id": "cd773ed3-8815-4268-a19d-cbca8bbf4b78",
+                "resourcePath": "sprites\\sprKeyArrow\\sprKeyArrow.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "c7ab770e-383a-4d8e-998b-ceacbd6c81d9",
             "Value": {
                 "id": "5ce82e7c-f09c-42d4-87d1-6a431484c433",
@@ -692,6 +732,14 @@
                 "id": "1920e88c-a945-43ce-b799-14ec8da866e1",
                 "resourcePath": "options\\windows\\options_windows.yy",
                 "resourceType": "GMWindowsOptions"
+            }
+        },
+        {
+            "Key": "ce97a4f6-114d-4bac-a033-f31df78fe7ce",
+            "Value": {
+                "id": "c49dada0-4439-48e1-9b88-a44ac3240839",
+                "resourcePath": "sprites\\sprSpaceReset\\sprSpaceReset.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

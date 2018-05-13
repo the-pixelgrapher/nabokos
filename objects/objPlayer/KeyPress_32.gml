@@ -6,4 +6,4 @@ if global.complete=1 and global.fadeMode="none" and objMenuPause.drawMenuPause=0
 	instance_create_layer(0,0,"insPostprocess",objFadeWipe);
 }
 
-if objMenuPause.drawMenuPause=0 {scrSound("click");}
+if objMenuPause.drawMenuPause=0 and global.showControls=0 {scrSound("click");}

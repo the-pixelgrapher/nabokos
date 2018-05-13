@@ -1,5 +1,5 @@
 // ---- LEVEL NUMBER POPUP ANIMATION ----
-if global.fadeMode="none" and levelNTimer>-51
+if global.fadeMode="none" and levelNTimer>-51 and global.showControls=0
 {
 	levelNTimer-=1;
 	

@@ -51,6 +51,7 @@ if global.fadeMode="outR" or global.fadeMode="outM" or global.fadeMode="outLS"
 		if global.fadeMode="outR" {room_restart();}
 		if global.fadeMode="outM" {room_goto(1);}
 		if global.fadeMode="outLS" {room_goto(2);}
+		global.fadeMode="none";
 	}
 }
 
@@ -61,6 +62,7 @@ if global.fadeMode="outLN"
 	if x<=0
 	{
 		room_goto(clamp(objLevelSelect.select+3,0,10)); //go to selected level
+		global.fadeMode="none";
 	}
 }
 

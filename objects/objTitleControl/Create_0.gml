@@ -30,5 +30,7 @@ if global.aaSet=0
 	global.aaSet=1;
 }
 
+instance_create_layer(0,0,"insPostprocess",objControlsScreen);
+
 x=212;
 y=361;
