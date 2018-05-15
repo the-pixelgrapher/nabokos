@@ -14,27 +14,25 @@ if image_angle=090 {xx=xo+00; yy=yo-64;}
 if image_angle=180 {xx=xo-64; yy=yo+00;}
 if image_angle=270 {xx=xo+00; yy=yo+64;}
 
+
+
 if state=0 
 {
 	targetx=xo;
 	targety=yo;
-	if !position_meeting(xo,yo, objWall) 
-	{
-		with instance_create_layer(xo-32,yo-32,"insMarkers",objWall)
-		{
-			visible=0;
-		}
-	}
 }
 
-var wall=instance_position(xo-32,yo-32,objWall);
+
 
 if state=1 
 {
 	targetx=xx;
 	targety=yy;
-	if position_meeting(xo,yo, wall) {instance_destroy(wall);}
+	//if position_meeting(xo,yo, wall) {instance_destroy(wall);}
+	//with wall {x=xx-32; y=yy-32;}
 }
+
+with wall {x=targetx-32; y=targety-32;}
 
 // DOOR OPEN/CLOSE SOUNDS
 if state=1 and sndPlayed1=0

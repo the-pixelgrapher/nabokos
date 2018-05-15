@@ -5,11 +5,16 @@ select = global.level; //select last played level
 activd = 0;
 
 // ---- CHECKING CURRENTY UNLOCKED LEVELS
-global.levelUnlocked = 0;
-for (var i = 1; i < 21; i++)
+global.levelUnlocked = -1;
+global.levelComplete = 0;
+for (var i = 0; i < 21; i++)
 {
 	if (global.levelState[i] > 0)
 	{
 		global.levelUnlocked += 1;
+	}
+	if (global.levelState[i] = 2)
+	{
+		global.levelComplete += 1;
 	}
 }

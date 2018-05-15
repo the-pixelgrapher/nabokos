@@ -231,6 +231,14 @@
             }
         },
         {
+            "Key": "4a87c143-1bd4-4f9f-910e-b60cdb2707f2",
+            "Value": {
+                "id": "51d6026a-2e3c-4011-8a07-0a27ace67038",
+                "resourcePath": "rooms\\rm09\\rm09.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "4b4abc24-17a3-4f39-b2ce-f117c344f4dc",
             "Value": {
                 "id": "7c4130d1-be0f-4c23-b71f-48e19cc8327d",
@@ -255,19 +263,19 @@
             }
         },
         {
-            "Key": "4e688d3e-7e99-493f-82fc-ccb20d056b8a",
-            "Value": {
-                "id": "d5a8ac0a-e9bd-4622-9327-f93dae28a4fa",
-                "resourcePath": "objects\\objRotationtest\\objRotationtest.yy",
-                "resourceType": "GMObject"
-            }
-        },
-        {
             "Key": "50928403-dd28-4b16-9cba-7e778eac4b75",
             "Value": {
                 "id": "fc3f4057-856f-4413-9b8a-d4dabf19af7a",
                 "resourcePath": "scripts\\scrElectron\\scrElectron.yy",
                 "resourceType": "GMScript"
+            }
+        },
+        {
+            "Key": "53b73339-fdaa-4607-acf8-b20662e8d31c",
+            "Value": {
+                "id": "7401c300-dcde-431f-8b6a-ec7dd1935561",
+                "resourcePath": "objects\\objXOR\\objXOR.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -796,6 +804,14 @@
                 "id": "50167f88-d330-4823-89d8-38a0ce980d63",
                 "resourcePath": "views\\e4a6fcd4-f1f6-42ca-9238-4c3175b378a4.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "e6287005-15c2-41f8-b167-feee1a7023cd",
+            "Value": {
+                "id": "ff965120-5891-4363-af99-97e5eadf696f",
+                "resourcePath": "sprites\\sprXOR\\sprXOR.yy",
+                "resourceType": "GMSprite"
             }
         },
         {

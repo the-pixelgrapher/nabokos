@@ -33,4 +33,4 @@ for (var i = 0; i < 5; i++;)
 draw_set_colour($545454);
 draw_rectangle(0,760,1024,768,0);
 draw_set_colour($0DA5F2);
-draw_rectangle(0,760,easeP*round(1024*(global.levelUnlocked/20)),768,0);
+draw_rectangle(0,760,easeP*round(1024*(global.levelComplete/21)),768,0);

@@ -26,7 +26,7 @@ if global.fadeMode="outT"
 	if x<=0
 	{
 		scrSound("trans");
-		room_goto(global.levelUnlocked+3);
+		room_goto(clamp(global.levelUnlocked+3,3,room_last));
 		global.fadeMode="none";
 	}
 }
@@ -61,7 +61,7 @@ if global.fadeMode="outLN"
 	x=ease("easeoutquart",counter)*amplify+1024;
 	if x<=0
 	{
-		room_goto(clamp(objLevelSelect.select+3,0,room_last)); //go to selected level
+		room_goto(clamp(objLevelSelect.select+3,3,room_last)); //go to selected level
 		global.fadeMode="none";
 	}
 }
