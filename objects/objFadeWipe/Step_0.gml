@@ -61,7 +61,7 @@ if global.fadeMode="outLN"
 	x=ease("easeoutquart",counter)*amplify+1024;
 	if x<=0
 	{
-		room_goto(clamp(objLevelSelect.select+3,0,10)); //go to selected level
+		room_goto(clamp(objLevelSelect.select+3,0,room_last)); //go to selected level
 		global.fadeMode="none";
 	}
 }

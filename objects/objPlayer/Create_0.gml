@@ -10,10 +10,6 @@ rotT=0;
 rotI=0;
 alarm[0]=60;
 
-// ROTATION LERP SETUP
-instance_create_layer(x,y,"insMarkers",objPlayerRotTarget);
-instance_create_layer(x+64,y+64,"insMarkers",objPlayerRotLerp);
-
 // ---- FADE IN ON LOAD ----
 
 if global.reset=1 {global.fadeMode="inR";}

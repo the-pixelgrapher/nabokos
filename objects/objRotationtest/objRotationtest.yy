@@ -1,18 +1,28 @@
 {
-    "id": "5e836dd3-b42a-4775-ab75-312651ffb8ed",
+    "id": "4e688d3e-7e99-493f-82fc-ccb20d056b8a",
     "modelName": "GMObject",
     "mvc": "1.0",
-    "name": "objPlayerRotLerp",
+    "name": "objRotationtest",
     "eventList": [
         {
-            "id": "5a319770-9891-48f0-ae6a-72a391336dec",
+            "id": "16f36459-450c-46da-b1a4-0db4f0584bc1",
+            "modelName": "GMEvent",
+            "mvc": "1.0",
+            "IsDnD": false,
+            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
+            "enumb": 0,
+            "eventtype": 0,
+            "m_owner": "4e688d3e-7e99-493f-82fc-ccb20d056b8a"
+        },
+        {
+            "id": "86e5be68-a64c-497e-b12d-88b995437dcc",
             "modelName": "GMEvent",
             "mvc": "1.0",
             "IsDnD": false,
             "collisionObjectId": "00000000-0000-0000-0000-000000000000",
             "enumb": 0,
             "eventtype": 3,
-            "m_owner": "5e836dd3-b42a-4775-ab75-312651ffb8ed"
+            "m_owner": "4e688d3e-7e99-493f-82fc-ccb20d056b8a"
         }
     ],
     "maskSpriteId": "00000000-0000-0000-0000-000000000000",
@@ -33,6 +43,6 @@
     "physicsStartAwake": true,
     "properties": null,
     "solid": false,
-    "spriteId": "34d30b39-08b7-4844-833b-3c65b064714c",
-    "visible": false
+    "spriteId": "43c182e3-304e-42c0-8dd9-683274aeea3f",
+    "visible": true
 }

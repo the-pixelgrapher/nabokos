@@ -51,7 +51,8 @@ if snapped=1
 
 
 // ---- MAGNET ROTATION ----
-rotI=point_direction(x,y,objPlayerRotLerp.x,objPlayerRotLerp.y);
+//rotI=point_direction(x,y,objPlayerRotLerp.x,objPlayerRotLerp.y);
+
 //rotT = direction if powered off or not adjecent a crate.
 /*
 if global.rotationMode=1
@@ -123,6 +124,8 @@ if magState=1 and global.rotationMode=0
 	}
 		
 }
+
+rotI=lerp(rotI,rotT,0.25);
 
 // ---- DELAYED GAME RESET ----
 if resetTimer=32 and global.complete=0 and !place_meeting(x,y,objExit)

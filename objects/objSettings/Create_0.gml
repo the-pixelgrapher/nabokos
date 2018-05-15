@@ -4,7 +4,6 @@
 global.rotationMode=0;			//0 is auto rotation 1 is manual
 global.lerpRot=0;				//animate rotation
 global.stepMovement=0;			//singe step movement
-global.showControls=1;			//show controls screen
 audio_channel_num(32);			//max cocurrent sounds
 global.sound=1;					//sound effects
 //global.music=1;					//background music
@@ -20,6 +19,14 @@ global.wy=window_get_y();
 
 // LEVEL PROGRESS DATA
 scrLoad();
+if global.levelState[0] = 1 
+{
+	global.showControls=1;		//show controls screen
+}			
+if global.levelState[0] = 2
+{
+	global.showControls=0;
+}
 
 //GAME START
 room_goto_next();
