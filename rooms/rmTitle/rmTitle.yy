@@ -1,6 +1,6 @@
 
 {
-    "name": "tmTitle",
+    "name": "rmTitle",
     "id": "fefc99c3-8d2e-4e7c-b2ed-0cb6dbfa61f0",
     "creationCodeFile": "RoomCreationCode.gml",
     "inheritCode": false,
