@@ -54,7 +54,7 @@ if snapped=1
 	
 	// stop player from pulling crate off goal and getting stuck in door
 	if place_meeting(x-xx,y-yy,objGoal) and place_meeting(x-xx,y-yy,objCrate) and 
-	place_meeting(x+xx,y+yy,objWallMb) and magState=1
+	place_meeting(x+xx,y+yy,objWallMb) and magState=1 and place_meeting(x,y,objWireA)
 	{
 		speed=0;
 	}
