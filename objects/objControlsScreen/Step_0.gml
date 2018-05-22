@@ -13,7 +13,7 @@ if drawControls=1 or counter>0
 	if drawControls=1 and counter=1
 	{
 		if yo=0 and counter=1 {counter2=0;} //reset fade out animation
-		if keyActP == 1
+		if keyActP == 1 or keyboard_check_pressed(vk_escape)
 		{
 			scrSound("click")
 			drawControls=0;

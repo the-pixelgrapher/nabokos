@@ -7,6 +7,8 @@ if alarm[0]=-1
 }
 
 if state=1
-{instance_create_layer(x+xx,y+yy,"insMarkers", objElectron);}
+{
+	instance_create_layer(x+yy,y+xx,"insMarkers", objElectron);
+}
 
 image_index=state;

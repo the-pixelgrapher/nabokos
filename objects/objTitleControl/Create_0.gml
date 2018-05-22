@@ -10,7 +10,7 @@ progDelay=60;
 // ---- CHECKING CURRENTY UNLOCKED LEVELS
 global.levelUnlocked = -1;
 global.levelComplete = 0;
-for (var i = 0; i < 21; i++)
+for (var i = 0; i < room_last-3; i++)
 {
 	if (global.levelState[i] > 0)
 	{

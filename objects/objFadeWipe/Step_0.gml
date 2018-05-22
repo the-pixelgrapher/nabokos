@@ -26,7 +26,7 @@ if global.fadeMode="outT"
 	if x<=0
 	{
 		scrSound("trans");
-		room_goto(clamp(global.levelUnlocked+3,3,room_last));
+		room_goto(clamp(global.levelUnlocked+3,3,room_last-1));
 		global.fadeMode="none";
 	}
 }

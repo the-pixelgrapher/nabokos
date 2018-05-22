@@ -29,8 +29,8 @@ if snapped=1
 	// ---- STOPPING ----
 	if global.stepMovement=0
 	{
-		if keyRight=0 and direction=0		{speed=0;} //stop if key for direction is no longer held
-		if keyUp=0    and direction=90		{speed=0;}
+		if keyRight=0 and direction=0	{speed=0;} //stop if key for direction is no longer held
+		if keyUp=0    and direction=90	{speed=0;}
 		if keyLeft=0  and direction=180	{speed=0;}
 		if keyDown=0  and direction=270	{speed=0;}
 		
@@ -46,13 +46,24 @@ if snapped=1
 		if mean(keyRightP,keyUpP,keyLeftP,keyDownP)<0.1 {speed=0;} //stop if no keys pressed
 	}
 	
+	var xx, yy;
+	if direction=0		{xx=64;		yy=0;}
+	if direction=90		{xx=0;		yy=-64;}
+	if direction=180	{xx=-64;	yy=0;}
+	if direction=270	{xx=0;		yy=64;}
+	
+	// stop player from pulling crate off goal and getting stuck in door
+	if place_meeting(x-xx,y-yy,objGoal) and place_meeting(x-xx,y-yy,objCrate) and 
+	place_meeting(x+xx,y+yy,objWallMb) and magState=1
+	{
+		speed=0;
+	}
+	
 	if resetTimer>=24 or objMenuPause.drawMenuPause=1 or global.showControls=1 {speed=0;}
 }
 
 
 // ---- MAGNET ROTATION ----
-//rotI=point_direction(x,y,objPlayerRotLerp.x,objPlayerRotLerp.y);
-
 //rotT = direction if powered off or not adjecent a crate.
 /*
 if global.rotationMode=1
