@@ -6,7 +6,7 @@ if drawControls=1 or counter>0
 	if yo<=64 and counter2=1 //fade in animation
 	{
 		counter+=1/25;
-		easer=ease("easeoutquint",counter)*-446+446+64;
+		easer=ease("easeoutquint",counter)*-446+510;
 		yo=ease("easeoutquint",counter)*amplify+64;
 		easea=ease("easeoutquint",counter*1.1);
 	}

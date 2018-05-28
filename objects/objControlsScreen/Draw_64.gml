@@ -8,9 +8,9 @@ if easea>0
 	draw_set_font(fntDIN2);
 	draw_set_halign(1);
 	draw_set_valign(0);
-	draw_set_colour($545454);
+	draw_set_colour(scrCol(0));
 	draw_text(512,yo+128,"KEYBOARD CONTROLS");
-	draw_set_colour($0DA5F2);
+	draw_set_colour(scrCol(2));
 	draw_line_width(408,yo+128+34,614,yo+128+34,2); // heading underline
 	
 	draw_sprite_ext(sprKeyArrow,0,512,yo+254,1,1,90,c_white,easea);
@@ -25,7 +25,7 @@ if easea>0
 	
 	draw_set_colour($F5F5F5);
 	draw_roundrect_ext(304,yo+586,720,yo+640,32,32,0);
-	draw_set_colour($545454);
+	draw_set_colour(scrCol(0));
 	draw_set_font(fntDIN);
 	draw_text(512,yo+606,"PRESS SPACE TO CONTINUE");
 }

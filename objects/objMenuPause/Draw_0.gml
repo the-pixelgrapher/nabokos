@@ -26,9 +26,9 @@ if easea>0
 		if (select = i)
 		{
 			if (i = 4)	{draw_set_colour($5d3ae9);}
-			else		{draw_set_colour($0DA5F2);}
+			else		{draw_set_colour(scrCol(2));}
 		}
-		else			{draw_set_colour($5c5c5c);}
+		else			{draw_set_colour($4D4D4D);}
 		draw_text(512, y + yy + 248, item);
 	}
 }

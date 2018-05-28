@@ -1,11 +1,11 @@
-draw_set_colour($545454);
+draw_set_colour($4D4D4D);
 draw_set_alpha(1);
 draw_set_font(fntDIN3);
 draw_set_valign(0);
 draw_set_halign(1);
 draw_text(512,128,"LEVEL SELECTION");
 
-draw_set_colour($0DA5F2);
+draw_set_colour(scrCol(2));
 draw_line_width(334,192,691,192,2); // heading underline
 
 
@@ -27,7 +27,7 @@ for (var i = 0; i < 21; i++)
 		yo = rn * 128 + 288,				//y origin point
 	
 	//if ( i == 20) {draw_sprite(sprSquare,2,xo,yo);}
-	if ( i == 20) {draw_sprite_ext(sprSquare,0,xo,yo,1,1,0,$6363E9,1)}
+	if ( i == 20) {draw_sprite_ext(sprSquare,0,xo,yo,1,1,0,scrCol(4),1)}
 	else		  {draw_sprite_ext(sprSquare,0,xo,yo,1,1,0,scrCol(global.levelState[i]),1)}
 	
 	if (global.levelState[i] == 0) {draw_set_alpha(0.67);}	//text is faded when level is locked

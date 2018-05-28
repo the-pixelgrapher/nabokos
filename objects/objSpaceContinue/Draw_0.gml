@@ -1,6 +1,6 @@
 draw_set_alpha(alpha);
 
-draw_set_colour($0DA5F2);
+draw_set_colour(scrCol(2));
 draw_roundrect_ext(x,y,x+562,y+64,32,32,0);
 draw_set_colour(c_white);
 draw_set_font(fntDIN2);

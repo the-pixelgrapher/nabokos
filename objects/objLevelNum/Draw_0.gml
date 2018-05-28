@@ -8,7 +8,7 @@ if levelNTimer>-51
 	draw_roundrect_ext(385-32, easey-56 ,385+254+32, easey+56, 64, 64, 0);
 	draw_sprite_ext(sprSquare,0,581,easey,1,1,0,scrCol(global.levelState[global.level]),easea);
 	draw_set_font(fntDIN3);
-	draw_set_colour($545454);
+	draw_set_colour($4D4D4D);
 	draw_text(409, easey+1 ,"LEVEL");
 	draw_set_font(fntDIN4);
 	draw_set_halign(1);

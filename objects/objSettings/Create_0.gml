@@ -7,6 +7,7 @@ global.stepMovement=0;			//singe step movement
 audio_channel_num(32);			//max cocurrent sounds
 global.sound=1;					//sound effects
 //global.music=1;					//background music
+global.eVis=0;					//debug electron visibility
 
 // GAME MECHANIC PARAMETERS
 global.level=0;

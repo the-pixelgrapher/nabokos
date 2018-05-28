@@ -24,13 +24,13 @@ for (var i = 0; i < 5; i++;)
 	if (select = i)
 	{
 		if (i = 4)	{draw_set_colour($5d3ae9);}
-		else		{draw_set_colour($0DA5F2);}
+		else		{draw_set_colour(scrCol(2));}
 	}
-	else			{draw_set_colour($5c5c5c);}
+	else			{draw_set_colour($4D4D4D);}
 	draw_text((1*(i/3+1))*easex + x, y + yy, item);
 }
 
-draw_set_colour($545454);
+draw_set_colour($4D4D4D);
 draw_rectangle(0,760,1024,768,0);
-draw_set_colour($0DA5F2);
+draw_set_colour(scrCol(2));
 draw_rectangle(0,760,easeP*round(1024*(global.levelComplete/(room_last-3))),768,0);
