@@ -13,7 +13,7 @@ for (var i = 0; i < 21; i++;)
 	if global.level=i 
 	{
 		global.levelState[i]=2; //set current level as complete
-		if i < room_last-4 and global.levelState[i+1]=0 {global.levelState[i+1]=1;} 
+		if i < room_last-5 and global.levelState[i+1]=0 {global.levelState[i+1]=1;} 
 		//set next level to unlocked
 	}
 }

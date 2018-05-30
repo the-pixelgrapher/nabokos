@@ -1,14 +1,16 @@
 // ---- PLAYER VARIABLES & PARAMETERS ----
 global.complete=0;		//whether the level is complete or not
-global.level=room-3;
+global.level=room-4;
+near=0;
 
 //VARIABLES
 alpha=1;
 magState=0;				//magnet power state off=0 on=1
 resetTimer=0;			//delayed reset timer
-rotT=0;
-rotI=0;
-alarm[0]=60;
+rot=0;					//true rotation
+rotT=0;					//roation animation target
+rotL=0;					//rotation animation lerp
+alarm[0]=60;			//controls popup delay
 
 // ---- FADE IN ON LOAD ----
 

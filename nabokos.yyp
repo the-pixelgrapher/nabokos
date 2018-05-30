@@ -247,6 +247,14 @@
             }
         },
         {
+            "Key": "446bd8a0-3c06-4770-a24e-f1b1242ce3f4",
+            "Value": {
+                "id": "5afec3c5-e56f-4c5e-b47e-ace5d4779363",
+                "resourcePath": "rooms\\rmLevelEdit\\rmLevelEdit.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "4b4abc24-17a3-4f39-b2ce-f117c344f4dc",
             "Value": {
                 "id": "7c4130d1-be0f-4c23-b71f-48e19cc8327d",
@@ -340,6 +348,14 @@
                 "id": "dbdc18f8-d51c-44cf-9303-c271b88a1718",
                 "resourcePath": "fonts\\fntDIN4\\fntDIN4.yy",
                 "resourceType": "GMFont"
+            }
+        },
+        {
+            "Key": "65ae7213-c7f7-44cd-988d-37d873997bdd",
+            "Value": {
+                "id": "df264b81-20dd-4fa6-a089-8cd70d30c0a7",
+                "resourcePath": "objects\\objLevelEdit\\objLevelEdit.yy",
+                "resourceType": "GMObject"
             }
         },
         {
@@ -871,6 +887,14 @@
             }
         },
         {
+            "Key": "eef912b1-ebda-4fb3-b85c-ef461a3eb09d",
+            "Value": {
+                "id": "939d7a2e-f711-445c-b08e-05bf1b491529",
+                "resourcePath": "sprites\\sprGSelect\\sprGSelect.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "ef9cde35-7e6f-4ea0-ad80-d759475e3c28",
             "Value": {
                 "id": "fab0b7ca-5a4a-4558-b3dc-fef8d825c042",
@@ -915,6 +939,14 @@
             "Value": {
                 "id": "4702892b-25c8-444d-8a57-aad585837162",
                 "resourcePath": "sprites\\sprGoal\\sprGoal.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "f9a6881e-f09e-425f-b641-27594f1eac23",
+            "Value": {
+                "id": "781445ea-4752-4b15-9348-5f6c7a7a3176",
+                "resourcePath": "sprites\\sprite25\\sprite25.yy",
                 "resourceType": "GMSprite"
             }
         },

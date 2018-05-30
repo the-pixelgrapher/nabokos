@@ -8,12 +8,12 @@ if drawMenuPause=1 or counter>0
 		counter+=1/25;
 		easer=ease("easeoutquint",counter)*-446+446+64;
 		y=ease("easeoutquint",counter)*amplify+64;
-		easea=ease("easeoutquint",counter*1.1);
+		easea=ease("easeoutquint",counter*1.33);
 	}
 	if drawMenuPause=1 
 	{
 		if y=0 and counter=1 {counter2=0;} //reset fade out animation
-		if objControlsScreen.counter=0
+		if objControlsScreen.drawControls=0
 		{
 			select -= keyUpP;
 			select += keyDownP;
@@ -23,17 +23,21 @@ if drawMenuPause=1 or counter>0
 
 			if keyActP == 1 //and counter == 1
 			{
-				scrSound("click")
+				scrSound("click");
 		
 				if !instance_exists(objFadeWipe)
-				{
-					if select=0 {global.fadeMode="outM";} //main menu
-					if select=1 {global.fadeMode="outLS";} //level selection
+				{	
+					if select=4 {global.fadeMode="outM";}			//main menu
+					if select=1 {global.fadeMode="outLS";}			//level selection
 					instance_create_layer(0,-768,"insPostprocess",objFadeWipe);
 				}
+				
+				if select=0 and counter2=0 and y=0 and counter=1	//CONTINUE
+				{
+					drawMenuPause=0;
+				}
+				
 				if select=2 and objControlsScreen.counter=0 {objControlsScreen.drawControls=1;}
-				if select=4 {game_end();}
-				//drawMenuPause=0;
 			}
 		}
 	}
@@ -46,7 +50,7 @@ if drawMenuPause=0 or counter2>0
 		counter2+=1/25;
 		easer=ease("easeoutquint",counter2)*446+64;
 		y=ease("easeoutquint",counter2)*amplify2;
-		easea=1-ease("easeoutquint",counter2*1.1);
+		easea=1-ease("easeoutquint",counter2*1.33);
 	}
 	if y=64 and counter2=1 {counter=0;} //reset fade in animation
 }

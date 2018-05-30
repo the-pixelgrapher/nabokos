@@ -33,4 +33,4 @@ for (var i = 0; i < 5; i++;)
 draw_set_colour($4D4D4D);
 draw_rectangle(0,760,1024,768,0);
 draw_set_colour(scrCol(2));
-draw_rectangle(0,760,easeP*round(1024*(global.levelComplete/(room_last-3))),768,0);
+draw_rectangle(0,760,easeP*round(1024*(global.levelComplete/(room_last-4))),768,0);

@@ -9,7 +9,7 @@
     "option_windows_copy_exe_to_dest": false,
     "option_windows_copyright_info": "(c) 2018 Pixelgrapher",
     "option_windows_description_info": "Sokoban Reversed",
-    "option_windows_display_cursor": true,
+    "option_windows_display_cursor": false,
     "option_windows_display_name": "nabokos",
     "option_windows_enable_steam": false,
     "option_windows_executable_name": "${project_name}",

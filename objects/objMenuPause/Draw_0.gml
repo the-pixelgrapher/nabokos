@@ -17,11 +17,11 @@ if easea>0
 	for (var i = 0; i < 5; i++;)
 	{
 		var yy = i * 64;
-		if (i = 0) {var item = "MAIN MENU"}
+		if (i = 0) {var item = "CONTINUE"}
 		if (i = 1) {	item = "LEVEL SELECTION"}
 		if (i = 2) {	item = "CONTROLS"}
 		if (i = 3) {	item = "OPTIONS"}
-		if (i = 4) {	item = "EXIT GAME"}
+		if (i = 4) {	item = "MAIN MENU"}
 		
 		if (select = i)
 		{

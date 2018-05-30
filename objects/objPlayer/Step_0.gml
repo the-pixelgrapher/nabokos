@@ -64,6 +64,13 @@ if snapped=1
 
 
 // ---- MAGNET ROTATION ----
+
+//crate collision checks
+var TO = place_meeting(x,y-16,objCrate),
+	RI = place_meeting(x+16,y,objCrate),
+	BO = place_meeting(x,y+16,objCrate),
+	LE = place_meeting(x-16,y,objCrate);
+
 //rotT = direction if powered off or not adjecent a crate.
 /*
 if global.rotationMode=1
@@ -88,55 +95,85 @@ if global.rotationMode=1
 // Magnet rotates to face a single adjecent crate
 if magState=1 and global.rotationMode=0
 {
-	if place_meeting(x,y-16,objCrate) and //if only top
-	!place_meeting(x,y+16,objCrate)   and
-	!place_meeting(x-16,y,objCrate)   and
-	!place_meeting(x+16,y,objCrate)   {rotT=90;}
+	if TO=1 and RI=0 and BO=0 and LE=0 //if only top 90
+	{
 		
-	if place_meeting(x,y+16,objCrate) and //if only bottom
-	!place_meeting(x,y-16,objCrate)   and
-	!place_meeting(x-16,y,objCrate)   and
-	!place_meeting(x+16,y,objCrate)   {rotT=270;}
-		
-	if place_meeting(x-16,y,objCrate) and //if only left
-	!place_meeting(x,y-16,objCrate)   and
-	!place_meeting(x,y+16,objCrate)   and
-	!place_meeting(x+16,y,objCrate)   {rotT=180;}
-		
-	if place_meeting(x+16,y,objCrate) and //if only right
-	!place_meeting(x,y-16,objCrate)   and
-	!place_meeting(x,y+16,objCrate)   and
-	!place_meeting(x-16,y,objCrate)   {rotT=0;}
-
+		if rot=000 {rotT+=090;}
+		if rot=180 {rotT-=090;}
+		if rot=270 
+		{
+			if direction=180 {rotT+=180;}
+			if direction=000 {rotT-=180;}
+			if direction=090 or direction=270 {rotT-=180;}
+		}
+		rot=090;
+	}
+	if TO=0 and RI=0 and BO=1 and LE=0 //if only bottom 270
+	{
+		if rot=000 {rotT-=090;}
+		if rot=180 {rotT+=090;}
+		if rot=090 
+		{
+			if direction=180 {rotT-=180;}
+			if direction=000 {rotT+=180;}
+			if direction=090 or direction=270 {rotT-=180;}
+		}
+		rot=270;
+	}
+	if TO=0 and RI=0 and BO=0 and LE=1 //if only left 180
+	{
+		if rot=090 {rotT+=090;}
+		if rot=270 {rotT-=090;}
+		if rot=000 
+		{
+			if direction=090 {rotT-=180;}
+			if direction=270 {rotT+=180;}
+			if direction=000 or direction=180 {rotT-=180;}
+		}
+		rot=180;
+	}
+	if TO=0 and RI=1 and BO=0 and LE=0 //if only right 0
+	{
+		if rot=090 {rotT-=090;}
+		if rot=270 {rotT+=090;}
+		if rot=180 
+		{
+			if direction=090 {rotT+=180;}
+			if direction=270 {rotT-=180;}
+			if direction=000 or direction=180 {rotT-=180;}
+		}
+		rot=000;
+	}
+	
 	// magnet faces closest crate to front when cornered
-	if position_meeting(x+64,y,objCrate) and position_meeting(x,y-64,objCrate) // top right check
-	and !position_meeting(x-64,y,objCrate) and !position_meeting(x,y+64,objCrate)
+	if RI=1 and TO=1 // top right check
+	and LE=0 and BO=0
 	{
-		if rotT=180	{rotT=90;}
-		if rotT=270	{rotT=0;}
+		if rot=270	{rotT+=90; rot=0;}
+		if rot=180	{rotT-=90; rot=90;}
 	}
-	if position_meeting(x-64,y,objCrate) and position_meeting(x,y+64,objCrate) // bottom left check
-	and !position_meeting(x+64,y,objCrate) and !position_meeting(x,y-64,objCrate)
+	if LE=1 and BO=1 // bottom left check
+	and RI=0 and TO=0
 	{
-		if rotT=90	{rotT=180;}
-		if rotT=0	{rotT=270;}
+		if rot=90	{rotT+=90; rot=180;}
+		if rot=0	{rotT-=90; rot=270;}
 	}
-	if position_meeting(x,y-64,objCrate) and position_meeting(x-64,y,objCrate) // top left check
-	and !position_meeting(x,y+64,objCrate) and !position_meeting(x+64,y,objCrate)
+	if TO=1 and LE=1 // top left check
+	and BO=0 and RI=0
 	{
-		if rotT=0	{rotT=90;}
-		if rotT=270 {rotT=180;}
+		if rot=0	{rotT+=90; rot=90;}
+		if rot=270	{rotT-=90; rot=180;}
 	}
-	if position_meeting(x,y+64,objCrate) and position_meeting(x+64,y,objCrate) // bottom right check
-	and !position_meeting(x,y-64,objCrate) and !position_meeting(x-64,y,objCrate)
+	if RI=1 and BO=1 // bottom right check
+	and TO=0 and LE=0
 	{
-		if rotT=180	{rotT=270;}
-		if rotT=90	{rotT=0;}
+		if rot=180	{rotT+=90; rot=270;}
+		if rot=90	{rotT-=90; rot=0;}
 	}
 		
 }
 
-rotI=lerp(rotI,rotT,0.25);
+rotL=lerp(rotL,rotT,0.5); //magnet rotation lerp animation
 
 // ---- DELAYED GAME RESET ----
 if resetTimer=32 and global.complete=0 and !place_meeting(x,y,objExit)
