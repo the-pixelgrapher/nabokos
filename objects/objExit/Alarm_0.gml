@@ -5,6 +5,6 @@ if !collision_line(x,y,x,y+1000,objSolid,0,0) {image_angle=270;}
 
 if global.playState=1
 {
-	layer_create(401, "insDoors");
+	if !layer_exists("insDoors") {layer_create(250, "insDoors");}
 	instance_create_layer(x,y,"insDoors",objDoor);
 }

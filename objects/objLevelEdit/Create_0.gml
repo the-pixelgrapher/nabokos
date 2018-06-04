@@ -5,6 +5,7 @@ row=0;
 col=0;
 iSelect=1;
 filled=0;
+near="none";
 irot=0;
 irotT=0;
 irotL=0;
@@ -12,6 +13,8 @@ savedTimer=0;
 soundTimer=0;
 sx=128+32;
 sy=128+32;
+sxL=0;
+syL=0;
 
 layer_create(0,"insMarkers");
 layer_create(200,"insWalls");

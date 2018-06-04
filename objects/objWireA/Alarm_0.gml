@@ -45,3 +45,5 @@ if place_meeting(x+64,y,objElectric) and place_meeting(x,y+64,objElectric)
 	sprite_index=sprWireTR; //right & bottom
 	image_angle=270;
 }
+
+if global.playState=0 {alarm[0]=1;}

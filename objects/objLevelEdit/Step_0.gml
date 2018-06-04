@@ -2,23 +2,25 @@ scrControl();
 if savedTimer > 0 {savedTimer--;}
 if savedTimer = 0 {soundTimer = 0;}
 
+filled = position_meeting(sx,sy,objGameObject); //whether selected square contains an object
 
 // ---- GRID NAVIGATION ----
-if activd == 0
-{
-	if keyLeftP == 1 or keyRightP == 1 or keyUpP == 1 or keyDownP == 1 {scrSound("tap");}
+
+if keyLeftP == 1 or keyRightP == 1 or keyUpP == 1 or keyDownP == 1 {scrSound("tap");}
 	
-	if keyLeftP == 1 {col--;}
-	if keyRightP == 1 {col++;}
-	if keyUpP == 1 {row --;}
-	if keyDownP == 1 {row ++;}
+if keyLeftP == 1 {col--;}
+if keyRightP == 1 {col++;}
+if keyUpP == 1 {row --;}
+if keyDownP == 1 {row ++;}
 	
-	row = clamp(row,0,7);
-	col = clamp(col,0,11);
+row = clamp(row,0,7);
+col = clamp(col,0,11);
 	
-	sx = (col*64) + 128 + 32;
-	sy = (row*64) + 128 + 32;
-}
+sx = (col*64) + 128 + 32;
+sy = (row*64) + 128 + 32;
+
+sxL=lerp(sxL,sx,0.5);
+syL=lerp(syL,sy,0.5);
 
 // ---- HOTBAR OBJECT SELECTION ----
 if keyboard_check_pressed(ord("1")) {iSelect=1;}
@@ -46,12 +48,12 @@ if irot=360 {irot=0;}
 if irot<0 {irot=270;}
 irotL=lerp(irotL,irotT,0.25);
 
-// ---- PLACE OBJECT ----
-if keyActR == 1
+#region // ---- PLACE OBJECT ----
+if keyActP == 1
 {	
 	if iSelect=1
 	{
-		if !position_meeting(sx,sy,objWall) {instance_create_layer(sx-32,sy-32,"insWalls",objWall);}
+		if !position_meeting(sx,sy,objSolid) {instance_create_layer(sx-32,sy-32,"insWalls",objWall);}
 	}
 	if iSelect=2
 	{
@@ -63,7 +65,7 @@ if keyActR == 1
 	}
 	if iSelect=3
 	{
-		if !position_meeting(sx,sy,objCrate) {instance_create_layer(sx,sy,"insCrates",objCrate);}
+		if !position_meeting(sx,sy,objSolid) {instance_create_layer(sx,sy,"insCrates",objCrate);}
 	}
 	if iSelect=4
 	{
@@ -93,21 +95,24 @@ if keyActR == 1
 	{
 		if !position_meeting(sx,sy,objExit) and !position_meeting(sx,sy,objSolid)
 		{
+			instance_destroy(objExit);
 			with instance_create_layer(sx,sy,"insWallsM",objExit) {image_angle=objLevelEdit.irot;}
-			
 		}
 	}
 	if iSelect=9
 	{
 		if !position_meeting(sx,sy,objPlayer) and !position_meeting(sx,sy,objSolid)
 		{
-			instance_create_layer(sx,sy,"insPlayer",objPlayer);
+			instance_destroy(objPlayer);
+			with instance_create_layer(sx,sy,"insPlayer",objPlayer) {image_angle=objLevelEdit.irot;}
+			//with instance_create_depth(sx,sy,300,objPlayer) {image_angle=objLevelEdit.irot;}
 		}
 	}
 	
 	scrSound("click");
 	scrSound("door");
 }
+#endregion
 
 // ---- REMOVE OBJECT ----
 if keyboard_check_pressed(ord("X"))
@@ -122,6 +127,7 @@ if keyboard_check_pressed(ord("X"))
 	if position_meeting(sx,sy,objPlayer) {near=instance_position(sx,sy,objPlayer);}
 	if position_meeting(sx,sy,objWall) {near=instance_position(sx,sy,objWall);}
 	
-	instance_destroy(near);
+	if near!="none" {instance_destroy(near);}
 	scrSound("click");
+
 }

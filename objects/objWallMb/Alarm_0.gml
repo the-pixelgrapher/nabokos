@@ -1,0 +1,1 @@
+instance_create_layer(x,y,"insWalls",objWallM); image_index=1;

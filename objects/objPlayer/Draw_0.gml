@@ -1,10 +1,10 @@
 if alpha>0 
 {
-	if global.lerpRot=1 
+	if global.lerpRot=1 and global.playState=1
 	{
 		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotL,c_white,alpha);
 	}
-	if global.lerpRot=0
+	else
 	{
 		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotT,c_white,alpha);
 	}

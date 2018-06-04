@@ -12,18 +12,24 @@ draw_line_width(128,84,288,84,2); // heading underline
 draw_set_colour(scrCol(0));
 draw_set_font(fntDIN);
 
+if filled=0 {draw_set_alpha(1)}
+else {draw_set_alpha(0.5)}
 draw_sprite(sprKeySpace,0,468,48);
 draw_text(540,55,"PLACE");
+draw_set_alpha(1);
 
+if filled=1 {draw_set_alpha(1)}
+else {draw_set_alpha(0.5)}
 draw_sprite(sprKeyX,0,621,48);
 draw_text(661,55,"REMOVE");
+draw_set_alpha(1);
 
 if iSelect=2 or iSelect=6 or iSelect=7 or iSelect=8 or iSelect=9 {draw_set_alpha(1)}
 else {draw_set_alpha(0.5)}
 draw_sprite(sprKeyQ,0,755,48);
 draw_sprite(sprKeyE,0,795,48);
 draw_text(835,55,"ROTATE");
-draw_set_alpha(1)
+draw_set_alpha(1);
 
 draw_sprite(sprKeyF5,0,817,677);
 draw_text(857,684,"SAVE");
@@ -87,4 +93,4 @@ draw_set_colour(scrCol(4));
 draw_line_width(127,640,896,640,4); // heading underline
 
 // ---- DRAW SELECTION MARKER ----
-draw_sprite(sprGSelect,0,sx,sy);
+draw_sprite(sprGSelect,0,sxL,syL);

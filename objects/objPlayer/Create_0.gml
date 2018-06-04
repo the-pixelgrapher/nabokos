@@ -3,7 +3,8 @@ if global.playState=1
 	
 // ---- PLAYER VARIABLES & PARAMETERS ----
 global.complete=0;		//whether the level is complete or not
-global.level=room-4;
+if room>3 {global.level=room-4;}
+else {global.level=20;}
 near=0;
 	
 // ---- FADE IN ON LOAD ----
@@ -17,14 +18,17 @@ instance_create_layer(0,0,"GUI",objLevelNum);
 instance_create_layer(0,0,"GUI",objMenuPause);
 alarm[0]=60;			//controls popup delay
 
+
 }
 
 //VARIABLES
+rot=image_angle;		//true rotation
+rotT=image_angle;		//roation animation target
+alarm[1]=1;
+
 alpha=1;
 magState=0;				//magnet power state off=0 on=1
 resetTimer=0;			//delayed reset timer
-rot=image_angle;		//true rotation
-rotT=image_angle;		//roation animation target
 rotL=0;					//rotation animation lerp
 
 
