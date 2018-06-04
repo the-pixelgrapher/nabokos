@@ -1,3 +1,6 @@
+if room>3
+{
+
 var state=0, xx, yy, targetx, targety;
 
 //DOOR TAKES STATE OF NEARBY WIRE
@@ -54,3 +57,5 @@ if state=0 and sndPlayed0=0
 
 y=lerp(y,targety,0.2); //door animation
 x=lerp(x,targetx,0.2); //door animation
+
+}

@@ -1,4 +1,5 @@
-
+if global.playState=1
+{
 
 // ---- SNAPPING SETUP ----
 var snapped = place_snapped(32,32) * !place_snapped(64,32) * !place_snapped(32,64);
@@ -66,11 +67,16 @@ if snapped=1
 // ---- MAGNET ROTATION ----
 
 //crate collision checks
-var TO = place_meeting(x,y-16,objCrate),
-	RI = place_meeting(x+16,y,objCrate),
-	BO = place_meeting(x,y+16,objCrate),
-	LE = place_meeting(x-16,y,objCrate);
-
+var TO = place_meeting(x,y-32,objCrate),
+	RI = place_meeting(x+32,y,objCrate),
+	BO = place_meeting(x,y+32,objCrate),
+	LE = place_meeting(x-32,y,objCrate),
+	
+	TL = position_meeting(x-64,y-64,objCrate),
+	TR = position_meeting(x+64,y-64,objCrate),
+	BR = position_meeting(x+64,y+64,objCrate),
+	BL = position_meeting(x-64,y+64,objCrate);
+	
 //rotT = direction if powered off or not adjecent a crate.
 /*
 if global.rotationMode=1
@@ -102,8 +108,8 @@ if magState=1 and global.rotationMode=0
 		if rot=180 {rotT-=090;}
 		if rot=270 
 		{
-			if direction=180 {rotT+=180;}
-			if direction=000 {rotT-=180;}
+			if direction=180 {rotT+=180*(2*BR-1);}
+			if direction=000 {rotT-=180*(2*BL-1);}
 			if direction=090 or direction=270 {rotT-=180;}
 		}
 		rot=090;
@@ -114,8 +120,8 @@ if magState=1 and global.rotationMode=0
 		if rot=180 {rotT+=090;}
 		if rot=090 
 		{
-			if direction=180 {rotT-=180;}
-			if direction=000 {rotT+=180;}
+			if direction=180 {rotT-=180*(2*TR-1);}
+			if direction=000 {rotT+=180*(2*TL-1);}
 			if direction=090 or direction=270 {rotT-=180;}
 		}
 		rot=270;
@@ -126,8 +132,8 @@ if magState=1 and global.rotationMode=0
 		if rot=270 {rotT-=090;}
 		if rot=000 
 		{
-			if direction=090 {rotT-=180;}
-			if direction=270 {rotT+=180;}
+			if direction=090 {rotT-=180*(2*BR-1);}
+			if direction=270 {rotT+=180*(2*TR-1);}
 			if direction=000 or direction=180 {rotT-=180;}
 		}
 		rot=180;
@@ -138,8 +144,8 @@ if magState=1 and global.rotationMode=0
 		if rot=270 {rotT+=090;}
 		if rot=180 
 		{
-			if direction=090 {rotT+=180;}
-			if direction=270 {rotT-=180;}
+			if direction=090 {rotT+=180*(2*BL-1);}
+			if direction=270 {rotT-=180*(2*TL-1);}
 			if direction=000 or direction=180 {rotT-=180;}
 		}
 		rot=000;
@@ -196,4 +202,6 @@ if snapped=1 and place_meeting(x,y,objExit)
 		layer_create(150,"insOverlay");
 		instance_create_layer(0,0,"insOverlay", objComplete);
 	}
+}
+
 }

@@ -1,3 +1,5 @@
+global.playState=1;
+
 levelNTimer=60*3;		//level number popup timer
 easey=-34;				//y easing of level number popup
 easea=0;				//alpha easing of level number popup

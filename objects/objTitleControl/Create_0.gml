@@ -1,3 +1,5 @@
+global.playState=1;
+
 select=0;
 amplify=128;
 easea=0;

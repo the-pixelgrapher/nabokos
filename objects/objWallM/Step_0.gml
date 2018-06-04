@@ -1,5 +1,5 @@
 //DOOR TAKES STATE OF NEARBY WIRE
-var state, xx, yy, targetx, targety;
+var state=0, xx, yy, targetx, targety;
 if position_meeting(xo-64,yo+00,objWireA) or
    position_meeting(xo+64,yo+00,objWireA) or
    position_meeting(xo+00,yo+64,objWireA) or
