@@ -12,8 +12,8 @@ draw_line_width(128,84,288,84,2); // heading underline
 draw_set_colour(scrCol(0));
 draw_set_font(fntDIN);
 
-if filled=0 {draw_set_alpha(1)}
-else {draw_set_alpha(0.5)}
+if filled=1 or keyboard_check(ord("X")) {draw_set_alpha(0.5)}
+else {draw_set_alpha(1)}
 draw_sprite(sprKeySpace,0,468,48);
 draw_text(540,55,"PLACE");
 draw_set_alpha(1);

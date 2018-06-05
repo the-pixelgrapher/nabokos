@@ -15,6 +15,11 @@ sx=128+32;
 sy=128+32;
 sxL=0;
 syL=0;
+keyLeftTimer = 0;
+keyRightTimer = 0;
+keyUpTimer = 0;
+keyDownTimer = 0;
+keyCooldown = 0;
 
 layer_create(0,"insMarkers");
 layer_create(200,"insWalls");

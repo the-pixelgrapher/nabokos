@@ -44,4 +44,21 @@ if position_meeting(x,y-64,objPlayer) and objPlayer.rot=270 and objPlayer.magSta
 	yy=-1*m;
 }
 
+
+var xd, yd;
+if direction=0		{xd=128;	yd=0;}
+if direction=90		{xd=0;		yd=-128;}
+if direction=180	{xd=-128;	yd=0;}
+if direction=270	{xd=0;		yd=128;}
+	
+// stop crate from getting stuck if being pulled towards closing door
+if place_meeting(x-xd/2,y-yd/2,objGoal) and place_meeting(x+xd,y+yd,objWallMb)
+{
+	if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)
+	{
+		speed=0;
+	}
+}
+
+
 image_index=position_meeting(x,y,objGoal); //sprite changes when on goal

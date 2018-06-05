@@ -3,6 +3,7 @@
 if place_meeting(x-64,y,objElectric) or place_meeting(x+64,y,objElectric)
 {
 	sprite_index=sprWireH; //left or right
+	image_angle=0;
 }
 
 if place_meeting(x,y-64,objElectric) or place_meeting(x,y+64,objElectric)
@@ -14,6 +15,7 @@ if place_meeting(x,y-64,objElectric) or place_meeting(x,y+64,objElectric)
 if place_meeting(x-64,y,objElectric) and place_meeting(x+64,y,objElectric)
 {
 	sprite_index=sprWireH; //left & right
+	image_angle=0;
 }
 
 if place_meeting(x,y-64,objElectric) and place_meeting(x,y+64,objElectric)

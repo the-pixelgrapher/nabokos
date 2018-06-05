@@ -13,7 +13,7 @@ keyUpR = max(keyboard_check_released(vk_up), keyboard_check_released(ord("W")));
 keyLeftR = max(keyboard_check_released(vk_left), keyboard_check_released(ord("A")));
 keyDownR = max(keyboard_check_released(vk_down), keyboard_check_released(ord("S")));
 	
-	
-	
+
+keyAct = max(keyboard_check(vk_enter), keyboard_check(vk_space));
 keyActP = max(keyboard_check_pressed(vk_enter), keyboard_check_pressed(vk_space));
 keyActR = max(keyboard_check_released(vk_enter), keyboard_check_released(vk_space));

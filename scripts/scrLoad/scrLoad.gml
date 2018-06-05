@@ -11,4 +11,7 @@ for
 }
 global.levelState[0] = clamp(ini_read_real("levelProgress",string(0),0), 1, 2);
 
+
+
+
 ini_close();

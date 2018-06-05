@@ -1,0 +1,2 @@
+drawCLevel=!drawCLevel;
+scrSound("click");

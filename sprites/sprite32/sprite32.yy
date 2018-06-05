@@ -2,7 +2,7 @@
     "id": "567e8397-d53f-4a29-8e6e-60e074aded3b",
     "modelName": "GMSprite",
     "mvc": "1.12",
-    "name": "sprKeyF5",
+    "name": "sprite32",
     "For3D": false,
     "HTile": false,
     "VTile": false,
