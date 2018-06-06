@@ -31,8 +31,8 @@ draw_sprite(sprKeyE,0,795,48);
 draw_text(835,55,"ROTATE");
 draw_set_alpha(1);
 
-draw_sprite(sprKeyF5,0,817,677);
-draw_text(857,684,"SAVE");
+draw_sprite(sprKeyFunc5,0,817,677);
+draw_text(857,684,"PLAY");
 
 if savedTimer > 0 {draw_sprite(sprSAVED,0,802,677);}
 

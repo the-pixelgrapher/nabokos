@@ -4,7 +4,7 @@ if global.playState=1
 // ---- PLAYER VARIABLES & PARAMETERS ----
 global.complete=0;		//whether the level is complete or not
 if room>3 {global.level=room-4;}
-else {global.level=20;}
+else {global.level=0;}
 near=0;
 	
 // ---- FADE IN ON LOAD ----

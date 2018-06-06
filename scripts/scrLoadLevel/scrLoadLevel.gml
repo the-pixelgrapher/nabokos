@@ -1,9 +1,9 @@
 /// @desc Load Level
 
 with (objGameObject) instance_destroy();
-if (file_exists("clevel.json"))
+if (file_exists(string("c") + string(global.cLevel) + string(".json")))
 {
-	var _wrapper = LoadJSONFromFile("clevel.json");
+	var _wrapper = LoadJSONFromFile(string("c") + string(global.cLevel) + string(".json"));
 	var _list = _wrapper[? "root"];
 	//var _list = ds_map_find_value(_wrapper, "root");
 	

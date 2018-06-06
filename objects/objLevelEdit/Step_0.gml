@@ -2,7 +2,7 @@ scrControl();
 if savedTimer > 0 {savedTimer--;}
 if savedTimer = 0 {soundTimer = 0;}
 
-filled = position_meeting(sx,sy,objGameObject); //whether selected square contains an object
+//filled = position_meeting(sx,sy,objGameObject); //whether selected square contains an object
 
 // ---- GRID NAVIGATION ----
 if keyLeftP == 1 or keyRightP == 1 or keyUpP == 1 or keyDownP == 1 {scrSound("tap");}
@@ -24,22 +24,22 @@ if keyRightR == 1 {keyRightTimer = 0;}
 if keyUpR == 1 {keyUpTimer = 0;}
 if keyDownR == 1 {keyDownTimer = 0;}
 
-if keyLeft == 1 and keyLeftTimer > 15 and (frac(keyLeftTimer/5)=0) and col < 12 and col > 0
+if keyLeft == 1 and keyRight == 0 and keyLeftTimer > 10 and frac(keyLeftTimer/5)=0 and col > 0
 {
 	col--; scrSound("tap");
 }
 
-if keyRight == 1 and keyRightTimer > 15 and (frac(keyRightTimer/5)=0) 
+if keyRight == 1 and keyLeft == 0 and keyRightTimer > 10 and frac(keyRightTimer/5)=0 and col < 11
 {
 	col++; scrSound("tap");
 }
 
-if keyUp == 1 and keyUpTimer > 15 and (frac(keyUpTimer/5)=0) 
+if keyUp == 1 and keyDown == 0 and keyUpTimer > 10 and frac(keyUpTimer/5)=0 and row > 0
 {
 	row--; scrSound("tap");
 }
 
-if keyDown == 1  and keyDownTimer > 15 and (frac(keyDownTimer/5)=0) 
+if keyDown == 1 and keyUp == 0 and keyDownTimer > 10 and frac(keyDownTimer/5)=0 and row < 7
 {
 	row++; scrSound("tap");
 }
@@ -53,6 +53,8 @@ sy = (row*64) + 128 + 32;
 
 sxL=lerp(sxL,sx,0.5);
 syL=lerp(syL,sy,0.5);
+
+filled = position_meeting(sx,sy,objGameObject); //whether selected square contains an object
 
 // ---- HOTBAR OBJECT SELECTION ----
 if keyboard_check_pressed(ord("1")) {iSelect=1;}
@@ -80,12 +82,14 @@ if irot == 360 {irot=0;}
 if irot < 0 {irot=270;}
 irotL=lerp(irotL,irotT,0.25);
 
+
+
 #region // ---- PLACE OBJECT ----
 if keyAct == 1 and !keyboard_check(ord("X"))
 {	
 	if iSelect=1
 	{
-		if !position_meeting(sx,sy,objSolid) 
+		if !filled
 		{
 			instance_create_layer(sx-32,sy-32,"insWalls",objWall);
 			scrSound("door");
@@ -93,47 +97,48 @@ if keyAct == 1 and !keyboard_check(ord("X"))
 	}
 	if iSelect=2
 	{
-		if !position_meeting(sx,sy,objWallMb) and !position_meeting(sx,sy,objSolid)
+		if !filled
 		{
 			with instance_create_layer(sx,sy,"insWallsM",objWallMb) {image_angle=objLevelEdit.irot;}
 			scrSound("door");
 		}
 	}
-	if iSelect=3
+	if iSelect=3 and !position_meeting(sx,sy,objSolid)
 	{
-		if !position_meeting(sx,sy,objSolid) 
+		if filled=0 or position_meeting(sx,sy,objWireA) or position_meeting(sx,sy,objAND)
+		or position_meeting(sx,sy,objXOR) or position_meeting(sx,sy,objGoal)
 		{
 			instance_create_layer(sx,sy,"insCrates",objCrate);
 			scrSound("door");
 		}
 	}
-	if iSelect=4
+	if iSelect=4 and !position_meeting(sx,sy,objGoal)
 	{
-		if !position_meeting(sx,sy,objGoal) 
+		if !filled or position_meeting(sx,sy,objCrate) or position_meeting(sx,sy,objPlayer)
 		{
 			instance_create_layer(sx,sy,"insGoals",objGoal);
 			scrSound("door");
 		}
 	}
-	if iSelect=5
+	if iSelect=5 and !position_meeting(sx,sy,objElectric)
 	{
-		if !position_meeting(sx,sy,objWireA) 
+		if !filled or position_meeting(sx,sy,objCrate)
 		{
 			instance_create_layer(sx,sy,"insWire",objWireA);
 			scrSound("door");
 		}
 	}
-	if iSelect=6
+	if iSelect=6 and !position_meeting(sx,sy,objElectric)
 	{
-		if !position_meeting(sx,sy,objAND) and !position_meeting(sx,sy,objSolid)
+		if !filled or position_meeting(sx,sy,objCrate) or position_meeting(sx,sy,objPlayer) 
 		{
 			with instance_create_layer(sx,sy,"insWire",objAND) {image_angle=objLevelEdit.irot;}
 			scrSound("door");
 		}
 	}
-	if iSelect=7
+	if iSelect=7 and !position_meeting(sx,sy,objElectric)
 	{
-		if !position_meeting(sx,sy,objXOR) and !position_meeting(sx,sy,objSolid)
+		if !filled or position_meeting(sx,sy,objCrate) or position_meeting(sx,sy,objPlayer)
 		{
 			with instance_create_layer(sx,sy,"insWire",objXOR) {image_angle=objLevelEdit.irot;}
 			scrSound("door");
@@ -141,20 +146,20 @@ if keyAct == 1 and !keyboard_check(ord("X"))
 	}
 	if iSelect=8
 	{
-		if !position_meeting(sx,sy,objExit) and !position_meeting(sx,sy,objSolid)
+		if !filled
 		{
 			instance_destroy(objExit);
 			with instance_create_layer(sx,sy,"insWallsM",objExit) {image_angle=objLevelEdit.irot;}
 			scrSound("door");
 		}
 	}
-	if iSelect=9
+	if iSelect=9 and !position_meeting(sx,sy,objPlayer)
 	{
-		if !position_meeting(sx,sy,objPlayer) and !position_meeting(sx,sy,objSolid)
+		if filled=0 or position_meeting(sx,sy,objWireA) or position_meeting(sx,sy,objAND) or 
+		position_meeting(sx,sy,objXOR) or position_meeting(sx,sy,objGoal)
 		{
 			instance_destroy(objPlayer);
 			with instance_create_layer(sx,sy,"insPlayer",objPlayer) {image_angle=objLevelEdit.irot;}
-			//with instance_create_depth(sx,sy,300,objPlayer) {image_angle=objLevelEdit.irot;}
 			scrSound("door");
 		}
 	}
@@ -162,7 +167,7 @@ if keyAct == 1 and !keyboard_check(ord("X"))
 #endregion
 
 // ---- REMOVE OBJECT ----
-if keyboard_check_pressed(ord("X"))
+if keyboard_check_pressed(ord("X")) and filled == 1
 {
 	if position_meeting(sx,sy,objXOR) {near=instance_position(sx,sy,objXOR);}
 	if position_meeting(sx,sy,objAND) {near=instance_position(sx,sy,objAND);}
@@ -174,7 +179,18 @@ if keyboard_check_pressed(ord("X"))
 	if position_meeting(sx,sy,objPlayer) {near=instance_position(sx,sy,objPlayer);}
 	if position_meeting(sx,sy,objWall) {near=instance_position(sx,sy,objWall);}
 	
-	if near!="none" {instance_destroy(near);}
-	scrSound("click");
-
+	if near!="none" 
+	{
+		instance_destroy(near);
+		scrSound("click");
+	}
 }
+
+if keyActR == 1 or keyboard_check_pressed(ord("X")) 
+{
+	scrSaveLevel();
+	savedTimer=90;
+}
+
+global.cValid[global.cLevel] = instance_exists(objPlayer);
+filled = position_meeting(sx,sy,objGameObject); //whether selected square contains an object

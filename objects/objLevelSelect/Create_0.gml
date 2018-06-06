@@ -6,6 +6,9 @@ instance_create_layer(0, 0 ,"insPostprocess" ,objFadeWipe); //fade in animation
 select = global.level; //select last played level
 activd = 0;
 
+layer_create(101,"GUI");
+instance_create_layer(0,0,"GUI",objCustomLevels);
+
 // ---- CHECKING CURRENTY UNLOCKED LEVELS
 global.levelUnlocked = -1;
 global.levelComplete = 0;

@@ -1,5 +1,3 @@
-global.playState=0;
-
 activd=0;
 row=0;
 col=0;
@@ -28,3 +26,14 @@ layer_create(350,"insCrates");
 layer_create(400,"insGoals");
 layer_create(500,"insWallsM");
 layer_create(600,"insWire");
+
+if global.playState=0
+{
+	scrLoadLevel();
+}
+
+if global.playState == 1 
+{
+	scrLoadLevel();
+	instance_destroy();
+}

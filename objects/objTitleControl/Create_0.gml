@@ -25,6 +25,7 @@ for (var i = 0; i < room_last-4; i++)
 }
 
 global.level = global.levelUnlocked;
+global.cLevel = 0;
 
 if global.splashPlayed=0
 {

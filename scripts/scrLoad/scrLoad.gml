@@ -11,7 +11,11 @@ for
 }
 global.levelState[0] = clamp(ini_read_real("levelProgress",string(0),0), 1, 2);
 
-
+for (var cl = 0; cl < 5; cl++)
+{
+	global.cLevelState[cl] = file_exists(string("c") + string(cl) + string(".json"));
+	global.cValid[cl] = clamp(ini_read_real("cLevelValidity",string(cl),0), 0, 1);
+}
 
 
 ini_close();

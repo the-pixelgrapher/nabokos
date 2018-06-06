@@ -24,9 +24,9 @@ ds_map_add_list(_wrapper,"root",_root_list);
 
 //save all to string
 var _string  = json_encode(_wrapper);
-SaveStringToFile("clevel.json",_string);
+SaveStringToFile(string("c") + string(global.cLevel) + string(".json"),_string);
 
 //NUKE DATA!!!
 ds_map_destroy(_wrapper);
 
-show_debug_message("SAVED!")
+//show_debug_message("SAVED!")
