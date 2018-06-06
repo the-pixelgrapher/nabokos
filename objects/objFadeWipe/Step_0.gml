@@ -15,7 +15,7 @@ if global.fadeMode="out"
 	if x<=0
 	{
 		global.fadeMode="none";
-		if global.complete=1{room_goto_next();}
+		room_goto_next();
 	}
 }
 

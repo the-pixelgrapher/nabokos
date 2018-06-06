@@ -49,6 +49,6 @@ if state=0 and sndPlayed0=0
 	sndPlayed1=0;
 }
 
-
+image_alpha=spawn.image_alpha;
 x=lerp(x,targetx,0.2);
 y=lerp(y,targety,0.2);

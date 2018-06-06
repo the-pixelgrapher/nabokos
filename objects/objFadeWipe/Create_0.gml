@@ -7,7 +7,7 @@ if global.fadeMode="out" or global.fadeMode="outT" or global.fadeMode="outLN"
 {
 	x=1024;
 	y=0;
-	if global.fadeMode="outT" or global.fadeMode="outLN" {scrSound("start");}
+	if global.fadeMode="outT" or room = 2 {scrSound("start");}
 	scrSound("trans");
 }
 

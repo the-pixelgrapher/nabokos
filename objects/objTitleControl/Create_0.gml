@@ -1,5 +1,5 @@
 global.playState=1;
-
+global.gotoCL = 0;
 select=0;
 amplify=128;
 easea=0;
@@ -8,6 +8,7 @@ easeP=0;
 t=0;
 t2=0;
 progDelay=60;
+scrSound("load");
 
 // ---- CHECKING CURRENTY UNLOCKED LEVELS
 global.levelUnlocked = -1;

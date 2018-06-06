@@ -17,7 +17,15 @@ if objControlsScreen.counter=0
 		{
 			if select < 2
 			{
-				if select=0 {global.fadeMode="outT";} //main menu
+				if select=0 
+				{
+					if global.levelState[room_last-5] = 2 
+					{
+						global.gotoCL = 1;
+						global.fadeMode="outLS";
+					}
+					else {global.fadeMode="outT";} //continue game
+				} 
 				if select=1 {global.fadeMode="outLS";} //level selection
 				instance_create_layer(0,-768,"insPostprocess",objFadeWipe);
 			}

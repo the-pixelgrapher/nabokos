@@ -19,22 +19,48 @@ if drawCLevel == 1 or counter > 0
 		if select < 0 {select = 4;}
 		if keyLeftP == 1 or keyRightP == 1 {scrSound("tap");}
 		
-		if keyActP
+		if keyActR
 		{
-			global.cLevel = select;
-			if global.cValid[global.cLevel] = 1
+			if global.cValid[select] = 1 and global.fadeMode="none"
 			{
+				
+				global.cLevel = select;
+				global.fadeMode="out";
+				instance_create_layer(0,0,"insPostprocess",objFadeWipe);
 				global.playState = 1;
-				room_goto_next();
+				
 			}
 		}
 		
 		if keyboard_check_pressed(ord("E"))
 		{
-			global.cLevel = select;
-			global.playState = 0;
-			room_goto_next();
+			if global.fadeMode="none"
+			{
+				global.cLevel = select;
+				global.fadeMode="out";
+				instance_create_layer(0,0,"insPostprocess",objFadeWipe);
+				global.playState = 0;
+			}
 		}
+	}
+	
+	if keyboard_check(ord("X")) == 1 and deleteTimer <= 60 and global.cLevelState[select] == 1
+	{
+		deleteTimer += 1;
+	}
+	if keyboard_check_released(ord("X")) == 1 or global.cLevelState[select] == 0 or 
+	keyLeftP == 1 or keyRightP == 1
+	{
+		deleteTimer = 0;
+	}
+	
+	if deleteTimer > 60 
+	{
+		file_delete(string("c") + string(select) + string(".json"));
+		scrSound("error");
+		scrLoad();
+		scrSave();
+		deleteTimer = 0;
 	}
 }
 

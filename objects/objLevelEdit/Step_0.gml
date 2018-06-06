@@ -1,8 +1,9 @@
-scrControl();
-if savedTimer > 0 {savedTimer--;}
-if savedTimer = 0 {soundTimer = 0;}
+t += 1/120;
+easex=ease("easeoutquint",t)*amplify-amplify;
+easep=ease("easeoutquint",t);
+easea=ease("easeinoutquad",t*2);
 
-//filled = position_meeting(sx,sy,objGameObject); //whether selected square contains an object
+scrControl();
 
 // ---- GRID NAVIGATION ----
 if keyLeftP == 1 or keyRightP == 1 or keyUpP == 1 or keyDownP == 1 {scrSound("tap");}
@@ -122,7 +123,7 @@ if keyAct == 1 and !keyboard_check(ord("X"))
 	}
 	if iSelect=5 and !position_meeting(sx,sy,objElectric)
 	{
-		if !filled or position_meeting(sx,sy,objCrate)
+		if !filled or position_meeting(sx,sy,objCrate) or position_meeting(sx,sy,objPlayer)
 		{
 			instance_create_layer(sx,sy,"insWire",objWireA);
 			scrSound("door");
@@ -186,11 +187,10 @@ if keyboard_check_pressed(ord("X")) and filled == 1
 	}
 }
 
-if keyActR == 1 or keyboard_check_pressed(ord("X")) 
+if keyAct == 1 or keyboard_check(ord("X"))
 {
-	scrSaveLevel();
-	savedTimer=90;
+	if alarm[0] == -1 {alarm[0] = 60*5;}
 }
 
-global.cValid[global.cLevel] = instance_exists(objPlayer);
+
 filled = position_meeting(sx,sy,objGameObject); //whether selected square contains an object

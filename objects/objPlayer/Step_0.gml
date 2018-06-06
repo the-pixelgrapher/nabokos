@@ -1,6 +1,9 @@
 if global.playState=1
 {
 
+if t < 1 {t += 1/120;}
+ea = ease("easeoutcubic",t);
+
 // ---- SNAPPING SETUP ----
 var snapped = place_snapped(32,32) * !place_snapped(64,32) * !place_snapped(32,64);
 
@@ -78,27 +81,6 @@ var TO = place_meeting(x,y-32,objCrate),
 	BR = position_meeting(x+64,y+64,objCrate),
 	BL = position_meeting(x-64,y+64,objCrate);
 	
-//rotT = direction if powered off or not adjecent a crate.
-/*
-if global.rotationMode=1
-{
-	if magState=0
-	{
-		if keyRight=1 {rotT=0;}
-		if keyUp=1    {rotT=90;}
-		if keyLeft=1  {rotT=180;}
-		if keyDown=1  {rotT=270;}
-	}
-		
-	if magState=1
-	{
-		if keyRight=1 and !position_meeting(x-64,y,objCrate) {rotT=0;}
-		if keyUp=1    and !position_meeting(x,y+64,objCrate) {rotT=90;}
-		if keyLeft=1  and !position_meeting(x+64,y,objCrate) {rotT=180;}
-		if keyDown=1  and !position_meeting(x,y-64,objCrate) {rotT=270;}
-	}
-}
-*/
 // Magnet rotates to face a single adjecent crate
 if magState=1 and global.rotationMode=0
 {
@@ -197,7 +179,7 @@ if snapped=1 and place_meeting(x,y,objExit)
 {
 	global.complete=1;
 	speed=0;								//player movement locked on completion
-	if alpha>0 {alpha-=1/30;}				//fade player out on completion
+	if image_alpha>0 {image_alpha-=1/30;}				//fade player out on completion
 	if !instance_exists(objComplete)		//level complete screen
 	{	
 		layer_create(150,"insOverlay");

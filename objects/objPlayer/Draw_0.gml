@@ -1,12 +1,12 @@
-if alpha>0 
+if image_alpha>0 
 {
 	if global.lerpRot=1 and global.playState=1
 	{
-		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotL,c_white,alpha);
+		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotL,c_white,image_alpha*ea);
 	}
 	else
 	{
-		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotT,c_white,alpha);
+		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotT,c_white,image_alpha);
 	}
 }
 

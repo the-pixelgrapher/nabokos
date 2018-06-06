@@ -13,8 +13,12 @@ for (var i = 0; i < 5; i++;)
 	var yy = i * 50;
 	if (i = 0) 
 	{
-		if global.levelState[0]=2 {var item = "CONTINUE";}
-		else {var item = "START GAME";}
+		if global.levelState[0]=2 and global.levelState[room_last-5] < 2 {var item = "CONTINUE";}
+		else 
+		{
+			if global.levelState[room_last-5] = 2 {var item = "LEVEL EDITOR"}
+			else {var item = "START GAME";}
+		}
 	}
 	if (i == 1) {item = "LEVEL SELECTION"}
 	if (i == 2) {item = "CONTROLS"}

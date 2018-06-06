@@ -5,16 +5,6 @@
     "name": "objXOR",
     "eventList": [
         {
-            "id": "f68fad68-db72-48b1-9ff7-0ec0e595ac02",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "53b73339-fdaa-4607-acf8-b20662e8d31c"
-        },
-        {
             "id": "a4111b3e-270e-48ce-8c4c-7ab722a6c2e1",
             "modelName": "GMEvent",
             "mvc": "1.0",

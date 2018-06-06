@@ -5,16 +5,6 @@
     "name": "objWallMb",
     "eventList": [
         {
-            "id": "23b9627b-4122-4920-a495-01399ace7ba7",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "6bb5bfe0-fe0a-4895-8af9-55bea07f5a13"
-        },
-        {
             "id": "956e9314-494b-4973-a70e-dac1c480bc9d",
             "modelName": "GMEvent",
             "mvc": "1.0",

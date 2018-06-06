@@ -21,6 +21,7 @@ if global.sound=1 {
 	
 		case "tap": //switch item
 		audio_play_sound(sndClick2,0,0);
+		audio_sound_pitch(sndClick2, 1.05-random(0.1));
 		break;
 	
 		case "trans": //room transitiom
@@ -37,10 +38,16 @@ if global.sound=1 {
 		
 		case "door": //door open-close
 		audio_play_sound(sndDoor,16,0);
+		audio_sound_pitch(sndDoor, 1.05-random(0.1));
 		break;
 		
 		case "error": //error
 		audio_play_sound(sndError,16,0);
+		break;
+		
+		case "load": //load
+		audio_play_sound(sndLoad,16,0);
+		audio_sound_pitch(sndLoad, 1.1-random(0.3));
 		break;
 		
 	}

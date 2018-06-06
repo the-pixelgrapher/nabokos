@@ -5,16 +5,6 @@
     "name": "objExit",
     "eventList": [
         {
-            "id": "2ebb7190-f796-42de-a875-35af7ab4b632",
-            "modelName": "GMEvent",
-            "mvc": "1.0",
-            "IsDnD": false,
-            "collisionObjectId": "00000000-0000-0000-0000-000000000000",
-            "enumb": 0,
-            "eventtype": 0,
-            "m_owner": "90270cb7-9109-4a78-b7ba-992f9deeeb1f"
-        },
-        {
             "id": "fe4d4127-009e-4f6a-9c01-b447e4cef1b8",
             "modelName": "GMEvent",
             "mvc": "1.0",

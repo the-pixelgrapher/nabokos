@@ -1,2 +1,2 @@
-state=0;
+event_inherited();
 alarm[0]=1;

@@ -14,7 +14,7 @@ ini_open("nabokos.ini");
 	if ini_section_exists("cLevelValidity") {ini_section_delete("cLevelValidity");}
 	for (var cl = 0; cl < 5; cl++)
 	{
-		ini_write_real("cLevelValidity",string("c"),global.cLevelState[cl]);
+		ini_write_real("cLevelValidity",string("cValid")+string(cl),global.cValid[cl]);
 	}
 	
 ini_close();

@@ -1,10 +1,16 @@
 global.playState=1;
+scrSound("load");
 
-global.fadeMode = "inLS";
-instance_create_layer(0, 0 ,"insPostprocess" ,objFadeWipe); //fade in animation
+//global.fadeMode = "inLS";
+//instance_create_layer(0, 0 ,"insPostprocess" ,objFadeWipe); //fade in animation
 
 select = global.level; //select last played level
 activd = 0;
+
+t = 0;
+ea = 0;
+ex = 0;
+amp = 96;
 
 layer_create(101,"GUI");
 instance_create_layer(0,0,"GUI",objCustomLevels);
