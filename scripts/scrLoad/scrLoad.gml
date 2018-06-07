@@ -21,5 +21,9 @@ for (var cl = 0; cl < 5; cl++)
 	}
 }
 
+global.stepMovement = ini_read_real("options","stepMovement",0);
+global.rotationMode = ini_read_real("options","easyRotation",0);
+global.invisCrates = ini_read_real("options","invisiCrates",0);
+global.sound = ini_read_real("options","sound",1);
 
 ini_close();

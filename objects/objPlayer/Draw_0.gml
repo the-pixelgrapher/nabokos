@@ -2,7 +2,7 @@ if image_alpha>0
 {
 	if global.lerpRot=1 and global.playState=1
 	{
-		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotL,c_white,image_alpha*ea);
+		draw_sprite_ext(sprPlayer0,magState,x,y,1,1,rotL,c_white,image_alpha);
 	}
 	else
 	{

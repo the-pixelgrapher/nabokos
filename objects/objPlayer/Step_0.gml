@@ -1,8 +1,7 @@
 if global.playState=1
 {
 
-if t < 1 {t += 1/120;}
-ea = ease("easeoutcubic",t);
+global.lerpRot = !global.rotationMode;
 
 // ---- SNAPPING SETUP ----
 var snapped = place_snapped(32,32) * !place_snapped(64,32) * !place_snapped(32,64);
@@ -80,16 +79,36 @@ var TO = place_meeting(x,y-32,objCrate),
 	TR = position_meeting(x+64,y-64,objCrate),
 	BR = position_meeting(x+64,y+64,objCrate),
 	BL = position_meeting(x-64,y+64,objCrate);
-	
+
+// Magnet rotates manually if not locked onto a crate
+if (global.rotationMode == 1)
+{
+	if (magState == 0)
+	{
+		if (keyLeft == 1) {rot = 180;}
+		if (keyUp == 1) {rot = 90;}
+		if (keyRight == 1) {rot = 0;}
+		if (keyDown == 1) {rot = 270;}
+	}
+	else
+	{
+		if (keyLeft == 1 and RI == 0) {rot = 180;}
+		if (keyUp == 1 and BO == 0) {rot = 90;}
+		if (keyRight == 1 and LE == 0) {rot = 0;}
+		if (keyDown == 1 and TO == 0) {rot = 270;}
+	}
+	rotT = rot;
+}
+
 // Magnet rotates to face a single adjecent crate
-if magState=1 and global.rotationMode=0
+if (magState=1 and global.rotationMode=0)
 {
 	if TO=1 and RI=0 and BO=0 and LE=0 //if only top 90
 	{
 		
-		if rot=000 {rotT+=090;}
-		if rot=180 {rotT-=090;}
-		if rot=270 
+		if (rot=000) {rotT+=090;}
+		if (rot=180) {rotT-=090;}
+		if (rot=270) 
 		{
 			if direction=180 {rotT+=180*(2*BR-1);}
 			if direction=000 {rotT-=180*(2*BL-1);}

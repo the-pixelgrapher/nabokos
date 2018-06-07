@@ -13,7 +13,7 @@ if drawMenuPause=1 or counter>0
 	if drawMenuPause=1 
 	{
 		if y=0 and counter=1 {counter2=0;} //reset fade out animation
-		if objControlsScreen.drawControls=0
+		if objControlsScreen.drawControls=0 and objOptions.drawOptions=0
 		{
 			select -= keyUpP;
 			select += keyDownP;
@@ -38,6 +38,16 @@ if drawMenuPause=1 or counter>0
 				}
 				
 				if select=2 and objControlsScreen.counter=0 {objControlsScreen.drawControls=1;}
+				if select=3 and objOptions.counter=0 
+				{
+					with (objOptions)
+					{
+						if counter2=1 and yo=64 and counter=0 and drawOptions=0
+						{
+							drawOptions=1;
+						}
+					}
+				}
 			}
 		}
 	}

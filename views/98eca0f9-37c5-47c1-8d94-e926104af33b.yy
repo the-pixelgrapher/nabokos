@@ -13,7 +13,8 @@
         "bd633024-1d46-4946-8ae4-629cb09b8b06",
         "8fe3e745-31df-4d6c-87db-3c92879499b3",
         "5d6341dd-b6aa-41cd-8c3b-5aee3b0cd2b7",
-        "9a52c0d9-ce70-4a04-9ab5-11a9e1692f97"
+        "9a52c0d9-ce70-4a04-9ab5-11a9e1692f97",
+        "cb45cfdd-fa93-4796-a20d-867d0e10d0e9"
     ],
     "filterType": "GMObject",
     "folderName": "ui",

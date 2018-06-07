@@ -1,3 +1,4 @@
+scrLoad();
 global.playState=1;
 global.gotoCL = 0;
 select=0;
@@ -41,6 +42,7 @@ if global.aaSet=0
 }
 
 instance_create_layer(0,0,"insPostprocess",objControlsScreen);
+instance_create_layer(0,0,"insPostprocess",objOptions);
 
 x=212;
 y=361;

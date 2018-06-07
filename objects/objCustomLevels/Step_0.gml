@@ -1,8 +1,6 @@
-scrControl();
-
 if drawCLevel == 1 or counter > 0
 {
-	  
+	scrControl();
 	if yo <= 64 and counter2 == 1 //fade in animation
 	{
 		counter+=1/30;

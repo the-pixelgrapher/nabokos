@@ -16,6 +16,7 @@ ea = 0;
 scrSound("load");
 layer_create(101,"GUI");
 instance_create_layer(0,0,"GUI",objControlsScreen);
+instance_create_layer(0,0,"GUI",objOptions);
 instance_create_layer(0,0,"GUI",objLevelNum);
 instance_create_layer(0,0,"GUI",objMenuPause);
 alarm[0]=60;			//controls popup delay
