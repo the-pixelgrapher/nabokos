@@ -11,7 +11,7 @@ if easea>0
 	draw_set_colour($f5f5f5);
 	draw_text(512,yo+305,"CUSTOM LEVELS");
 	draw_set_colour(scrCol(4));
-	draw_line_width(420,yo+305+36,605,yo+305+36,2); // heading underline
+	draw_line_width(512-92*easea,yo+305+36,512+92*easea,yo+305+36,2); // heading underline
 	
 	if keyAct=0 {draw_set_alpha(0.5*easea);}
 	else draw_set_alpha(1*easea);

@@ -1,5 +1,6 @@
 global.playState=1;
 scrSound("load");
+scrLoad();
 
 //global.fadeMode = "inLS";
 //instance_create_layer(0, 0 ,"insPostprocess" ,objFadeWipe); //fade in animation

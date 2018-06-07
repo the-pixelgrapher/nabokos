@@ -6,7 +6,7 @@ draw_set_halign(1);
 draw_text(512,128+ex/1.5,"LEVEL SELECTION");
 
 draw_set_colour(scrCol(2));
-draw_line_width(334,192,691,192,2); // heading underline
+draw_line_width(512-178*ea,192,512+177*ea,192,2); // heading underline
 
 if objCustomLevels.counter != 1 or objCustomLevels.drawCLevel=0
 {
@@ -53,7 +53,7 @@ draw_set_halign(0);
 draw_set_valign(0);
 
 draw_set_alpha(ea*(1-objCustomLevels.easea));
-draw_sprite(sprKeyFunc5,1,781,646 - ex);
-draw_text(821,654 - ex,"LEVEL EDITOR");
+draw_sprite(sprKeyFunc5,1,781,646 - ex*1.5);
+draw_text(821,654 - ex*1.5,"LEVEL EDITOR");
 
 draw_set_alpha(1);

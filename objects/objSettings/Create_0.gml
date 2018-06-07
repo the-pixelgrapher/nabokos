@@ -27,6 +27,7 @@ if global.levelState[0] = 2
 {
 	global.showControls=0;
 }
+global.cLevel = 0;
 
 //GAME START
 room_goto_next();

@@ -1,7 +1,6 @@
 t += 1/120;
 easex=ease("easeoutquint",t)*amplify-amplify;
 easep=ease("easeoutquint",t);
-easea=ease("easeinoutquad",t*2);
 
 scrControl();
 

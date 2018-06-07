@@ -2,7 +2,7 @@ scrControl();
 
 if t < 1 {t += 1/120;}
 ex = ease("easeoutquint",t)*amp-amp;
-ea = ease("easeoutquad",t*2);
+ea = ease("easeoutquint",t*1.25);
 
 if objCustomLevels.drawCLevel=0
 {

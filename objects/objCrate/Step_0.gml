@@ -1,5 +1,5 @@
 t += 1/120;
-ea = ease("easeoutcubic",t*(randa+1));
+ea = ease("easeoutquart",t*(randa+1));
 ex = ease("easeoutquint",t)*amp-amp;
 
 if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)

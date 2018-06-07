@@ -1,3 +1,7 @@
-drawCLevel=1;
+scrLoad();
+scrSave();
+
+drawCLevel = 1;
 scrSound("click");
+
 global.gotoCL = 0;

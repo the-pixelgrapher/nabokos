@@ -10,5 +10,5 @@ amplify=-64;
 amplify2=64;
 yo=64;
 
-select=0;
+select=global.cLevel;
 deleteTimer = 0;
