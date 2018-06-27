@@ -45,10 +45,20 @@ if global.sound=1 {
 		audio_play_sound(sndError,16,0);
 		break;
 		
-		case "load": //load
+		case "load": //load in, room start
 		audio_play_sound(sndLoad,16,0);
 		audio_sound_pitch(sndLoad, 1.1-random(0.3));
 		break;
+		
+		case "music": //background music
+		if !audio_is_playing(sndMusic) and global.music == 1
+		{
+			audio_play_sound(sndMusic,64,1);
+			//audio_sound_gain(sndMusic,0.0,0);
+			//audio_sound_gain(sndMusic,0.25,2000);
+		}
+		break;
+		
 		
 	}
 }

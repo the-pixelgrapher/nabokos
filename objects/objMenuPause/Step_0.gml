@@ -28,7 +28,11 @@ if drawMenuPause=1 or counter>0
 				if !instance_exists(objFadeWipe)
 				{	
 					if select=4 {global.fadeMode="outM";}			//main menu
-					if select=1 {global.fadeMode="outLS";}			//level selection
+					if select=1										//level selection
+					{
+						global.fadeMode="outLS";
+						if room=3 {global.gotoCL=1;}
+					}			
 					instance_create_layer(0,-768,"insPostprocess",objFadeWipe);
 				}
 				

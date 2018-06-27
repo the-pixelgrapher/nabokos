@@ -71,6 +71,14 @@
             }
         },
         {
+            "Key": "1214563b-745d-4737-b7f5-40b9463fe289",
+            "Value": {
+                "id": "2d08135c-6978-4170-8747-c9cbc8468ff2",
+                "resourcePath": "sounds\\sndMusic\\sndMusic.yy",
+                "resourceType": "GMSound"
+            }
+        },
+        {
             "Key": "1264fb9b-fc93-4bbe-af57-ababf88563d7",
             "Value": {
                 "id": "3e481d8a-1372-4b69-843b-f2430a96e9b3",

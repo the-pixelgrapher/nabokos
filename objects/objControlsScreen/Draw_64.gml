@@ -1,6 +1,6 @@
 if easea>0
 {
-	draw_set_colour(c_white);
+	draw_set_colour($f5f5f5);
 	draw_set_circle_precision(40);
 	draw_set_alpha(easea);
 	draw_roundrect_ext(64,yo+64,1024-64,yo+768-64,easer,easer,0);

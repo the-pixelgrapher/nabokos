@@ -32,8 +32,8 @@ if easea>0
 	draw_sprite(sprState,global.invisCrates,320,yo+400);
 	draw_text(379,yo+403,"INVISIBLE CRATE CHALLENGE");
 	
-	draw_sprite(sprState,global.sound,320,yo+456);
-	draw_text(379,yo+459,"SOUND EFFECTS");
+	draw_sprite(sprState,global.music,320,yo+456);
+	draw_text(379,yo+459,"BACKGROUND MUSIC");
 	
 	
 	draw_sprite(sprKeySpace,0,376,yo+544)

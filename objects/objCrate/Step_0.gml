@@ -56,7 +56,7 @@ if direction=180	{xd=-128;	yd=0;}
 if direction=270	{xd=0;		yd=128;}
 	
 // stop crate from getting stuck if being pulled towards closing door
-if place_meeting(x,y,objGoal) and place_meeting(x+xd,y+yd,objWallMb) and 
+if place_meeting(x-xd/4,y-yd/4,objGoal) and place_meeting(x+xd,y+yd,objWallMb) and 
 place_meeting(x+xd/2,y+yd/2,objWireA)
 {
 	if place_snapped(32,32) and !place_snapped(64,32) and !place_snapped(32,64)

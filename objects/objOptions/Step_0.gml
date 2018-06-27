@@ -34,7 +34,17 @@ if drawOptions == 1 or counter > 0
 			}
 			if select == 3
 			{
-				global.sound = !global.sound;
+				global.music = !global.music;
+				if global.music == 1 
+				{
+					scrSound("music");
+					audio_sound_gain(sndMusic,0.25,500);
+				}
+				else
+				{
+					audio_sound_gain(sndMusic,0.0,500);
+				}
+				
 			}
 			scrSound("click");
 			scrSave();

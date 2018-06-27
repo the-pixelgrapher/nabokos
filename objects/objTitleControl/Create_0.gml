@@ -46,3 +46,5 @@ instance_create_layer(0,0,"insPostprocess",objOptions);
 
 x=212;
 y=361;
+
+scrSound("music");

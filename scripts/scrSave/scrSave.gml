@@ -21,6 +21,6 @@ ini_open("nabokos.ini");
 	ini_write_real("options","stepMovement",global.stepMovement);
 	ini_write_real("options","easyRotation",global.rotationMode);
 	ini_write_real("options","invisiCrates",global.invisCrates);
-	ini_write_real("options","sound",global.sound);
+	ini_write_real("options","sound",global.music);
 	
 ini_close();

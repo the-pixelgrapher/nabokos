@@ -6,6 +6,13 @@ draw_set_colour(c_white);
 draw_set_font(fntDIN2);
 draw_set_halign(1);
 draw_set_valign(0);
-draw_text(512,y+23,"PRESS SPACE TO CONTINUE");
+if room=3
+{
+	draw_text(512,y+23,"PRESS SPACE TO EXIT");
+}
+else
+{
+	draw_text(512,y+23,"PRESS SPACE TO CONTINUE");
+}
 
 draw_set_alpha(1);
